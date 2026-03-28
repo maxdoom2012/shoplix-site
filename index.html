@@ -5,463 +5,712 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoplix — Shared Shopping Lists</title>
     <meta name="description" content="Shoplix — real-time shared shopping lists for families and events. Offline-first, syncs instantly across all devices.">
+    <meta name="theme-color" content="#1565C0">
+    <link rel="icon" type="image/png" href="app-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <style>
         :root {
-            --blue: #1565C0;
-            --blue-light: #1976D2;
-            --blue-pale: #E3F2FD;
-            --blue-wash: #F5F9FF;
-            --ink: #1A1A2E;
-            --ink-soft: #4A4A5A;
-            --ink-muted: #8A8A9A;
-            --cream: #FAFBFE;
+            --blue-900: #0D47A1;
+            --blue-700: #1565C0;
+            --blue-600: #1976D2;
+            --blue-500: #2196F3;
+            --blue-100: #BBDEFB;
+            --blue-50: #E3F2FD;
+            --blue-wash: #F0F6FF;
+            --ink: #0F172A;
+            --ink-700: #334155;
+            --ink-500: #64748B;
+            --ink-400: #94A3B8;
+            --ink-200: #E2E8F0;
+            --ink-100: #F1F5F9;
+            --ink-50: #F8FAFC;
             --white: #FFFFFF;
-            --border: #E8EDF5;
-            --green: #2E7D32;
-            --green-pale: #E8F5E9;
-            --amber: #F57F17;
-            --amber-pale: #FFF8E1;
-            --radius: 16px;
-            --radius-sm: 10px;
+            --green-600: #16A34A;
+            --green-50: #F0FDF4;
+            --amber-600: #D97706;
+            --amber-50: #FFFBEB;
+            --rose-600: #E11D48;
+            --rose-50: #FFF1F2;
+            --violet-600: #7C3AED;
+            --violet-50: #F5F3FF;
+            --radius-xl: 20px;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
             --font-display: 'DM Serif Display', Georgia, serif;
-            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --shadow-sm: 0 1px 3px rgba(15,23,42,0.04), 0 1px 2px rgba(15,23,42,0.06);
+            --shadow-md: 0 4px 16px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.04);
+            --shadow-lg: 0 12px 40px rgba(15,23,42,0.08), 0 4px 12px rgba(15,23,42,0.04);
+            --shadow-xl: 0 20px 60px rgba(15,23,42,0.1), 0 8px 20px rgba(15,23,42,0.06);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
 
         body {
             font-family: var(--font-body);
             color: var(--ink);
-            background: var(--cream);
+            background: var(--ink-50);
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ── Lang toggle ─────────────────────────── */
-        .lang-bar {
+        /* ── Utility ───────────────────────────────── */
+        .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--ink-500);
+            font-size: 17px;
+            max-width: 520px;
+            margin: 0 auto 48px;
+        }
+
+        /* ── i18n ──────────────────────────────────── */
+        [data-lang] { display: none; }
+        [data-lang].active { display: block; }
+        span[data-lang] { display: none; }
+        span[data-lang].active { display: inline; }
+
+        /* ── Nav ───────────────────────────────────── */
+        .nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 100;
+            padding: 14px 24px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
-            padding: 12px 24px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(250, 251, 254, 0.85);
-            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            background: rgba(248,250,252,0.82);
+            border-bottom: 1px solid rgba(226,232,240,0.6);
+            transition: box-shadow 0.3s ease;
         }
-
+        .nav.scrolled { box-shadow: var(--shadow-sm); }
+        .nav-brand {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none; color: var(--ink);
+        }
+        .nav-brand img { width: 32px; height: 32px; border-radius: 8px; }
+        .nav-brand span {
+            font-family: var(--font-display);
+            font-size: 20px;
+        }
         .lang-toggle {
-            display: flex;
-            gap: 2px;
-            background: var(--blue-pale);
+            display: flex; gap: 2px;
+            background: var(--blue-50);
             border-radius: 20px;
             padding: 3px;
         }
-
         .lang-toggle button {
             padding: 5px 14px;
             border: none;
             border-radius: 18px;
             background: transparent;
-            color: var(--blue);
+            color: var(--blue-700);
             font-family: var(--font-body);
             font-size: 13px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.25s ease;
         }
-
         .lang-toggle button.active {
-            background: var(--blue);
+            background: var(--blue-700);
             color: white;
-            box-shadow: 0 2px 8px rgba(21, 101, 192, 0.3);
+            box-shadow: 0 2px 8px rgba(21,101,192,0.25);
         }
 
-        /* ── Hero ────────────────────────────────── */
+        /* ── Hero ──────────────────────────────────── */
         .hero {
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
             text-align: center;
-            padding: 100px 24px 60px;
+            padding: 120px 24px 80px;
             position: relative;
+            overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
-            top: -200px;
-            right: -150px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(25, 118, 210, 0.08) 0%, transparent 70%);
+            top: -40%; right: -20%;
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(25,118,210,0.07) 0%, transparent 65%);
             border-radius: 50%;
             pointer-events: none;
         }
-
         .hero::after {
             content: '';
             position: absolute;
-            bottom: -100px;
-            left: -100px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(46, 125, 50, 0.06) 0%, transparent 70%);
+            bottom: -30%; left: -15%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(22,163,74,0.05) 0%, transparent 65%);
             border-radius: 50%;
             pointer-events: none;
         }
 
-        .app-icon {
-            width: 96px;
-            height: 96px;
-            background: linear-gradient(145deg, var(--blue-light), var(--blue));
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 32px;
-            box-shadow: 0 12px 40px rgba(21, 101, 192, 0.25), 0 2px 8px rgba(21, 101, 192, 0.15);
-            animation: float 6s ease-in-out infinite;
-            position: relative;
-            z-index: 1;
+        .hero-icon {
+            width: 112px; height: 112px;
+            border-radius: 28px;
+            margin-bottom: 36px;
+            box-shadow: var(--shadow-xl);
+            animation: heroFloat 6s ease-in-out infinite;
+            position: relative; z-index: 1;
         }
-
-        @keyframes float {
+        @keyframes heroFloat {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .app-icon svg {
-            width: 48px;
-            height: 48px;
-            fill: white;
+            50% { transform: translateY(-10px); }
         }
 
         .hero h1 {
             font-family: var(--font-display);
-            font-size: clamp(42px, 8vw, 64px);
+            font-size: clamp(48px, 9vw, 72px);
             font-weight: 400;
             letter-spacing: -0.02em;
-            color: var(--ink);
             margin-bottom: 16px;
-            position: relative;
-            z-index: 1;
+            position: relative; z-index: 1;
         }
-
-        .hero h1 span {
-            color: var(--blue);
-        }
+        .hero h1 .brand { color: var(--blue-700); }
 
         .hero .tagline {
             font-size: clamp(17px, 3vw, 20px);
-            color: var(--ink-soft);
-            max-width: 480px;
-            margin-bottom: 40px;
+            color: var(--ink-500);
+            max-width: 500px;
+            margin-bottom: 44px;
             font-weight: 400;
-            position: relative;
-            z-index: 1;
+            position: relative; z-index: 1;
         }
 
-        .store-buttons {
-            display: flex;
-            gap: 16px;
+        .store-row {
+            display: flex; gap: 16px;
             flex-wrap: wrap;
             justify-content: center;
-            position: relative;
-            z-index: 1;
+            position: relative; z-index: 1;
         }
-
-        .store-buttons a {
+        .store-row a {
             display: block;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             border-radius: var(--radius-sm);
         }
-
-        .store-buttons a:hover {
+        .store-row a:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
+        .store-row img { height: 52px; border-radius: var(--radius-sm); }
+        .gplay-badge { height: 76px !important; margin: -12px 0; }
 
-        .store-buttons img {
-            height: 52px;
-            border-radius: var(--radius-sm);
-        }
-
-        /* ── Features ────────────────────────────── */
-        .features {
-            padding: 80px 24px;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-
+        /* ── Features ──────────────────────────────── */
+        .features { padding: 100px 24px; }
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+            max-width: 1120px;
+            margin: 0 auto;
         }
-
-        .feature-card {
+        .f-card {
             background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px 24px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid var(--ink-200);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
-
-        .feature-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+        .f-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
         }
-
-        .feature-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-            font-size: 22px;
+        .f-card-icon {
+            width: 48px; height: 48px;
+            border-radius: var(--radius-md);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
         }
+        .f-card-icon.blue { background: var(--blue-50); color: var(--blue-600); }
+        .f-card-icon.green { background: var(--green-50); color: var(--green-600); }
+        .f-card-icon.amber { background: var(--amber-50); color: var(--amber-600); }
+        .f-card-icon.rose { background: var(--rose-50); color: var(--rose-600); }
+        .f-card-icon.violet { background: var(--violet-50); color: var(--violet-600); }
 
-        .feature-icon.blue { background: var(--blue-pale); }
-        .feature-icon.green { background: var(--green-pale); }
-        .feature-icon.amber { background: var(--amber-pale); }
-
-        .feature-card h3 {
-            font-family: var(--font-body);
+        .f-card h3 {
             font-size: 17px;
             font-weight: 600;
             margin-bottom: 8px;
-            color: var(--ink);
+        }
+        .f-card p {
+            font-size: 14px;
+            color: var(--ink-500);
+            line-height: 1.6;
         }
 
-        .feature-card p {
+        /* ── How It Works ──────────────────────────── */
+        .how {
+            padding: 100px 24px;
+            background: var(--white);
+            border-top: 1px solid var(--ink-200);
+            border-bottom: 1px solid var(--ink-200);
+        }
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .how-step {
+            text-align: center;
+            position: relative;
+        }
+        .how-step::after {
+            content: '';
+            position: absolute;
+            top: 36px; right: -16px;
+            width: 32px; height: 2px;
+            background: var(--ink-200);
+        }
+        .how-step:last-child::after { display: none; }
+        .step-num {
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            background: var(--blue-50);
+            color: var(--blue-700);
+            font-family: var(--font-display);
+            font-size: 28px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+            border: 2px solid var(--blue-100);
+        }
+        .how-step h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .how-step p {
             font-size: 14px;
-            color: var(--ink-soft);
+            color: var(--ink-500);
             line-height: 1.55;
         }
 
-        /* ── Footer ──────────────────────────────── */
-        footer {
+        /* ── More Features ─────────────────────────── */
+        .more { padding: 100px 24px; }
+        .more-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .m-card {
+            background: var(--white);
+            border: 1px solid var(--ink-200);
+            border-radius: var(--radius-md);
+            padding: 24px 20px;
             text-align: center;
-            padding: 48px 24px;
-            border-top: 1px solid var(--border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .m-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .m-card i {
+            font-size: 28px;
+            color: var(--blue-600);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .m-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .m-card p {
+            font-size: 12px;
+            color: var(--ink-500);
+            line-height: 1.5;
         }
 
-        footer .footer-links {
-            display: flex;
-            gap: 24px;
+        /* ── Footer ────────────────────────────────── */
+        footer {
+            padding: 48px 24px;
+            text-align: center;
+            border-top: 1px solid var(--ink-200);
+        }
+        .footer-links {
+            display: flex; gap: 24px;
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 16px;
         }
-
         footer a {
-            color: var(--blue);
+            color: var(--blue-700);
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
             transition: opacity 0.2s;
         }
-
         footer a:hover { opacity: 0.7; }
-
-        footer .copyright {
+        .copyright {
             font-size: 13px;
-            color: var(--ink-muted);
+            color: var(--ink-400);
         }
 
-        /* ── i18n ────────────────────────────────── */
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
-
-        /* container for inline lang spans */
-        .lang-inline { display: none; }
-        .lang-inline.active { display: inline; }
-
-        /* ── Responsive ──────────────────────────── */
-        @media (max-width: 480px) {
-            .hero { padding: 90px 20px 48px; }
-            .store-buttons { flex-direction: column; align-items: center; }
-            .store-buttons img { height: 48px; }
-            .features { padding: 48px 20px; }
+        /* ── Scroll Reveal ─────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* ── Load animation ──────────────────────── */
-        .fade-up {
+        .hero > * {
             opacity: 0;
             transform: translateY(20px);
             animation: fadeUp 0.7s ease forwards;
         }
-
-        .fade-up:nth-child(1) { animation-delay: 0.1s; }
-        .fade-up:nth-child(2) { animation-delay: 0.2s; }
-        .fade-up:nth-child(3) { animation-delay: 0.3s; }
-        .fade-up:nth-child(4) { animation-delay: 0.4s; }
+        .hero > *:nth-child(1) { animation-delay: 0.05s; }
+        .hero > *:nth-child(2) { animation-delay: 0.15s; }
+        .hero > *:nth-child(3) { animation-delay: 0.25s; }
+        .hero > *:nth-child(4) { animation-delay: 0.35s; }
 
         @keyframes fadeUp {
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .features .feature-card {
-            opacity: 0;
-            transform: translateY(16px);
+        /* ── Responsive ────────────────────────────── */
+        @media (max-width: 900px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .more-grid { grid-template-columns: repeat(2, 1fr); }
         }
-
-        .features .feature-card.visible {
-            animation: fadeUp 0.5s ease forwards;
+        @media (max-width: 640px) {
+            .hero { padding: 100px 20px 64px; }
+            .hero-icon { width: 88px; height: 88px; border-radius: 22px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .how-steps { grid-template-columns: 1fr; gap: 24px; }
+            .how-step::after { display: none; }
+            .more-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .store-row { flex-direction: column; align-items: center; }
+            .store-row img { height: 48px; }
+            .gplay-badge { height: 72px !important; }
         }
-
-        .features .feature-card:nth-child(1).visible { animation-delay: 0s; }
-        .features .feature-card:nth-child(2).visible { animation-delay: 0.1s; }
-        .features .feature-card:nth-child(3).visible { animation-delay: 0.2s; }
     </style>
 </head>
 <body>
 
-    <!-- Language bar -->
-    <nav class="lang-bar">
-        <div class="lang-toggle">
-            <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
-            <button id="btn-uk" onclick="switchLang('uk')">UK</button>
-        </div>
-    </nav>
+<!-- ═══ Nav ═══ -->
+<nav class="nav" id="nav">
+    <a href="#" class="nav-brand">
+        <img src="app-icon.png" alt="Shoplix">
+        <span>Shoplix</span>
+    </a>
+    <div class="lang-toggle">
+        <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
+        <button id="btn-uk" onclick="switchLang('uk')">UK</button>
+    </div>
+</nav>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="app-icon fade-up">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.16 14.26l.04-.12.96-1.74h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 20.12 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7.42c-.13 0-.25-.11-.25-.25z"/>
-            </svg>
-        </div>
+<!-- ═══ Hero ═══ -->
+<section class="hero">
+    <img src="app-icon.png" alt="Shoplix" class="hero-icon">
 
-        <h1 class="fade-up">
-            <span>Shoplix</span>
-        </h1>
+    <h1><span class="brand">Shoplix</span></h1>
 
-        <p class="tagline fade-up">
-            <span class="lang-inline active" data-lang="en">Shared shopping lists for your family and events. Real-time sync, works offline.</span>
-            <span class="lang-inline" data-lang="uk">Спільні списки покупок для родини та подій. Синхронізація в реальному часі, працює офлайн.</span>
-        </p>
+    <p class="tagline">
+        <span data-lang="en" class="active">Shared shopping lists for families and events. Real-time sync, works offline.</span>
+        <span data-lang="uk">Спільні списки покупок для родини та подій. Синхронізація в реальному часі, працює офлайн.</span>
+    </p>
 
-        <div class="store-buttons fade-up">
-            <a href="#" aria-label="Download on the App Store">
-                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
-            </a>
-            <a href="#" aria-label="Get it on Google Play">
-                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height: 76px; margin: -12px 0;">
-            </a>
-        </div>
-    </section>
+    <div class="store-row">
+        <a href="#" aria-label="Download on the App Store">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+        </a>
+        <a href="#" aria-label="Get it on Google Play">
+            <img class="gplay-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+        </a>
+    </div>
+</section>
 
-    <!-- Features -->
-    <section class="features">
-
-        <!-- English features -->
-        <div class="lang-content active" data-lang="en">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon blue">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1976D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3>Share with family</h3>
-                    <p>Create lists and share them instantly. Everyone sees changes in real time — no more duplicate purchases.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon green">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    </div>
-                    <h3>Works offline</h3>
-                    <p>Add items without internet. Everything syncs automatically when you're back online.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon amber">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F57F17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <h3>Two list types</h3>
-                    <p>Household lists where items vanish when bought. Event lists where items are claimed and history is kept.</p>
-                </div>
+<!-- ═══ Features ═══ -->
+<section class="features">
+    <div data-lang="en" class="active">
+        <h2 class="section-title reveal">Everything you need</h2>
+        <p class="section-subtitle reveal">Powerful features, zero friction. Just create a list and go.</p>
+        <div class="features-grid">
+            <div class="f-card reveal">
+                <div class="f-card-icon blue"><i class="ph ph-house"></i></div>
+                <h3>Household & Event Lists</h3>
+                <p>Two list types for every situation. Household lists — items vanish when bought. Event lists — claim items and keep full history.</p>
+            </div>
+            <div class="f-card reveal">
+                <div class="f-card-icon green"><i class="ph ph-users-three"></i></div>
+                <h3>Real-Time Collaboration</h3>
+                <p>Share with a unique invite code. Everyone sees changes instantly — items added, bought, or claimed update across all devices.</p>
+            </div>
+            <div class="f-card reveal">
+                <div class="f-card-icon amber"><i class="ph ph-shopping-cart"></i></div>
+                <h3>Smart Item Management</h3>
+                <p>Autocomplete from your catalog, quantity chips for fast input, swipe gestures to buy or delete. Tap any item to edit details.</p>
+            </div>
+            <div class="f-card reveal">
+                <div class="f-card-icon rose"><i class="ph ph-user-plus"></i></div>
+                <h3>Claim System</h3>
+                <p>In event lists, tap the person icon to claim an item. Your avatar appears so others know you're buying it. No more duplicates.</p>
+            </div>
+            <div class="f-card reveal">
+                <div class="f-card-icon violet"><i class="ph ph-copy-simple"></i></div>
+                <h3>Templates</h3>
+                <p>Save reusable templates for lists you shop regularly. Apply a template to instantly add all its items to any list.</p>
+            </div>
+            <div class="f-card reveal">
+                <div class="f-card-icon blue"><i class="ph ph-archive"></i></div>
+                <h3>Product Catalog</h3>
+                <p>Every product you add is saved for reuse. Next time you type, it appears as a suggestion — no need to re-enter items every week.</p>
             </div>
         </div>
+    </div>
 
-        <!-- Ukrainian features -->
-        <div class="lang-content" data-lang="uk">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon blue">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1976D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3>Діліться з родиною</h3>
-                    <p>Створюйте списки та діліться ними миттєво. Усі бачать зміни в реальному часі — більше ніяких подвійних покупок.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon green">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    </div>
-                    <h3>Працює офлайн</h3>
-                    <p>Додавайте товари без інтернету. Все синхронізується автоматично, коли з'явиться зв'язок.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon amber">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F57F17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <h3>Два типи списків</h3>
-                    <p>Домашні списки — товари зникають після покупки. Списки подій — товари бронюються, історія зберігається.</p>
-                </div>
+    <div data-lang="uk">
+        <h2 class="section-title reveal">Усе, що потрібно</h2>
+        <p class="section-subtitle reveal">Потужні можливості, нуль зайвого. Просто створіть список і починайте.</p>
+        <div class="features-grid">
+            <div class="f-card reveal">
+                <div class="f-card-icon blue"><i class="ph ph-house"></i></div>
+                <h3>Домашні та списки подій</h3>
+                <p>Два типи списків для кожної ситуації. Домашні — товари зникають після покупки. Подій — резервуйте товари, історія зберігається.</p>
+            </div>
+            <div class="f-card reveal">
+                <div class="f-card-icon green"><i class="ph ph-users-three"></i></div>
+                <h3>Співпраця в реальному часі</h3>
+                <p>Поділіться унікальним кодом. Кожен бачить зміни миттєво — додані, куплені чи зарезервовані товари оновлюються на всіх пристроях.</p>
+            </div>
+            <div class="f-card reveal">
+                <div class="f-card-icon amber"><i class="ph ph-shopping-cart"></i></div>
+                <h3>Розумне управління товарами</h3>
+                <p>Автодоповнення з каталогу, чіпи кількості для швидкого введення, жести свайпу для покупки чи видалення. Натисніть на товар для редагування.</p>
+            </div>
+            <div class="f-card reveal">
+                <div class="f-card-icon rose"><i class="ph ph-user-plus"></i></div>
+                <h3>Система резервування</h3>
+                <p>У списках подій натисніть іконку людини, щоб зарезервувати товар. Ваш аватар з'явиться — інші бачитимуть, що ви його купуєте.</p>
+            </div>
+            <div class="f-card reveal">
+                <div class="f-card-icon violet"><i class="ph ph-copy-simple"></i></div>
+                <h3>Шаблони</h3>
+                <p>Зберігайте шаблони для регулярних покупок. Застосуйте шаблон, щоб миттєво додати всі його товари до будь-якого списку.</p>
+            </div>
+            <div class="f-card reveal">
+                <div class="f-card-icon blue"><i class="ph ph-archive"></i></div>
+                <h3>Каталог товарів</h3>
+                <p>Кожен доданий товар зберігається для повторного використання. Наступного разу він з'явиться як підказка — не потрібно вводити знову.</p>
             </div>
         </div>
+    </div>
+</section>
 
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="privacy-policy.html">
-                <span class="lang-inline active" data-lang="en">Privacy Policy</span>
-                <span class="lang-inline" data-lang="uk">Політика конфіденційності</span>
-            </a>
-            <a href="mailto:support@shoplix.app">support@shoplix.app</a>
+<!-- ═══ How It Works ═══ -->
+<section class="how">
+    <div data-lang="en" class="active">
+        <h2 class="section-title reveal">How it works</h2>
+        <p class="section-subtitle reveal">Start shopping together in under a minute.</p>
+        <div class="how-steps">
+            <div class="how-step reveal">
+                <div class="step-num">1</div>
+                <h3>Create a list</h3>
+                <p>Choose Household or Event type. Add a name and start adding items.</p>
+            </div>
+            <div class="how-step reveal">
+                <div class="step-num">2</div>
+                <h3>Share the code</h3>
+                <p>Tap the menu, then Share. Send the invite code via any messenger.</p>
+            </div>
+            <div class="how-step reveal">
+                <div class="step-num">3</div>
+                <h3>Shop together</h3>
+                <p>Everyone sees updates in real time. Swipe to mark items as bought.</p>
+            </div>
         </div>
-        <p class="copyright">&copy; 2026 Shoplix</p>
-    </footer>
+    </div>
+    <div data-lang="uk">
+        <h2 class="section-title reveal">Як це працює</h2>
+        <p class="section-subtitle reveal">Почніть купувати разом менш ніж за хвилину.</p>
+        <div class="how-steps">
+            <div class="how-step reveal">
+                <div class="step-num">1</div>
+                <h3>Створіть список</h3>
+                <p>Оберіть тип — Домашній або Подія. Додайте назву і починайте наповнювати.</p>
+            </div>
+            <div class="how-step reveal">
+                <div class="step-num">2</div>
+                <h3>Поділіться кодом</h3>
+                <p>Натисніть меню, потім Поділитися. Надішліть код через будь-який месенджер.</p>
+            </div>
+            <div class="how-step reveal">
+                <div class="step-num">3</div>
+                <h3>Купуйте разом</h3>
+                <p>Кожен бачить оновлення в реальному часі. Свайпніть, щоб позначити як куплений.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <script>
-        function switchLang(lang) {
-            document.querySelectorAll('.lang-content').forEach(el => {
-                el.classList.toggle('active', el.dataset.lang === lang);
-            });
-            document.querySelectorAll('.lang-inline').forEach(el => {
-                el.classList.toggle('active', el.dataset.lang === lang);
-            });
-            document.querySelectorAll('.lang-toggle button').forEach(el => {
-                el.classList.remove('active');
-            });
-            document.getElementById('btn-' + lang).classList.add('active');
-        }
+<!-- ═══ More Features ═══ -->
+<section class="more">
+    <div data-lang="en" class="active">
+        <h2 class="section-title reveal">And so much more</h2>
+        <p class="section-subtitle reveal">Every detail is crafted for the best shopping experience.</p>
+        <div class="more-grid">
+            <div class="m-card reveal">
+                <i class="ph ph-wifi-slash"></i>
+                <h4>Works Offline</h4>
+                <p>Shop without internet. Syncs when you're back online.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-vibrate"></i>
+                <h4>Shake to Undo</h4>
+                <p>Accidentally bought or deleted? Just shake your phone.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-squares-four"></i>
+                <h4>Categories & Sorting</h4>
+                <p>Organize by category. Drag to reorder, show or hide headers.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-palette"></i>
+                <h4>Custom Themes</h4>
+                <p>11 palettes, animated icons, color skins, and more.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-bell"></i>
+                <h4>Push Notifications</h4>
+                <p>Per-list alerts for item and member changes.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-arrows-left-right"></i>
+                <h4>Left / Right Handed</h4>
+                <p>Flip the swipe direction for your dominant hand.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-user"></i>
+                <h4>Profile & Avatar</h4>
+                <p>Set your name and photo. Link Apple or Google account.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-shield-check"></i>
+                <h4>No Sign-Up Required</h4>
+                <p>Start instantly. Create an account later if you want.</p>
+            </div>
+        </div>
+    </div>
+    <div data-lang="uk">
+        <h2 class="section-title reveal">І ще багато іншого</h2>
+        <p class="section-subtitle reveal">Кожна деталь продумана для найкращого досвіду покупок.</p>
+        <div class="more-grid">
+            <div class="m-card reveal">
+                <i class="ph ph-wifi-slash"></i>
+                <h4>Працює офлайн</h4>
+                <p>Купуйте без інтернету. Синхронізується при підключенні.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-vibrate"></i>
+                <h4>Скасування тряском</h4>
+                <p>Випадково купили чи видалили? Просто струсніть телефон.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-squares-four"></i>
+                <h4>Категорії та сортування</h4>
+                <p>Групуйте за категоріями. Перетягуйте для зміни порядку.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-palette"></i>
+                <h4>Кастомні теми</h4>
+                <p>11 палітр, анімовані іконки, кольорові скіни та інше.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-bell"></i>
+                <h4>Push-сповіщення</h4>
+                <p>Сповіщення для кожного списку окремо.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-arrows-left-right"></i>
+                <h4>Ліва / права рука</h4>
+                <p>Змініть напрямок свайпу під робочу руку.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-user"></i>
+                <h4>Профіль та аватар</h4>
+                <p>Встановіть ім'я та фото. Прив'яжіть Apple чи Google.</p>
+            </div>
+            <div class="m-card reveal">
+                <i class="ph ph-shield-check"></i>
+                <h4>Без реєстрації</h4>
+                <p>Почніть миттєво. Створіть акаунт пізніше, якщо захочете.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        // Scroll reveal for feature cards
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.15 });
+<!-- ═══ Footer ═══ -->
+<footer>
+    <div class="footer-links">
+        <a href="privacy-policy.html">
+            <span data-lang="en" class="active">Privacy Policy</span>
+            <span data-lang="uk">Політика конфіденційності</span>
+        </a>
+        <a href="mailto:support@shoplix.app">support@shoplix.app</a>
+    </div>
+    <p class="copyright">&copy; 2026 Shoplix</p>
+</footer>
 
-        document.querySelectorAll('.feature-card').forEach(card => observer.observe(card));
-    </script>
+<script>
+    // Language
+    function switchLang(lang) {
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            el.classList.toggle('active', el.dataset.lang === lang);
+        });
+        document.querySelectorAll('.lang-toggle button').forEach(el => el.classList.remove('active'));
+        document.getElementById('btn-' + lang).classList.add('active');
+        localStorage.setItem('shoplix-lang', lang);
+        // Re-observe revealed elements for new lang content
+        document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
+    }
+
+    // Restore language
+    const saved = localStorage.getItem('shoplix-lang');
+    if (saved) switchLang(saved);
+
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
 </body>
 </html>
