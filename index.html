@@ -340,7 +340,7 @@
         }
         .showcase-section.green-tint { background: linear-gradient(135deg, var(--green-50) 0%, var(--white) 60%); }
         .showcase-section.blue-tint { background: linear-gradient(135deg, var(--white) 40%, var(--blue-50) 100%); }
-        .showcase-section.amber-tint { background: linear-gradient(135deg, var(--amber-50) 0%, var(--white) 60%); }
+        /* amber-tint kept for potential future use */
 
         .showcase-grid {
             display: grid;
@@ -454,22 +454,6 @@
             background: linear-gradient(135deg, var(--amber-100) 0%, var(--amber-50) 100%);
             border: 1px solid rgba(217,119,6,0.15);
         }
-        .showcase-section.rose-tint { background: linear-gradient(135deg, var(--white) 40%, var(--rose-50) 100%); }
-        .rose-tint .showcase-tag { background: #FCE4EC; color: var(--rose-600); }
-        .rose-tint .showcase-illustration {
-            background: linear-gradient(135deg, #FCE4EC 0%, var(--rose-50) 100%);
-            border: 1px solid rgba(225,29,72,0.15);
-        }
-        .rose-tint .showcase-illustration i { color: var(--rose-600); }
-        .rose-tint .benefit-card i { color: var(--rose-600); }
-        .showcase-section.violet-tint { background: linear-gradient(135deg, var(--violet-50) 0%, var(--white) 60%); }
-        .violet-tint .showcase-tag { background: var(--violet-100); color: var(--violet-600); }
-        .violet-tint .showcase-illustration {
-            background: linear-gradient(135deg, var(--violet-100) 0%, var(--violet-50) 100%);
-            border: 1px solid rgba(124,58,237,0.15);
-        }
-        .violet-tint .showcase-illustration i { color: var(--violet-600); }
-        .violet-tint .benefit-card i { color: var(--violet-600); }
         .showcase-illustration i {
             font-size: 80px;
             opacity: 0.3;
@@ -621,51 +605,83 @@
         .marquee-pill.rose i { color: var(--rose-600); }
         .marquee-pill.violet i { color: var(--violet-600); }
 
-        /* ── More Features ─────────────────────────── */
-        .more { padding: 100px 24px; background: var(--ink-50); }
-        .more-grid {
+        /* ── Bento Grid ────────────────────────────── */
+        .bento { padding: 100px 24px; }
+        .bento-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            max-width: 1080px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        .m-card {
+        .bento-card {
             background: var(--white);
             border: 1px solid var(--ink-200);
-            border-radius: var(--radius-lg);
-            padding: 28px 24px;
-            text-align: center;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            border-radius: var(--radius-xl);
+            padding: 36px 32px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .m-card:hover {
+        .bento-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
             border-color: transparent;
         }
-        .m-card-icon {
-            width: 52px; height: 52px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 24px;
+        .bento-card.span-2 { grid-column: span 2; }
+        .bento-card.tall { grid-row: span 2; display: flex; flex-direction: column; justify-content: center; }
+
+        .bento-card .bento-accent {
+            position: absolute;
+            top: 0; right: 0;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            opacity: 0.06;
+            pointer-events: none;
+            transform: translate(30%, -30%);
         }
-        .m-card-icon.blue { background: var(--blue-50); color: var(--blue-600); }
-        .m-card-icon.green { background: var(--green-50); color: var(--green-600); }
-        .m-card-icon.amber { background: var(--amber-50); color: var(--amber-600); }
-        .m-card-icon.rose { background: var(--rose-50); color: var(--rose-600); }
-        .m-card-icon.violet { background: var(--violet-50); color: var(--violet-600); }
-        .m-card h4 {
+
+        .bento-icon {
+            width: 56px; height: 56px;
+            border-radius: var(--radius-lg);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+        .bento-icon.blue { background: var(--blue-50); color: var(--blue-600); }
+        .bento-icon.green { background: var(--green-50); color: var(--green-600); }
+        .bento-icon.amber { background: var(--amber-50); color: var(--amber-600); }
+        .bento-icon.rose { background: var(--rose-50); color: var(--rose-600); }
+        .bento-icon.violet { background: var(--violet-50); color: var(--violet-600); }
+
+        .bento-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .bento-card.span-2 h3 {
+            font-family: var(--font-display);
+            font-size: clamp(22px, 3vw, 28px);
+            font-weight: 400;
+        }
+        .bento-card p {
             font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-        .m-card p {
-            font-size: 13px;
             color: var(--ink-500);
-            line-height: 1.5;
+            line-height: 1.6;
+        }
+        .bento-card .bento-tags {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            margin-top: 16px;
+        }
+        .bento-card .bento-tag {
+            padding: 6px 14px;
+            background: var(--ink-50);
+            border: 1px solid var(--ink-200);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--ink-700);
         }
 
         /* ── CTA Section ───────────────────────────── */
@@ -800,7 +816,9 @@
             .showcase-text > p { margin-left: auto; margin-right: auto; }
             .showcase-visual { order: -1; }
             .benefit-card:hover { transform: none; }
-            .more-grid { grid-template-columns: repeat(2, 1fr); }
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .bento-card.span-2 { grid-column: span 2; }
+            .bento-card.tall { grid-row: span 1; }
             .how-steps::before { display: none; }
         }
         @media (max-width: 640px) {
@@ -810,8 +828,9 @@
             .phone-notch { width: 100px; height: 24px; top: 10px; }
             .float-card { display: none; }
             .how-steps { grid-template-columns: 1fr; gap: 32px; }
-            .more-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .m-card { padding: 20px 16px; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .bento-card.span-2 { grid-column: span 1; }
+            .bento-card { padding: 28px 24px; }
             .store-row { flex-direction: column; align-items: center; }
             .store-row img { height: 48px; }
             .gplay-badge { height: 72px !important; }
@@ -1010,162 +1029,128 @@
     </div>
 </section>
 
-<!-- ═══ Showcase 3: Smart Management ═══ -->
-<section class="showcase-section amber-tint">
-    <div class="showcase-grid">
-        <div class="showcase-text reveal">
-            <div data-lang="en" class="active">
-                <div class="showcase-tag"><i class="ph ph-shopping-cart"></i> Smart</div>
-                <h2>Manage items effortlessly</h2>
-                <p>Autocomplete from your personal catalog, quantity chips for fast input, swipe gestures to buy or delete. Your catalog grows as you shop.</p>
-            </div>
-            <div data-lang="uk">
-                <div class="showcase-tag"><i class="ph ph-shopping-cart"></i> Розумне</div>
-                <h2>Керуйте товарами без зусиль</h2>
-                <p>Автодоповнення з вашого каталогу, чіпи кількості для швидкого введення, жести свайпу для покупки чи видалення. Ваш каталог зростає з покупками.</p>
-            </div>
-            <div class="benefit-cards">
-                <div class="benefit-card">
-                    <i class="ph ph-archive"></i>
-                    <div>
-                        <h4><span data-lang="en" class="active">Product catalog</span><span data-lang="uk">Каталог товарів</span></h4>
-                        <p><span data-lang="en" class="active">Items saved for reuse. Just start typing.</span><span data-lang="uk">Товари збережені. Просто почніть вводити.</span></p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <i class="ph ph-copy-simple"></i>
-                    <div>
-                        <h4><span data-lang="en" class="active">Templates</span><span data-lang="uk">Шаблони</span></h4>
-                        <p><span data-lang="en" class="active">Save & reuse your regular shopping lists.</span><span data-lang="uk">Зберігайте та використовуйте регулярні списки.</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="showcase-visual reveal">
-            <div class="showcase-illustration">
-                <i class="ph ph-shopping-cart"></i>
-                <div class="illust-card" style="top: 12%; left: 8%;">
-                    <div class="dot green"></div>
-                    <div class="line"></div>
-                    <span class="check">&#10003;</span>
-                </div>
-                <div class="illust-card" style="top: 42%; right: 6%;">
-                    <div class="dot amber"></div>
-                    <div class="line"></div>
-                    <span style="font-size: 11px; color: var(--ink-400);">x3</span>
-                </div>
-                <div class="illust-card" style="bottom: 15%; left: 20%;">
-                    <div class="dot rose"></div>
-                    <div class="line short"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- ═══ Bento Features ═══ -->
+<section class="bento">
+    <h2 class="section-title reveal">
+        <span data-lang="en" class="active">Everything you need</span>
+        <span data-lang="uk">Усе, що потрібно</span>
+    </h2>
+    <p class="section-subtitle reveal">
+        <span data-lang="en" class="active">Powerful features, zero friction. Just create a list and go.</span>
+        <span data-lang="uk">Потужні можливості, нуль зайвого. Просто створіть список і починайте.</span>
+    </p>
 
-<!-- ═══ Showcase 4: Claim System ═══ -->
-<section class="showcase-section rose-tint">
-    <div class="showcase-grid reverse">
-        <div class="showcase-text reveal">
-            <div data-lang="en" class="active">
-                <div class="showcase-tag"><i class="ph ph-user-plus"></i> Claim System</div>
-                <h2>Know who's buying what</h2>
-                <p>Tap any item to claim it. Your avatar appears so others know you're handling it. No more duplicate purchases or confusion at the store.</p>
-            </div>
-            <div data-lang="uk">
-                <div class="showcase-tag"><i class="ph ph-user-plus"></i> Резервування</div>
-                <h2>Знайте, хто що купує</h2>
-                <p>Натисніть на будь-який товар, щоб зарезервувати. Ваш аватар з'явиться — інші бачитимуть, що ви його берете. Жодних дублів.</p>
-            </div>
-            <div class="benefit-cards">
-                <div class="benefit-card">
-                    <i class="ph ph-user-circle"></i>
-                    <div>
-                        <h4><span data-lang="en" class="active">Avatar indicator</span><span data-lang="uk">Індикатор аватара</span></h4>
-                        <p><span data-lang="en" class="active">See who claimed each item at a glance.</span><span data-lang="uk">Бачте, хто зарезервував кожен товар.</span></p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <i class="ph ph-list-checks"></i>
-                    <div>
-                        <h4><span data-lang="en" class="active">Works in all lists</span><span data-lang="uk">Працює у всіх списках</span></h4>
-                        <p><span data-lang="en" class="active">Available in both household and event lists.</span><span data-lang="uk">Доступно і в домашніх, і в списках подій.</span></p>
-                    </div>
-                </div>
+    <div class="bento-grid">
+        <!-- Large: Smart Management -->
+        <div class="bento-card span-2 reveal">
+            <div class="bento-accent" style="background: var(--amber-500);"></div>
+            <div class="bento-icon amber"><i class="ph ph-shopping-cart"></i></div>
+            <h3>
+                <span data-lang="en" class="active">Manage items effortlessly</span>
+                <span data-lang="uk">Керуйте товарами без зусиль</span>
+            </h3>
+            <p>
+                <span data-lang="en" class="active">Autocomplete from your personal catalog, quantity chips for fast input, swipe gestures to buy or delete. Your catalog grows as you shop.</span>
+                <span data-lang="uk">Автодоповнення з вашого каталогу, чіпи кількості для швидкого введення, жести свайпу для покупки чи видалення.</span>
+            </p>
+            <div class="bento-tags">
+                <span class="bento-tag"><span data-lang="en" class="active">Autocomplete</span><span data-lang="uk">Автодоповнення</span></span>
+                <span class="bento-tag"><span data-lang="en" class="active">Swipe gestures</span><span data-lang="uk">Жести свайпу</span></span>
+                <span class="bento-tag"><span data-lang="en" class="active">Quantity chips</span><span data-lang="uk">Чіпи кількості</span></span>
             </div>
         </div>
-        <div class="showcase-visual reveal">
-            <div class="showcase-illustration">
-                <i class="ph ph-user-plus"></i>
-                <div class="illust-card" style="top: 18%; left: 10%;">
-                    <div class="dot rose"></div>
-                    <div class="line"></div>
-                    <span style="font-size: 16px;">&#128100;</span>
-                </div>
-                <div class="illust-card" style="top: 48%; right: 8%;">
-                    <div class="dot green"></div>
-                    <div class="line"></div>
-                    <span style="font-size: 16px;">&#128100;</span>
-                </div>
-                <div class="illust-card" style="bottom: 20%; left: 18%;">
-                    <div class="dot blue"></div>
-                    <div class="line short"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- ═══ Showcase 5: Unseen Updates ═══ -->
-<section class="showcase-section violet-tint">
-    <div class="showcase-grid">
-        <div class="showcase-text reveal">
-            <div data-lang="en" class="active">
-                <div class="showcase-tag"><i class="ph ph-eye"></i> What's New</div>
-                <h2>See what changed while you were away</h2>
-                <p>Open the app and instantly see which items were added, bought, or removed since your last visit. Stay in the loop without scrolling through history.</p>
-            </div>
-            <div data-lang="uk">
-                <div class="showcase-tag"><i class="ph ph-eye"></i> Що нового</div>
-                <h2>Дізнайтесь, що змінилось за вашу відсутність</h2>
-                <p>Відкрийте застосунок і одразу побачте, які товари додали, купили чи видалили з моменту вашого останнього візиту. Будьте в курсі без перегляду історії.</p>
-            </div>
-            <div class="benefit-cards">
-                <div class="benefit-card">
-                    <i class="ph ph-bell-ringing"></i>
-                    <div>
-                        <h4><span data-lang="en" class="active">Unseen highlights</span><span data-lang="uk">Непереглянуті зміни</span></h4>
-                        <p><span data-lang="en" class="active">New and changed items are highlighted automatically.</span><span data-lang="uk">Нові та змінені товари підсвічуються автоматично.</span></p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <i class="ph ph-clock-counter-clockwise"></i>
-                    <div>
-                        <h4><span data-lang="en" class="active">Deleted items shown</span><span data-lang="uk">Видалені товари видно</span></h4>
-                        <p><span data-lang="en" class="active">Items deleted by others appear briefly so you know what's gone.</span><span data-lang="uk">Видалені іншими товари з'являються на мить, щоб ви знали, що зникло.</span></p>
-                    </div>
-                </div>
-            </div>
+        <!-- Tall: Claim System -->
+        <div class="bento-card tall reveal">
+            <div class="bento-accent" style="background: var(--rose-600);"></div>
+            <div class="bento-icon rose"><i class="ph ph-user-plus"></i></div>
+            <h3>
+                <span data-lang="en" class="active">Claim system</span>
+                <span data-lang="uk">Резервування</span>
+            </h3>
+            <p>
+                <span data-lang="en" class="active">Tap any item to claim it. Your avatar appears so others know you're handling it. Works in all list types.</span>
+                <span data-lang="uk">Натисніть на товар, щоб зарезервувати. Ваш аватар з'явиться — інші бачитимуть. Працює у всіх списках.</span>
+            </p>
         </div>
-        <div class="showcase-visual reveal">
-            <div class="showcase-illustration">
-                <i class="ph ph-eye"></i>
-                <div class="illust-card" style="top: 15%; right: 10%; border-left: 3px solid var(--violet-600);">
-                    <div class="dot green"></div>
-                    <div class="line"></div>
-                    <span style="font-size: 11px; color: var(--violet-600); font-weight: 600;">NEW</span>
-                </div>
-                <div class="illust-card" style="top: 45%; left: 8%; opacity: 0.6; border-left: 3px solid var(--rose-600);">
-                    <div class="dot rose"></div>
-                    <div class="line"></div>
-                    <span style="font-size: 11px; color: var(--rose-600); text-decoration: line-through;">gone</span>
-                </div>
-                <div class="illust-card" style="bottom: 18%; right: 12%; border-left: 3px solid var(--violet-600);">
-                    <div class="dot blue"></div>
-                    <div class="line short"></div>
-                    <span style="font-size: 11px; color: var(--violet-600); font-weight: 600;">NEW</span>
-                </div>
-            </div>
+
+        <!-- Unseen Updates -->
+        <div class="bento-card reveal">
+            <div class="bento-accent" style="background: var(--violet-600);"></div>
+            <div class="bento-icon violet"><i class="ph ph-eye"></i></div>
+            <h3>
+                <span data-lang="en" class="active">Unseen updates</span>
+                <span data-lang="uk">Непереглянуті зміни</span>
+            </h3>
+            <p>
+                <span data-lang="en" class="active">See what changed since your last visit. New items highlighted, deleted items shown briefly.</span>
+                <span data-lang="uk">Дізнайтесь, що змінилось. Нові товари підсвічені, видалені — показані на мить.</span>
+            </p>
+        </div>
+
+        <!-- Templates -->
+        <div class="bento-card reveal">
+            <div class="bento-icon blue"><i class="ph ph-copy-simple"></i></div>
+            <h3>
+                <span data-lang="en" class="active">Templates</span>
+                <span data-lang="uk">Шаблони</span>
+            </h3>
+            <p>
+                <span data-lang="en" class="active">Save reusable lists for regular shopping. Apply with one tap.</span>
+                <span data-lang="uk">Зберігайте шаблони для регулярних покупок. Застосуйте одним натиском.</span>
+            </p>
+        </div>
+
+        <!-- Product Catalog -->
+        <div class="bento-card reveal">
+            <div class="bento-icon green"><i class="ph ph-archive"></i></div>
+            <h3>
+                <span data-lang="en" class="active">Product catalog</span>
+                <span data-lang="uk">Каталог товарів</span>
+            </h3>
+            <p>
+                <span data-lang="en" class="active">Every product saved for reuse. Just start typing and it appears.</span>
+                <span data-lang="uk">Кожен товар збережено. Просто почніть вводити — він з'явиться.</span>
+            </p>
+        </div>
+
+        <!-- Works Offline -->
+        <div class="bento-card reveal">
+            <div class="bento-icon blue"><i class="ph ph-wifi-slash"></i></div>
+            <h3>
+                <span data-lang="en" class="active">Works offline</span>
+                <span data-lang="uk">Працює офлайн</span>
+            </h3>
+            <p>
+                <span data-lang="en" class="active">Shop without internet. Everything syncs when you're back online.</span>
+                <span data-lang="uk">Купуйте без інтернету. Все синхронізується при підключенні.</span>
+            </p>
+        </div>
+
+        <!-- Custom Themes -->
+        <div class="bento-card reveal">
+            <div class="bento-icon amber"><i class="ph ph-palette"></i></div>
+            <h3>
+                <span data-lang="en" class="active">Custom themes</span>
+                <span data-lang="uk">Кастомні теми</span>
+            </h3>
+            <p>
+                <span data-lang="en" class="active">11 color palettes, animated icons, and personalized skins.</span>
+                <span data-lang="uk">11 палітр, анімовані іконки та персоналізовані скіни.</span>
+            </p>
+        </div>
+
+        <!-- No Sign-up -->
+        <div class="bento-card reveal">
+            <div class="bento-icon green"><i class="ph ph-shield-check"></i></div>
+            <h3>
+                <span data-lang="en" class="active">No sign-up required</span>
+                <span data-lang="uk">Без реєстрації</span>
+            </h3>
+            <p>
+                <span data-lang="en" class="active">Start instantly. Create an account later if you want.</span>
+                <span data-lang="uk">Почніть миттєво. Створіть акаунт пізніше, якщо захочете.</span>
+            </p>
         </div>
     </div>
 </section>
@@ -1263,102 +1248,6 @@
         <div class="marquee-pill"><i class="ph ph-house"></i><span data-lang="en" class="active">Household Lists</span><span data-lang="uk">Домашні списки</span></div>
         <div class="marquee-pill violet"><i class="ph ph-confetti"></i><span data-lang="en" class="active">Event Lists</span><span data-lang="uk">Списки подій</span></div>
         <div class="marquee-pill rose"><i class="ph ph-device-mobile"></i><span data-lang="en" class="active">iOS & Android</span><span data-lang="uk">iOS та Android</span></div>
-    </div>
-</section>
-
-<!-- ═══ More Features ═══ -->
-<section class="more">
-    <div data-lang="en" class="active">
-        <h2 class="section-title reveal">And so much more</h2>
-        <p class="section-subtitle reveal">Every detail is crafted for the best shopping experience.</p>
-        <div class="more-grid">
-            <div class="m-card reveal">
-                <div class="m-card-icon blue"><i class="ph ph-wifi-slash"></i></div>
-                <h4>Works Offline</h4>
-                <p>Shop without internet. Syncs when you're back online.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon green"><i class="ph ph-vibrate"></i></div>
-                <h4>Shake to Undo</h4>
-                <p>Accidentally bought or deleted? Just shake your phone.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon amber"><i class="ph ph-squares-four"></i></div>
-                <h4>Categories & Sorting</h4>
-                <p>Organize by category. Drag to reorder, show or hide headers.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon violet"><i class="ph ph-palette"></i></div>
-                <h4>Custom Themes</h4>
-                <p>11 palettes, animated icons, color skins, and more.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon rose"><i class="ph ph-bell"></i></div>
-                <h4>Push Notifications</h4>
-                <p>Per-list alerts for item and member changes.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon blue"><i class="ph ph-arrows-left-right"></i></div>
-                <h4>Left / Right Handed</h4>
-                <p>Flip the swipe direction for your dominant hand.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon green"><i class="ph ph-user"></i></div>
-                <h4>Profile & Avatar</h4>
-                <p>Set your name and photo. Link Apple or Google account.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon amber"><i class="ph ph-shield-check"></i></div>
-                <h4>No Sign-Up Required</h4>
-                <p>Start instantly. Create an account later if you want.</p>
-            </div>
-        </div>
-    </div>
-    <div data-lang="uk">
-        <h2 class="section-title reveal">І ще багато іншого</h2>
-        <p class="section-subtitle reveal">Кожна деталь продумана для найкращого досвіду покупок.</p>
-        <div class="more-grid">
-            <div class="m-card reveal">
-                <div class="m-card-icon blue"><i class="ph ph-wifi-slash"></i></div>
-                <h4>Працює офлайн</h4>
-                <p>Купуйте без інтернету. Синхронізується при підключенні.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon green"><i class="ph ph-vibrate"></i></div>
-                <h4>Скасування тряском</h4>
-                <p>Випадково купили чи видалили? Просто струсніть телефон.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon amber"><i class="ph ph-squares-four"></i></div>
-                <h4>Категорії та сортування</h4>
-                <p>Групуйте за категоріями. Перетягуйте для зміни порядку.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon violet"><i class="ph ph-palette"></i></div>
-                <h4>Кастомні теми</h4>
-                <p>11 палітр, анімовані іконки, кольорові скіни та інше.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon rose"><i class="ph ph-bell"></i></div>
-                <h4>Push-сповіщення</h4>
-                <p>Сповіщення для кожного списку окремо.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon blue"><i class="ph ph-arrows-left-right"></i></div>
-                <h4>Ліва / права рука</h4>
-                <p>Змініть напрямок свайпу під робочу руку.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon green"><i class="ph ph-user"></i></div>
-                <h4>Профіль та аватар</h4>
-                <p>Встановіть ім'я та фото. Прив'яжіть Apple чи Google.</p>
-            </div>
-            <div class="m-card reveal">
-                <div class="m-card-icon amber"><i class="ph ph-shield-check"></i></div>
-                <h4>Без реєстрації</h4>
-                <p>Почніть миттєво. Створіть акаунт пізніше, якщо захочете.</p>
-            </div>
-        </div>
     </div>
 </section>
 
