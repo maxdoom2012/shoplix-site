@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="app-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <style>
         :root {
@@ -17,6 +17,7 @@
             --blue-700: #1565C0;
             --blue-600: #1976D2;
             --blue-500: #2196F3;
+            --blue-400: #42A5F5;
             --blue-100: #BBDEFB;
             --blue-50: #E3F2FD;
             --blue-wash: #F0F6FF;
@@ -29,14 +30,19 @@
             --ink-50: #F8FAFC;
             --white: #FFFFFF;
             --green-600: #16A34A;
+            --green-500: #22C55E;
+            --green-100: #DCFCE7;
             --green-50: #F0FDF4;
             --amber-600: #D97706;
+            --amber-500: #F59E0B;
+            --amber-100: #FEF3C7;
             --amber-50: #FFFBEB;
             --rose-600: #E11D48;
             --rose-50: #FFF1F2;
             --violet-600: #7C3AED;
+            --violet-100: #EDE9FE;
             --violet-50: #F5F3FF;
-            --radius-xl: 20px;
+            --radius-xl: 24px;
             --radius-lg: 16px;
             --radius-md: 12px;
             --radius-sm: 8px;
@@ -54,29 +60,11 @@
         body {
             font-family: var(--font-body);
             color: var(--ink);
-            background: var(--ink-50);
+            background: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* ── Utility ───────────────────────────────── */
-        .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(28px, 5vw, 40px);
-            font-weight: 400;
-            letter-spacing: -0.01em;
-            text-align: center;
-            margin-bottom: 12px;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: var(--ink-500);
-            font-size: 17px;
-            max-width: 520px;
-            margin: 0 auto 48px;
         }
 
         /* ── i18n ──────────────────────────────────── */
@@ -85,18 +73,21 @@
         span[data-lang] { display: none; }
         span[data-lang].active { display: inline; }
 
+        /* ── Container ─────────────────────────────── */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
         /* ── Nav ───────────────────────────────────── */
         .nav {
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            padding: 14px 24px;
+            padding: 12px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(24px) saturate(180%);
             -webkit-backdrop-filter: blur(24px) saturate(180%);
-            background: rgba(248,250,252,0.82);
+            background: rgba(255,255,255,0.82);
             border-bottom: 1px solid rgba(226,232,240,0.6);
             transition: box-shadow 0.3s ease;
         }
@@ -105,10 +96,13 @@
             display: flex; align-items: center; gap: 10px;
             text-decoration: none; color: var(--ink);
         }
-        .nav-brand img { width: 32px; height: 32px; border-radius: 8px; }
+        .nav-brand img { width: 36px; height: 36px; border-radius: 10px; }
         .nav-brand span {
             font-family: var(--font-display);
-            font-size: 20px;
+            font-size: 22px;
+        }
+        .nav-right {
+            display: flex; align-items: center; gap: 12px;
         }
         .lang-toggle {
             display: flex; gap: 2px;
@@ -133,73 +127,105 @@
             color: white;
             box-shadow: 0 2px 8px rgba(21,101,192,0.25);
         }
+        .nav-cta {
+            display: none;
+            padding: 8px 20px;
+            background: var(--blue-700);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .nav-cta:hover { background: var(--blue-900); transform: translateY(-1px); }
+        @media (min-width: 640px) { .nav-cta { display: inline-flex; } }
 
         /* ── Hero ──────────────────────────────────── */
         .hero {
             min-height: 100vh;
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 48px;
             padding: 120px 24px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
             position: relative;
-            overflow: hidden;
         }
         .hero::before {
             content: '';
-            position: absolute;
-            top: -40%; right: -20%;
-            width: 800px; height: 800px;
-            background: radial-gradient(circle, rgba(25,118,210,0.07) 0%, transparent 65%);
+            position: fixed;
+            top: -200px; right: -200px;
+            width: 900px; height: 900px;
+            background: radial-gradient(circle, rgba(25,118,210,0.06) 0%, transparent 65%);
             border-radius: 50%;
             pointer-events: none;
+            z-index: -1;
         }
         .hero::after {
             content: '';
-            position: absolute;
-            bottom: -30%; left: -15%;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(22,163,74,0.05) 0%, transparent 65%);
+            position: fixed;
+            bottom: -200px; left: -200px;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(22,163,74,0.04) 0%, transparent 65%);
             border-radius: 50%;
             pointer-events: none;
+            z-index: -1;
         }
 
-        .hero-icon {
-            width: 112px; height: 112px;
-            border-radius: 28px;
-            margin-bottom: 36px;
-            box-shadow: var(--shadow-xl);
-            animation: heroFloat 6s ease-in-out infinite;
-            position: relative; z-index: 1;
-        }
-        @keyframes heroFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .hero h1 {
+        .hero-text { position: relative; z-index: 1; }
+        .hero-text h1 {
             font-family: var(--font-display);
-            font-size: clamp(48px, 9vw, 72px);
+            font-size: clamp(40px, 6vw, 64px);
             font-weight: 400;
             letter-spacing: -0.02em;
-            margin-bottom: 16px;
-            position: relative; z-index: 1;
+            line-height: 1.1;
+            margin-bottom: 20px;
         }
-        .hero h1 .brand { color: var(--blue-700); }
-
-        .hero .tagline {
-            font-size: clamp(17px, 3vw, 20px);
+        .hero-text h1 .highlight {
+            color: var(--blue-700);
+            position: relative;
+        }
+        .hero-text h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px; left: 0; right: 0;
+            height: 8px;
+            background: var(--blue-100);
+            border-radius: 4px;
+            z-index: -1;
+        }
+        .hero-text .tagline {
+            font-size: clamp(17px, 2.5vw, 20px);
             color: var(--ink-500);
-            max-width: 500px;
-            margin-bottom: 44px;
-            font-weight: 400;
-            position: relative; z-index: 1;
+            max-width: 480px;
+            margin-bottom: 32px;
+            line-height: 1.6;
         }
+
+        .hero-badges {
+            display: flex; flex-wrap: wrap; gap: 12px;
+            margin-bottom: 36px;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 16px;
+            background: var(--ink-50);
+            border: 1px solid var(--ink-200);
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ink-700);
+        }
+        .hero-badge i { color: var(--blue-600); font-size: 16px; }
 
         .store-row {
             display: flex; gap: 16px;
             flex-wrap: wrap;
-            justify-content: center;
-            position: relative; z-index: 1;
         }
         .store-row a {
             display: block;
@@ -213,141 +239,491 @@
         .store-row img { height: 52px; border-radius: var(--radius-sm); }
         .gplay-badge { height: 76px !important; margin: -12px 0; }
 
-        /* ── Features ──────────────────────────────── */
-        .features { padding: 100px 24px; }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1120px;
-            margin: 0 auto;
+        /* Phone Mockup */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
         }
-        .f-card {
+        .phone-mockup {
+            width: 280px;
+            height: 560px;
+            background: var(--ink);
+            border-radius: 44px;
+            padding: 12px;
+            box-shadow: var(--shadow-xl), 0 0 0 1px rgba(255,255,255,0.1) inset;
+            position: relative;
+            animation: phoneFloat 6s ease-in-out infinite;
+        }
+        @keyframes phoneFloat {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-12px) rotate(-2deg); }
+        }
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 34px;
+            background: linear-gradient(135deg, var(--blue-50) 0%, var(--green-50) 50%, var(--amber-50) 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .phone-screen img {
+            width: 75%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.1));
+        }
+        .phone-notch {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 28px;
+            background: var(--ink);
+            border-radius: 20px;
+            z-index: 2;
+        }
+
+        /* Floating elements around phone */
+        .float-card {
+            position: absolute;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 12px 16px;
+            box-shadow: var(--shadow-lg);
+            display: flex; align-items: center; gap: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            animation: floatCard 4s ease-in-out infinite;
+        }
+        .float-card i { font-size: 20px; }
+        .float-card.card-1 {
+            top: 15%; right: -20px;
+            animation-delay: 0s;
+        }
+        .float-card.card-1 i { color: var(--green-600); }
+        .float-card.card-2 {
+            bottom: 25%; left: -30px;
+            animation-delay: 1.5s;
+        }
+        .float-card.card-2 i { color: var(--blue-600); }
+        .float-card.card-3 {
+            bottom: 10%; right: -10px;
+            animation-delay: 3s;
+        }
+        .float-card.card-3 i { color: var(--amber-600); }
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* ── Feature Showcase (Alternating) ────────── */
+        .showcase-section {
+            padding: 100px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .showcase-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .showcase-section.green-tint { background: linear-gradient(135deg, var(--green-50) 0%, var(--white) 60%); }
+        .showcase-section.blue-tint { background: linear-gradient(135deg, var(--white) 40%, var(--blue-50) 100%); }
+        .showcase-section.amber-tint { background: linear-gradient(135deg, var(--amber-50) 0%, var(--white) 60%); }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .showcase-grid.reverse { direction: rtl; }
+        .showcase-grid.reverse > * { direction: ltr; }
+
+        .showcase-text .showcase-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+        .green-tint .showcase-tag { background: var(--green-100); color: var(--green-600); }
+        .blue-tint .showcase-tag { background: var(--blue-100); color: var(--blue-700); }
+        .amber-tint .showcase-tag { background: var(--amber-100); color: var(--amber-600); }
+
+        .showcase-text h2 {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .showcase-text > p {
+            font-size: 17px;
+            color: var(--ink-500);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 480px;
+        }
+
+        .benefit-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .benefit-card {
+            display: flex; align-items: flex-start; gap: 14px;
+            padding: 16px 20px;
             background: var(--white);
             border: 1px solid var(--ink-200);
-            border-radius: var(--radius-lg);
-            padding: 32px 28px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-        .f-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: transparent;
-        }
-        .f-card-icon {
-            width: 48px; height: 48px;
             border-radius: var(--radius-md);
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 20px;
-            font-size: 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .f-card-icon.blue { background: var(--blue-50); color: var(--blue-600); }
-        .f-card-icon.green { background: var(--green-50); color: var(--green-600); }
-        .f-card-icon.amber { background: var(--amber-50); color: var(--amber-600); }
-        .f-card-icon.rose { background: var(--rose-50); color: var(--rose-600); }
-        .f-card-icon.violet { background: var(--violet-50); color: var(--violet-600); }
+        .benefit-card:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+        .benefit-card i {
+            font-size: 22px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .green-tint .benefit-card i { color: var(--green-600); }
+        .blue-tint .benefit-card i { color: var(--blue-600); }
+        .amber-tint .benefit-card i { color: var(--amber-600); }
 
-        .f-card h3 {
-            font-size: 17px;
+        .benefit-card h4 {
+            font-size: 15px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 2px;
         }
-        .f-card p {
-            font-size: 14px;
+        .benefit-card p {
+            font-size: 13px;
             color: var(--ink-500);
-            line-height: 1.6;
+            line-height: 1.5;
         }
+
+        /* Showcase visual (decorative) */
+        .showcase-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .showcase-illustration {
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 4 / 3;
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .green-tint .showcase-illustration {
+            background: linear-gradient(135deg, var(--green-100) 0%, var(--green-50) 100%);
+            border: 1px solid rgba(22,163,74,0.15);
+        }
+        .blue-tint .showcase-illustration {
+            background: linear-gradient(135deg, var(--blue-100) 0%, var(--blue-50) 100%);
+            border: 1px solid rgba(25,118,210,0.15);
+        }
+        .amber-tint .showcase-illustration {
+            background: linear-gradient(135deg, var(--amber-100) 0%, var(--amber-50) 100%);
+            border: 1px solid rgba(217,119,6,0.15);
+        }
+        .showcase-section.rose-tint { background: linear-gradient(135deg, var(--white) 40%, var(--rose-50) 100%); }
+        .rose-tint .showcase-tag { background: #FCE4EC; color: var(--rose-600); }
+        .rose-tint .showcase-illustration {
+            background: linear-gradient(135deg, #FCE4EC 0%, var(--rose-50) 100%);
+            border: 1px solid rgba(225,29,72,0.15);
+        }
+        .rose-tint .showcase-illustration i { color: var(--rose-600); }
+        .rose-tint .benefit-card i { color: var(--rose-600); }
+        .showcase-section.violet-tint { background: linear-gradient(135deg, var(--violet-50) 0%, var(--white) 60%); }
+        .violet-tint .showcase-tag { background: var(--violet-100); color: var(--violet-600); }
+        .violet-tint .showcase-illustration {
+            background: linear-gradient(135deg, var(--violet-100) 0%, var(--violet-50) 100%);
+            border: 1px solid rgba(124,58,237,0.15);
+        }
+        .violet-tint .showcase-illustration i { color: var(--violet-600); }
+        .violet-tint .benefit-card i { color: var(--violet-600); }
+        .showcase-illustration i {
+            font-size: 80px;
+            opacity: 0.3;
+        }
+        .green-tint .showcase-illustration i { color: var(--green-600); }
+        .blue-tint .showcase-illustration i { color: var(--blue-600); }
+        .amber-tint .showcase-illustration i { color: var(--amber-600); }
+
+        /* Floating mini-cards inside illustration */
+        .illust-card {
+            position: absolute;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 10px 14px;
+            box-shadow: var(--shadow-md);
+            font-size: 13px;
+            font-weight: 500;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .illust-card .dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .illust-card .dot.green { background: var(--green-500); }
+        .illust-card .dot.blue { background: var(--blue-500); }
+        .illust-card .dot.amber { background: var(--amber-500); }
+        .illust-card .dot.rose { background: var(--rose-600); }
+        .illust-card .line {
+            width: 60px; height: 4px;
+            border-radius: 2px;
+            background: var(--ink-200);
+        }
+        .illust-card .line.short { width: 36px; }
+        .illust-card .check { color: var(--green-600); font-weight: 700; }
 
         /* ── How It Works ──────────────────────────── */
         .how {
             padding: 100px 24px;
-            background: var(--white);
-            border-top: 1px solid var(--ink-200);
-            border-bottom: 1px solid var(--ink-200);
+            background: var(--ink-50);
+            position: relative;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--ink-500);
+            font-size: 17px;
+            max-width: 520px;
+            margin: 0 auto 56px;
+            line-height: 1.6;
         }
         .how-steps {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
-            max-width: 860px;
+            max-width: 960px;
             margin: 0 auto;
+            position: relative;
+        }
+        /* connecting line */
+        .how-steps::before {
+            content: '';
+            position: absolute;
+            top: 44px;
+            left: calc(16.66% + 36px);
+            right: calc(16.66% + 36px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--blue-100), var(--blue-400), var(--blue-100));
+            border-radius: 1px;
         }
         .how-step {
             text-align: center;
             position: relative;
         }
-        .how-step::after {
-            content: '';
-            position: absolute;
-            top: 36px; right: -16px;
-            width: 32px; height: 2px;
-            background: var(--ink-200);
-        }
-        .how-step:last-child::after { display: none; }
         .step-num {
-            width: 72px; height: 72px;
+            width: 88px; height: 88px;
             border-radius: 50%;
-            background: var(--blue-50);
-            color: var(--blue-700);
+            background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+            color: var(--white);
             font-family: var(--font-display);
-            font-size: 28px;
+            font-size: 32px;
             display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 20px;
-            border: 2px solid var(--blue-100);
+            margin: 0 auto 24px;
+            box-shadow: 0 8px 24px rgba(21,101,192,0.25);
+            position: relative;
+            z-index: 1;
         }
         .how-step h3 {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 700;
             margin-bottom: 8px;
         }
         .how-step p {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--ink-500);
-            line-height: 1.55;
+            line-height: 1.6;
+            max-width: 260px;
+            margin: 0 auto;
         }
 
+        /* ── Marquee ───────────────────────────────── */
+        .marquee-section {
+            padding: 80px 0;
+            overflow: hidden;
+            background: var(--white);
+        }
+        .marquee-section .section-title { margin-bottom: 48px; }
+        .marquee-row {
+            display: flex;
+            gap: 16px;
+            animation: marqueeScroll 30s linear infinite;
+            width: max-content;
+            margin-bottom: 16px;
+        }
+        .marquee-row.reverse { animation-direction: reverse; }
+        .marquee-row.slow { animation-duration: 40s; }
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            background: var(--ink-50);
+            border: 1px solid var(--ink-200);
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.25s ease;
+        }
+        .marquee-pill:hover {
+            background: var(--blue-50);
+            border-color: var(--blue-100);
+            transform: scale(1.03);
+        }
+        .marquee-pill i { font-size: 20px; color: var(--blue-600); }
+        .marquee-pill.green i { color: var(--green-600); }
+        .marquee-pill.amber i { color: var(--amber-600); }
+        .marquee-pill.rose i { color: var(--rose-600); }
+        .marquee-pill.violet i { color: var(--violet-600); }
+
         /* ── More Features ─────────────────────────── */
-        .more { padding: 100px 24px; }
+        .more { padding: 100px 24px; background: var(--ink-50); }
         .more-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            max-width: 960px;
+            gap: 20px;
+            max-width: 1080px;
             margin: 0 auto;
         }
         .m-card {
             background: var(--white);
             border: 1px solid var(--ink-200);
-            border-radius: var(--radius-md);
-            padding: 24px 20px;
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
             text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
         .m-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
         }
-        .m-card i {
-            font-size: 28px;
-            color: var(--blue-600);
-            margin-bottom: 12px;
-            display: block;
+        .m-card-icon {
+            width: 52px; height: 52px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 24px;
         }
+        .m-card-icon.blue { background: var(--blue-50); color: var(--blue-600); }
+        .m-card-icon.green { background: var(--green-50); color: var(--green-600); }
+        .m-card-icon.amber { background: var(--amber-50); color: var(--amber-600); }
+        .m-card-icon.rose { background: var(--rose-50); color: var(--rose-600); }
+        .m-card-icon.violet { background: var(--violet-50); color: var(--violet-600); }
         .m-card h4 {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .m-card p {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--ink-500);
             line-height: 1.5;
+        }
+
+        /* ── CTA Section ───────────────────────────── */
+        .cta-section {
+            padding: 100px 24px;
+            background: linear-gradient(135deg, var(--blue-700) 0%, var(--blue-900) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+            border-radius: 50%;
+        }
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -40%; left: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(34,197,94,0.1) 0%, transparent 60%);
+            border-radius: 50%;
+        }
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 5vw, 44px);
+            color: var(--white);
+            margin-bottom: 16px;
+            position: relative; z-index: 1;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.75);
+            font-size: 18px;
+            max-width: 480px;
+            margin: 0 auto 40px;
+            position: relative; z-index: 1;
+        }
+        .cta-section .store-row {
+            justify-content: center;
+            position: relative; z-index: 1;
+        }
+        .cta-mascot {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 32px;
+            border-radius: 30px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            position: relative; z-index: 1;
         }
 
         /* ── Footer ────────────────────────────────── */
         footer {
             padding: 48px 24px;
             text-align: center;
+            background: var(--ink-50);
             border-top: 1px solid var(--ink-200);
         }
         .footer-links {
@@ -370,25 +746,31 @@
         }
 
         /* ── Scroll Reveal ─────────────────────────── */
-        .reveal {
+        /* Content is visible by default. Animation only activates when JS adds .reveal-ready to html */
+        .reveal-ready .reveal {
             opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
-        .reveal.visible {
+        .reveal-ready .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .hero > * {
+        .reveal-ready .hero-text > * {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(24px);
             animation: fadeUp 0.7s ease forwards;
         }
-        .hero > *:nth-child(1) { animation-delay: 0.05s; }
-        .hero > *:nth-child(2) { animation-delay: 0.15s; }
-        .hero > *:nth-child(3) { animation-delay: 0.25s; }
-        .hero > *:nth-child(4) { animation-delay: 0.35s; }
+        .reveal-ready .hero-text > *:nth-child(1) { animation-delay: 0.05s; }
+        .reveal-ready .hero-text > *:nth-child(2) { animation-delay: 0.15s; }
+        .reveal-ready .hero-text > *:nth-child(3) { animation-delay: 0.25s; }
+        .reveal-ready .hero-text > *:nth-child(4) { animation-delay: 0.35s; }
+        .reveal-ready .hero-visual {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s ease 0.3s forwards;
+        }
 
         @keyframes fadeUp {
             to { opacity: 1; transform: translateY(0); }
@@ -396,19 +778,45 @@
 
         /* ── Responsive ────────────────────────────── */
         @media (max-width: 900px) {
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 48px;
+                min-height: auto;
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+            .hero-text { order: 1; }
+            .hero-visual { order: 2; }
+            .hero-text .tagline { margin-left: auto; margin-right: auto; }
+            .hero-badges { justify-content: center; }
+            .store-row { justify-content: center; }
+            .showcase-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .showcase-grid.reverse { direction: ltr; }
+            .showcase-text > p { margin-left: auto; margin-right: auto; }
+            .showcase-visual { order: -1; }
+            .benefit-card:hover { transform: none; }
             .more-grid { grid-template-columns: repeat(2, 1fr); }
+            .how-steps::before { display: none; }
         }
         @media (max-width: 640px) {
-            .hero { padding: 100px 20px 64px; }
-            .hero-icon { width: 88px; height: 88px; border-radius: 22px; }
-            .features-grid { grid-template-columns: 1fr; }
-            .how-steps { grid-template-columns: 1fr; gap: 24px; }
-            .how-step::after { display: none; }
+            .hero { padding: 90px 20px 48px; }
+            .phone-mockup { width: 220px; height: 440px; border-radius: 36px; padding: 10px; }
+            .phone-screen { border-radius: 28px; }
+            .phone-notch { width: 100px; height: 24px; top: 10px; }
+            .float-card { display: none; }
+            .how-steps { grid-template-columns: 1fr; gap: 32px; }
             .more-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .m-card { padding: 20px 16px; }
             .store-row { flex-direction: column; align-items: center; }
             .store-row img { height: 48px; }
             .gplay-badge { height: 72px !important; }
+            .showcase-section { padding: 64px 20px; }
+            .showcase-illustration { max-width: 300px; }
         }
     </style>
 </head>
@@ -420,105 +828,343 @@
         <img src="app-icon.png" alt="Shoplix">
         <span>Shoplix</span>
     </a>
-    <div class="lang-toggle">
-        <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
-        <button id="btn-uk" onclick="switchLang('uk')">UK</button>
+    <div class="nav-right">
+        <div class="lang-toggle">
+            <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
+            <button id="btn-uk" onclick="switchLang('uk')">UK</button>
+        </div>
+        <a href="#download" class="nav-cta">
+            <span data-lang="en" class="active">Download</span>
+            <span data-lang="uk">Завантажити</span>
+        </a>
     </div>
 </nav>
 
 <!-- ═══ Hero ═══ -->
 <section class="hero">
-    <img src="app-icon.png" alt="Shoplix" class="hero-icon">
+    <div class="hero-text">
+        <h1>
+            <span data-lang="en" class="active"><span class="highlight">Smart</span> shopping lists for your family</span>
+            <span data-lang="uk"><span class="highlight">Розумні</span> списки покупок для вашої родини</span>
+        </h1>
 
-    <h1><span class="brand">Shoplix</span></h1>
+        <p class="tagline">
+            <span data-lang="en" class="active">Create shared lists, sync in real time, and never forget an item. Works offline, no sign-up required.</span>
+            <span data-lang="uk">Створюйте спільні списки, синхронізуйте в реальному часі та ніколи не забувайте товари. Працює офлайн, без реєстрації.</span>
+        </p>
 
-    <p class="tagline">
-        <span data-lang="en" class="active">Shared shopping lists for families and events. Real-time sync, works offline.</span>
-        <span data-lang="uk">Спільні списки покупок для родини та подій. Синхронізація в реальному часі, працює офлайн.</span>
-    </p>
+        <div class="hero-badges">
+            <div class="hero-badge">
+                <i class="ph ph-wifi-slash"></i>
+                <span data-lang="en" class="active">Works offline</span>
+                <span data-lang="uk">Працює офлайн</span>
+            </div>
+            <div class="hero-badge">
+                <i class="ph ph-lightning"></i>
+                <span data-lang="en" class="active">Real-time sync</span>
+                <span data-lang="uk">Миттєва синхронізація</span>
+            </div>
+            <div class="hero-badge">
+                <i class="ph ph-shield-check"></i>
+                <span data-lang="en" class="active">No sign-up</span>
+                <span data-lang="uk">Без реєстрації</span>
+            </div>
+        </div>
 
-    <div class="store-row">
-        <a href="#" aria-label="Download on the App Store">
-            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
-        </a>
-        <a href="#" aria-label="Get it on Google Play">
-            <img class="gplay-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
-        </a>
-    </div>
-</section>
-
-<!-- ═══ Features ═══ -->
-<section class="features">
-    <div data-lang="en" class="active">
-        <h2 class="section-title reveal">Everything you need</h2>
-        <p class="section-subtitle reveal">Powerful features, zero friction. Just create a list and go.</p>
-        <div class="features-grid">
-            <div class="f-card reveal">
-                <div class="f-card-icon blue"><i class="ph ph-house"></i></div>
-                <h3>Household & Event Lists</h3>
-                <p>Two list types for every situation. Household lists — items vanish when bought. Event lists — claim items and keep full history.</p>
-            </div>
-            <div class="f-card reveal">
-                <div class="f-card-icon green"><i class="ph ph-users-three"></i></div>
-                <h3>Real-Time Collaboration</h3>
-                <p>Share with a unique invite code. Everyone sees changes instantly — items added, bought, or claimed update across all devices.</p>
-            </div>
-            <div class="f-card reveal">
-                <div class="f-card-icon amber"><i class="ph ph-shopping-cart"></i></div>
-                <h3>Smart Item Management</h3>
-                <p>Autocomplete from your catalog, quantity chips for fast input, swipe gestures to buy or delete. Tap any item to edit details.</p>
-            </div>
-            <div class="f-card reveal">
-                <div class="f-card-icon rose"><i class="ph ph-user-plus"></i></div>
-                <h3>Claim System</h3>
-                <p>In event lists, tap the person icon to claim an item. Your avatar appears so others know you're buying it. No more duplicates.</p>
-            </div>
-            <div class="f-card reveal">
-                <div class="f-card-icon violet"><i class="ph ph-copy-simple"></i></div>
-                <h3>Templates</h3>
-                <p>Save reusable templates for lists you shop regularly. Apply a template to instantly add all its items to any list.</p>
-            </div>
-            <div class="f-card reveal">
-                <div class="f-card-icon blue"><i class="ph ph-archive"></i></div>
-                <h3>Product Catalog</h3>
-                <p>Every product you add is saved for reuse. Next time you type, it appears as a suggestion — no need to re-enter items every week.</p>
-            </div>
+        <div class="store-row">
+            <a href="#" aria-label="Download on the App Store">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+            </a>
+            <a href="#" aria-label="Get it on Google Play">
+                <img class="gplay-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+            </a>
         </div>
     </div>
 
-    <div data-lang="uk">
-        <h2 class="section-title reveal">Усе, що потрібно</h2>
-        <p class="section-subtitle reveal">Потужні можливості, нуль зайвого. Просто створіть список і починайте.</p>
-        <div class="features-grid">
-            <div class="f-card reveal">
-                <div class="f-card-icon blue"><i class="ph ph-house"></i></div>
-                <h3>Домашні та списки подій</h3>
-                <p>Два типи списків для кожної ситуації. Домашні — товари зникають після покупки. Подій — резервуйте товари, історія зберігається.</p>
+    <div class="hero-visual">
+        <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+                <img src="mascot.png" alt="Shoplix mascot">
             </div>
-            <div class="f-card reveal">
-                <div class="f-card-icon green"><i class="ph ph-users-three"></i></div>
-                <h3>Співпраця в реальному часі</h3>
+        </div>
+        <div class="float-card card-1">
+            <i class="ph-fill ph-check-circle"></i>
+            <span data-lang="en" class="active">Milk bought!</span>
+            <span data-lang="uk">Молоко куплено!</span>
+        </div>
+        <div class="float-card card-2">
+            <i class="ph-fill ph-users-three"></i>
+            <span data-lang="en" class="active">3 members</span>
+            <span data-lang="uk">3 учасники</span>
+        </div>
+        <div class="float-card card-3">
+            <i class="ph-fill ph-arrow-clockwise"></i>
+            <span data-lang="en" class="active">Synced</span>
+            <span data-lang="uk">Синхронізовано</span>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ Showcase 1: Lists ═══ -->
+<section class="showcase-section green-tint">
+    <div class="showcase-grid">
+        <div class="showcase-text reveal">
+            <div data-lang="en" class="active">
+                <div class="showcase-tag"><i class="ph ph-list-checks"></i> List Types</div>
+                <h2>Two list types for every situation</h2>
+                <p>Household lists for everyday groceries — items vanish when bought. Event lists for parties and gatherings — claim items and keep the full history.</p>
+            </div>
+            <div data-lang="uk">
+                <div class="showcase-tag"><i class="ph ph-list-checks"></i> Типи списків</div>
+                <h2>Два типи списків для кожної ситуації</h2>
+                <p>Домашні списки для щоденних покупок — товари зникають після покупки. Списки подій для вечірок — резервуйте товари та зберігайте історію.</p>
+            </div>
+            <div class="benefit-cards">
+                <div class="benefit-card">
+                    <i class="ph ph-house"></i>
+                    <div>
+                        <h4><span data-lang="en" class="active">Household</span><span data-lang="uk">Домашній</span></h4>
+                        <p><span data-lang="en" class="active">Buy and done. Clean list every time.</span><span data-lang="uk">Купив — готово. Чистий список щоразу.</span></p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <i class="ph ph-confetti"></i>
+                    <div>
+                        <h4><span data-lang="en" class="active">Event</span><span data-lang="uk">Подія</span></h4>
+                        <p><span data-lang="en" class="active">Claim items. See who's bringing what.</span><span data-lang="uk">Резервуйте товари. Бачте, хто що несе.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="showcase-visual reveal">
+            <div class="showcase-illustration">
+                <i class="ph ph-list-checks"></i>
+                <div class="illust-card" style="top: 20%; left: 10%;">
+                    <div class="dot green"></div>
+                    <div class="line"></div>
+                    <span class="check">&#10003;</span>
+                </div>
+                <div class="illust-card" style="top: 45%; right: 8%;">
+                    <div class="dot blue"></div>
+                    <div class="line"></div>
+                    <div class="line short"></div>
+                </div>
+                <div class="illust-card" style="bottom: 18%; left: 15%;">
+                    <div class="dot amber"></div>
+                    <div class="line short"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ Showcase 2: Collaboration ═══ -->
+<section class="showcase-section blue-tint">
+    <div class="showcase-grid reverse">
+        <div class="showcase-text reveal">
+            <div data-lang="en" class="active">
+                <div class="showcase-tag"><i class="ph ph-users-three"></i> Collaboration</div>
+                <h2>Real-time sync across all devices</h2>
+                <p>Share with a unique invite code. Everyone sees changes instantly — items added, bought, or claimed update on all connected devices in real time.</p>
+            </div>
+            <div data-lang="uk">
+                <div class="showcase-tag"><i class="ph ph-users-three"></i> Співпраця</div>
+                <h2>Синхронізація в реальному часі на всіх пристроях</h2>
                 <p>Поділіться унікальним кодом. Кожен бачить зміни миттєво — додані, куплені чи зарезервовані товари оновлюються на всіх пристроях.</p>
             </div>
-            <div class="f-card reveal">
-                <div class="f-card-icon amber"><i class="ph ph-shopping-cart"></i></div>
-                <h3>Розумне управління товарами</h3>
-                <p>Автодоповнення з каталогу, чіпи кількості для швидкого введення, жести свайпу для покупки чи видалення. Натисніть на товар для редагування.</p>
+            <div class="benefit-cards">
+                <div class="benefit-card">
+                    <i class="ph ph-share-network"></i>
+                    <div>
+                        <h4><span data-lang="en" class="active">Invite code</span><span data-lang="uk">Код запрошення</span></h4>
+                        <p><span data-lang="en" class="active">Share via any messenger in one tap.</span><span data-lang="uk">Поділіться через будь-який месенджер.</span></p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <i class="ph ph-lightning"></i>
+                    <div>
+                        <h4><span data-lang="en" class="active">Instant updates</span><span data-lang="uk">Миттєві оновлення</span></h4>
+                        <p><span data-lang="en" class="active">Changes appear instantly, no refresh needed.</span><span data-lang="uk">Зміни з'являються миттєво, без перезавантаження.</span></p>
+                    </div>
+                </div>
             </div>
-            <div class="f-card reveal">
-                <div class="f-card-icon rose"><i class="ph ph-user-plus"></i></div>
-                <h3>Система резервування</h3>
-                <p>У списках подій натисніть іконку людини, щоб зарезервувати товар. Ваш аватар з'явиться — інші бачитимуть, що ви його купуєте.</p>
+        </div>
+        <div class="showcase-visual reveal">
+            <div class="showcase-illustration">
+                <i class="ph ph-arrows-clockwise"></i>
+                <div class="illust-card" style="top: 15%; right: 10%;">
+                    <div class="dot blue"></div>
+                    <span style="font-size: 12px;">Device 1</span>
+                </div>
+                <div class="illust-card" style="bottom: 20%; left: 8%;">
+                    <div class="dot green"></div>
+                    <span style="font-size: 12px;">Device 2</span>
+                </div>
+                <div class="illust-card" style="top: 55%; left: 25%;">
+                    <div class="dot rose"></div>
+                    <span style="font-size: 12px;">Device 3</span>
+                </div>
             </div>
-            <div class="f-card reveal">
-                <div class="f-card-icon violet"><i class="ph ph-copy-simple"></i></div>
-                <h3>Шаблони</h3>
-                <p>Зберігайте шаблони для регулярних покупок. Застосуйте шаблон, щоб миттєво додати всі його товари до будь-якого списку.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ Showcase 3: Smart Management ═══ -->
+<section class="showcase-section amber-tint">
+    <div class="showcase-grid">
+        <div class="showcase-text reveal">
+            <div data-lang="en" class="active">
+                <div class="showcase-tag"><i class="ph ph-shopping-cart"></i> Smart</div>
+                <h2>Manage items effortlessly</h2>
+                <p>Autocomplete from your personal catalog, quantity chips for fast input, swipe gestures to buy or delete. Your catalog grows as you shop.</p>
             </div>
-            <div class="f-card reveal">
-                <div class="f-card-icon blue"><i class="ph ph-archive"></i></div>
-                <h3>Каталог товарів</h3>
-                <p>Кожен доданий товар зберігається для повторного використання. Наступного разу він з'явиться як підказка — не потрібно вводити знову.</p>
+            <div data-lang="uk">
+                <div class="showcase-tag"><i class="ph ph-shopping-cart"></i> Розумне</div>
+                <h2>Керуйте товарами без зусиль</h2>
+                <p>Автодоповнення з вашого каталогу, чіпи кількості для швидкого введення, жести свайпу для покупки чи видалення. Ваш каталог зростає з покупками.</p>
+            </div>
+            <div class="benefit-cards">
+                <div class="benefit-card">
+                    <i class="ph ph-archive"></i>
+                    <div>
+                        <h4><span data-lang="en" class="active">Product catalog</span><span data-lang="uk">Каталог товарів</span></h4>
+                        <p><span data-lang="en" class="active">Items saved for reuse. Just start typing.</span><span data-lang="uk">Товари збережені. Просто почніть вводити.</span></p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <i class="ph ph-copy-simple"></i>
+                    <div>
+                        <h4><span data-lang="en" class="active">Templates</span><span data-lang="uk">Шаблони</span></h4>
+                        <p><span data-lang="en" class="active">Save & reuse your regular shopping lists.</span><span data-lang="uk">Зберігайте та використовуйте регулярні списки.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="showcase-visual reveal">
+            <div class="showcase-illustration">
+                <i class="ph ph-shopping-cart"></i>
+                <div class="illust-card" style="top: 12%; left: 8%;">
+                    <div class="dot green"></div>
+                    <div class="line"></div>
+                    <span class="check">&#10003;</span>
+                </div>
+                <div class="illust-card" style="top: 42%; right: 6%;">
+                    <div class="dot amber"></div>
+                    <div class="line"></div>
+                    <span style="font-size: 11px; color: var(--ink-400);">x3</span>
+                </div>
+                <div class="illust-card" style="bottom: 15%; left: 20%;">
+                    <div class="dot rose"></div>
+                    <div class="line short"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ Showcase 4: Claim System ═══ -->
+<section class="showcase-section rose-tint">
+    <div class="showcase-grid reverse">
+        <div class="showcase-text reveal">
+            <div data-lang="en" class="active">
+                <div class="showcase-tag"><i class="ph ph-user-plus"></i> Claim System</div>
+                <h2>Know who's buying what</h2>
+                <p>Tap any item to claim it. Your avatar appears so others know you're handling it. No more duplicate purchases or confusion at the store.</p>
+            </div>
+            <div data-lang="uk">
+                <div class="showcase-tag"><i class="ph ph-user-plus"></i> Резервування</div>
+                <h2>Знайте, хто що купує</h2>
+                <p>Натисніть на будь-який товар, щоб зарезервувати. Ваш аватар з'явиться — інші бачитимуть, що ви його берете. Жодних дублів.</p>
+            </div>
+            <div class="benefit-cards">
+                <div class="benefit-card">
+                    <i class="ph ph-user-circle"></i>
+                    <div>
+                        <h4><span data-lang="en" class="active">Avatar indicator</span><span data-lang="uk">Індикатор аватара</span></h4>
+                        <p><span data-lang="en" class="active">See who claimed each item at a glance.</span><span data-lang="uk">Бачте, хто зарезервував кожен товар.</span></p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <i class="ph ph-list-checks"></i>
+                    <div>
+                        <h4><span data-lang="en" class="active">Works in all lists</span><span data-lang="uk">Працює у всіх списках</span></h4>
+                        <p><span data-lang="en" class="active">Available in both household and event lists.</span><span data-lang="uk">Доступно і в домашніх, і в списках подій.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="showcase-visual reveal">
+            <div class="showcase-illustration">
+                <i class="ph ph-user-plus"></i>
+                <div class="illust-card" style="top: 18%; left: 10%;">
+                    <div class="dot rose"></div>
+                    <div class="line"></div>
+                    <span style="font-size: 16px;">&#128100;</span>
+                </div>
+                <div class="illust-card" style="top: 48%; right: 8%;">
+                    <div class="dot green"></div>
+                    <div class="line"></div>
+                    <span style="font-size: 16px;">&#128100;</span>
+                </div>
+                <div class="illust-card" style="bottom: 20%; left: 18%;">
+                    <div class="dot blue"></div>
+                    <div class="line short"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ Showcase 5: Unseen Updates ═══ -->
+<section class="showcase-section violet-tint">
+    <div class="showcase-grid">
+        <div class="showcase-text reveal">
+            <div data-lang="en" class="active">
+                <div class="showcase-tag"><i class="ph ph-eye"></i> What's New</div>
+                <h2>See what changed while you were away</h2>
+                <p>Open the app and instantly see which items were added, bought, or removed since your last visit. Stay in the loop without scrolling through history.</p>
+            </div>
+            <div data-lang="uk">
+                <div class="showcase-tag"><i class="ph ph-eye"></i> Що нового</div>
+                <h2>Дізнайтесь, що змінилось за вашу відсутність</h2>
+                <p>Відкрийте застосунок і одразу побачте, які товари додали, купили чи видалили з моменту вашого останнього візиту. Будьте в курсі без перегляду історії.</p>
+            </div>
+            <div class="benefit-cards">
+                <div class="benefit-card">
+                    <i class="ph ph-bell-ringing"></i>
+                    <div>
+                        <h4><span data-lang="en" class="active">Unseen highlights</span><span data-lang="uk">Непереглянуті зміни</span></h4>
+                        <p><span data-lang="en" class="active">New and changed items are highlighted automatically.</span><span data-lang="uk">Нові та змінені товари підсвічуються автоматично.</span></p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <i class="ph ph-clock-counter-clockwise"></i>
+                    <div>
+                        <h4><span data-lang="en" class="active">Deleted items shown</span><span data-lang="uk">Видалені товари видно</span></h4>
+                        <p><span data-lang="en" class="active">Items deleted by others appear briefly so you know what's gone.</span><span data-lang="uk">Видалені іншими товари з'являються на мить, щоб ви знали, що зникло.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="showcase-visual reveal">
+            <div class="showcase-illustration">
+                <i class="ph ph-eye"></i>
+                <div class="illust-card" style="top: 15%; right: 10%; border-left: 3px solid var(--violet-600);">
+                    <div class="dot green"></div>
+                    <div class="line"></div>
+                    <span style="font-size: 11px; color: var(--violet-600); font-weight: 600;">NEW</span>
+                </div>
+                <div class="illust-card" style="top: 45%; left: 8%; opacity: 0.6; border-left: 3px solid var(--rose-600);">
+                    <div class="dot rose"></div>
+                    <div class="line"></div>
+                    <span style="font-size: 11px; color: var(--rose-600); text-decoration: line-through;">gone</span>
+                </div>
+                <div class="illust-card" style="bottom: 18%; right: 12%; border-left: 3px solid var(--violet-600);">
+                    <div class="dot blue"></div>
+                    <div class="line short"></div>
+                    <span style="font-size: 11px; color: var(--violet-600); font-weight: 600;">NEW</span>
+                </div>
             </div>
         </div>
     </div>
@@ -570,6 +1216,56 @@
     </div>
 </section>
 
+<!-- ═══ Marquee ═══ -->
+<section class="marquee-section">
+    <h2 class="section-title">
+        <span data-lang="en" class="active">Packed with features</span>
+        <span data-lang="uk">Повний набір можливостей</span>
+    </h2>
+    <div class="marquee-row">
+        <div class="marquee-pill"><i class="ph ph-wifi-slash"></i><span data-lang="en" class="active">Works Offline</span><span data-lang="uk">Працює офлайн</span></div>
+        <div class="marquee-pill green"><i class="ph ph-vibrate"></i><span data-lang="en" class="active">Shake to Undo</span><span data-lang="uk">Скасування тряском</span></div>
+        <div class="marquee-pill amber"><i class="ph ph-squares-four"></i><span data-lang="en" class="active">Categories & Sorting</span><span data-lang="uk">Категорії та сортування</span></div>
+        <div class="marquee-pill violet"><i class="ph ph-palette"></i><span data-lang="en" class="active">Custom Themes</span><span data-lang="uk">Кастомні теми</span></div>
+        <div class="marquee-pill rose"><i class="ph ph-bell"></i><span data-lang="en" class="active">Push Notifications</span><span data-lang="uk">Push-сповіщення</span></div>
+        <div class="marquee-pill"><i class="ph ph-arrows-left-right"></i><span data-lang="en" class="active">Left / Right Handed</span><span data-lang="uk">Ліва / права рука</span></div>
+        <div class="marquee-pill green"><i class="ph ph-user"></i><span data-lang="en" class="active">Profile & Avatar</span><span data-lang="uk">Профіль та аватар</span></div>
+        <div class="marquee-pill amber"><i class="ph ph-shield-check"></i><span data-lang="en" class="active">No Sign-Up Required</span><span data-lang="uk">Без реєстрації</span></div>
+        <div class="marquee-pill violet"><i class="ph ph-eye"></i><span data-lang="en" class="active">Unseen Updates</span><span data-lang="uk">Непереглянуті зміни</span></div>
+        <div class="marquee-pill rose"><i class="ph ph-user-plus"></i><span data-lang="en" class="active">Claim Items</span><span data-lang="uk">Резервування</span></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="marquee-pill"><i class="ph ph-wifi-slash"></i><span data-lang="en" class="active">Works Offline</span><span data-lang="uk">Працює офлайн</span></div>
+        <div class="marquee-pill green"><i class="ph ph-vibrate"></i><span data-lang="en" class="active">Shake to Undo</span><span data-lang="uk">Скасування тряском</span></div>
+        <div class="marquee-pill amber"><i class="ph ph-squares-four"></i><span data-lang="en" class="active">Categories & Sorting</span><span data-lang="uk">Категорії та сортування</span></div>
+        <div class="marquee-pill violet"><i class="ph ph-palette"></i><span data-lang="en" class="active">Custom Themes</span><span data-lang="uk">Кастомні теми</span></div>
+        <div class="marquee-pill rose"><i class="ph ph-bell"></i><span data-lang="en" class="active">Push Notifications</span><span data-lang="uk">Push-сповіщення</span></div>
+        <div class="marquee-pill"><i class="ph ph-arrows-left-right"></i><span data-lang="en" class="active">Left / Right Handed</span><span data-lang="uk">Ліва / права рука</span></div>
+        <div class="marquee-pill green"><i class="ph ph-user"></i><span data-lang="en" class="active">Profile & Avatar</span><span data-lang="uk">Профіль та аватар</span></div>
+        <div class="marquee-pill amber"><i class="ph ph-shield-check"></i><span data-lang="en" class="active">No Sign-Up Required</span><span data-lang="uk">Без реєстрації</span></div>
+        <div class="marquee-pill violet"><i class="ph ph-eye"></i><span data-lang="en" class="active">Unseen Updates</span><span data-lang="uk">Непереглянуті зміни</span></div>
+        <div class="marquee-pill rose"><i class="ph ph-user-plus"></i><span data-lang="en" class="active">Claim Items</span><span data-lang="uk">Резервування</span></div>
+    </div>
+    <div class="marquee-row reverse slow">
+        <div class="marquee-pill violet"><i class="ph ph-copy-simple"></i><span data-lang="en" class="active">Templates</span><span data-lang="uk">Шаблони</span></div>
+        <div class="marquee-pill"><i class="ph ph-archive"></i><span data-lang="en" class="active">Product Catalog</span><span data-lang="uk">Каталог товарів</span></div>
+        <div class="marquee-pill rose"><i class="ph ph-hand-swipe-right"></i><span data-lang="en" class="active">Swipe Gestures</span><span data-lang="uk">Жести свайпу</span></div>
+        <div class="marquee-pill green"><i class="ph ph-user-plus"></i><span data-lang="en" class="active">Claim Items</span><span data-lang="uk">Резервування</span></div>
+        <div class="marquee-pill amber"><i class="ph ph-hash"></i><span data-lang="en" class="active">Invite Codes</span><span data-lang="uk">Коди запрошення</span></div>
+        <div class="marquee-pill"><i class="ph ph-house"></i><span data-lang="en" class="active">Household Lists</span><span data-lang="uk">Домашні списки</span></div>
+        <div class="marquee-pill violet"><i class="ph ph-confetti"></i><span data-lang="en" class="active">Event Lists</span><span data-lang="uk">Списки подій</span></div>
+        <div class="marquee-pill rose"><i class="ph ph-device-mobile"></i><span data-lang="en" class="active">iOS & Android</span><span data-lang="uk">iOS та Android</span></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="marquee-pill violet"><i class="ph ph-copy-simple"></i><span data-lang="en" class="active">Templates</span><span data-lang="uk">Шаблони</span></div>
+        <div class="marquee-pill"><i class="ph ph-archive"></i><span data-lang="en" class="active">Product Catalog</span><span data-lang="uk">Каталог товарів</span></div>
+        <div class="marquee-pill rose"><i class="ph ph-hand-swipe-right"></i><span data-lang="en" class="active">Swipe Gestures</span><span data-lang="uk">Жести свайпу</span></div>
+        <div class="marquee-pill green"><i class="ph ph-user-plus"></i><span data-lang="en" class="active">Claim Items</span><span data-lang="uk">Резервування</span></div>
+        <div class="marquee-pill amber"><i class="ph ph-hash"></i><span data-lang="en" class="active">Invite Codes</span><span data-lang="uk">Коди запрошення</span></div>
+        <div class="marquee-pill"><i class="ph ph-house"></i><span data-lang="en" class="active">Household Lists</span><span data-lang="uk">Домашні списки</span></div>
+        <div class="marquee-pill violet"><i class="ph ph-confetti"></i><span data-lang="en" class="active">Event Lists</span><span data-lang="uk">Списки подій</span></div>
+        <div class="marquee-pill rose"><i class="ph ph-device-mobile"></i><span data-lang="en" class="active">iOS & Android</span><span data-lang="uk">iOS та Android</span></div>
+    </div>
+</section>
+
 <!-- ═══ More Features ═══ -->
 <section class="more">
     <div data-lang="en" class="active">
@@ -577,42 +1273,42 @@
         <p class="section-subtitle reveal">Every detail is crafted for the best shopping experience.</p>
         <div class="more-grid">
             <div class="m-card reveal">
-                <i class="ph ph-wifi-slash"></i>
+                <div class="m-card-icon blue"><i class="ph ph-wifi-slash"></i></div>
                 <h4>Works Offline</h4>
                 <p>Shop without internet. Syncs when you're back online.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-vibrate"></i>
+                <div class="m-card-icon green"><i class="ph ph-vibrate"></i></div>
                 <h4>Shake to Undo</h4>
                 <p>Accidentally bought or deleted? Just shake your phone.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-squares-four"></i>
+                <div class="m-card-icon amber"><i class="ph ph-squares-four"></i></div>
                 <h4>Categories & Sorting</h4>
                 <p>Organize by category. Drag to reorder, show or hide headers.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-palette"></i>
+                <div class="m-card-icon violet"><i class="ph ph-palette"></i></div>
                 <h4>Custom Themes</h4>
                 <p>11 palettes, animated icons, color skins, and more.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-bell"></i>
+                <div class="m-card-icon rose"><i class="ph ph-bell"></i></div>
                 <h4>Push Notifications</h4>
                 <p>Per-list alerts for item and member changes.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-arrows-left-right"></i>
+                <div class="m-card-icon blue"><i class="ph ph-arrows-left-right"></i></div>
                 <h4>Left / Right Handed</h4>
                 <p>Flip the swipe direction for your dominant hand.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-user"></i>
+                <div class="m-card-icon green"><i class="ph ph-user"></i></div>
                 <h4>Profile & Avatar</h4>
                 <p>Set your name and photo. Link Apple or Google account.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-shield-check"></i>
+                <div class="m-card-icon amber"><i class="ph ph-shield-check"></i></div>
                 <h4>No Sign-Up Required</h4>
                 <p>Start instantly. Create an account later if you want.</p>
             </div>
@@ -623,46 +1319,67 @@
         <p class="section-subtitle reveal">Кожна деталь продумана для найкращого досвіду покупок.</p>
         <div class="more-grid">
             <div class="m-card reveal">
-                <i class="ph ph-wifi-slash"></i>
+                <div class="m-card-icon blue"><i class="ph ph-wifi-slash"></i></div>
                 <h4>Працює офлайн</h4>
                 <p>Купуйте без інтернету. Синхронізується при підключенні.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-vibrate"></i>
+                <div class="m-card-icon green"><i class="ph ph-vibrate"></i></div>
                 <h4>Скасування тряском</h4>
                 <p>Випадково купили чи видалили? Просто струсніть телефон.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-squares-four"></i>
+                <div class="m-card-icon amber"><i class="ph ph-squares-four"></i></div>
                 <h4>Категорії та сортування</h4>
                 <p>Групуйте за категоріями. Перетягуйте для зміни порядку.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-palette"></i>
+                <div class="m-card-icon violet"><i class="ph ph-palette"></i></div>
                 <h4>Кастомні теми</h4>
                 <p>11 палітр, анімовані іконки, кольорові скіни та інше.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-bell"></i>
+                <div class="m-card-icon rose"><i class="ph ph-bell"></i></div>
                 <h4>Push-сповіщення</h4>
                 <p>Сповіщення для кожного списку окремо.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-arrows-left-right"></i>
+                <div class="m-card-icon blue"><i class="ph ph-arrows-left-right"></i></div>
                 <h4>Ліва / права рука</h4>
                 <p>Змініть напрямок свайпу під робочу руку.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-user"></i>
+                <div class="m-card-icon green"><i class="ph ph-user"></i></div>
                 <h4>Профіль та аватар</h4>
                 <p>Встановіть ім'я та фото. Прив'яжіть Apple чи Google.</p>
             </div>
             <div class="m-card reveal">
-                <i class="ph ph-shield-check"></i>
+                <div class="m-card-icon amber"><i class="ph ph-shield-check"></i></div>
                 <h4>Без реєстрації</h4>
                 <p>Почніть миттєво. Створіть акаунт пізніше, якщо захочете.</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section" id="download">
+    <img src="mascot.png" alt="Shoplix mascot" class="cta-mascot">
+    <h2>
+        <span data-lang="en" class="active">Ready to shop smarter?</span>
+        <span data-lang="uk">Готові купувати розумніше?</span>
+    </h2>
+    <p>
+        <span data-lang="en" class="active">Download Shoplix for free and start sharing lists with your family today.</span>
+        <span data-lang="uk">Завантажте Shoplix безкоштовно та почніть ділитися списками з родиною вже сьогодні.</span>
+    </p>
+    <div class="store-row">
+        <a href="#" aria-label="Download on the App Store">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-us?size=250x83" alt="Download on the App Store">
+        </a>
+        <a href="#" aria-label="Get it on Google Play">
+            <img class="gplay-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+        </a>
     </div>
 </section>
 
@@ -679,38 +1396,54 @@
 </footer>
 
 <script>
-    // Language
-    function switchLang(lang) {
-        document.querySelectorAll('[data-lang]').forEach(el => {
-            el.classList.toggle('active', el.dataset.lang === lang);
-        });
-        document.querySelectorAll('.lang-toggle button').forEach(el => el.classList.remove('active'));
-        document.getElementById('btn-' + lang).classList.add('active');
-        localStorage.setItem('shoplix-lang', lang);
-        // Re-observe revealed elements for new lang content
-        document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
-    }
-
-    // Restore language
-    const saved = localStorage.getItem('shoplix-lang');
-    if (saved) switchLang(saved);
-
-    // Nav scroll effect
-    window.addEventListener('scroll', () => {
-        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
-    });
-
-    // Scroll reveal
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    // Scroll reveal (must be defined first — other code depends on it)
+    var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.01 });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    function observeReveals() {
+        document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+            revealObserver.observe(el);
+        });
+    }
+
+    // Enable reveal animations
+    document.documentElement.classList.add('reveal-ready');
+    observeReveals();
+
+    // Language
+    function switchLang(lang) {
+        document.querySelectorAll('[data-lang]').forEach(function(el) {
+            el.classList.toggle('active', el.dataset.lang === lang);
+        });
+        document.querySelectorAll('.lang-toggle button').forEach(function(el) {
+            el.classList.remove('active');
+        });
+        document.getElementById('btn-' + lang).classList.add('active');
+        localStorage.setItem('shoplix-lang', lang);
+        observeReveals();
+    }
+
+    // Restore language
+    var saved = localStorage.getItem('shoplix-lang');
+    if (saved) switchLang(saved);
+
+    // Nav scroll effect
+    window.addEventListener('scroll', function() {
+        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Fallback: reveal all after 2s
+    setTimeout(function() {
+        document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+            el.classList.add('visible');
+        });
+    }, 2000);
 </script>
 </body>
 </html>
