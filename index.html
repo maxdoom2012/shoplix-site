@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoplix — Shared Shopping Lists</title>
-    <meta name="description" content="Shoplix — real-time shared shopping lists for families and events. Offline-first, syncs instantly across all devices.">
+    <meta name="description" content="Shoplix — shopping lists that actually understand how you shop. Two list types, item claiming, ghost items, and real-time sync.">
     <meta name="theme-color" content="#1565C0">
     <link rel="icon" type="image/png" href="app-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,7 +142,22 @@
             transition: all 0.25s ease;
         }
         .nav-cta:hover { background: var(--blue-900); transform: translateY(-1px); }
-        @media (min-width: 640px) { .nav-cta { display: inline-flex; } }
+        .nav-web {
+            display: none;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 16px;
+            color: var(--ink-700);
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .nav-web i { font-size: 16px; color: var(--blue-600); }
+        .nav-web:hover { color: var(--blue-700); }
+        @media (min-width: 640px) { .nav-cta, .nav-web { display: inline-flex; } }
+
 
         /* ── Hero ──────────────────────────────────── */
         .hero {
@@ -236,6 +251,7 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
+        .store-row { align-items: center; }
         .store-row img { height: 52px; border-radius: var(--radius-sm); }
         .gplay-badge { height: 76px !important; margin: -12px 0; }
 
@@ -852,6 +868,11 @@
             <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
             <button id="btn-uk" onclick="switchLang('uk')">UK</button>
         </div>
+        <a href="https://app.shoplix.app/" class="nav-web" target="_blank" rel="noopener">
+            <i class="ph ph-browser"></i>
+            <span data-lang="en" class="active">Web App</span>
+            <span data-lang="uk">Веб-додаток</span>
+        </a>
         <a href="#download" class="nav-cta">
             <span data-lang="en" class="active">Download</span>
             <span data-lang="uk">Завантажити</span>
@@ -863,25 +884,25 @@
 <section class="hero">
     <div class="hero-text">
         <h1>
-            <span data-lang="en" class="active"><span class="highlight">Smart</span> shopping lists for your family</span>
-            <span data-lang="uk"><span class="highlight">Розумні</span> списки покупок для вашої родини</span>
+            <span data-lang="en" class="active">Shopping lists that actually <span class="highlight">get it</span></span>
+            <span data-lang="uk">Списки покупок, які справді <span class="highlight">розуміють</span></span>
         </h1>
 
         <p class="tagline">
-            <span data-lang="en" class="active">Create shared lists, sync in real time, and never forget an item. Works offline, no sign-up required.</span>
-            <span data-lang="uk">Створюйте спільні списки, синхронізуйте в реальному часі та ніколи не забувайте товари. Працює офлайн, без реєстрації.</span>
+            <span data-lang="en" class="active">Not all shopping is the same. Household lists clean up after each trip. Event lists track who's bringing what. Shoplix handles both.</span>
+            <span data-lang="uk">Не всі покупки однакові. Домашні списки очищаються після кожного походу. Списки подій показують хто що несе. Shoplix працює з обома.</span>
         </p>
 
         <div class="hero-badges">
             <div class="hero-badge">
-                <i class="ph ph-wifi-slash"></i>
-                <span data-lang="en" class="active">Works offline</span>
-                <span data-lang="uk">Працює офлайн</span>
+                <i class="ph ph-list-checks"></i>
+                <span data-lang="en" class="active">Two list types</span>
+                <span data-lang="uk">Два типи списків</span>
             </div>
             <div class="hero-badge">
-                <i class="ph ph-lightning"></i>
-                <span data-lang="en" class="active">Real-time sync</span>
-                <span data-lang="uk">Миттєва синхронізація</span>
+                <i class="ph ph-eye"></i>
+                <span data-lang="en" class="active">Full visibility</span>
+                <span data-lang="uk">Повна видимість</span>
             </div>
             <div class="hero-badge">
                 <i class="ph ph-shield-check"></i>
@@ -918,9 +939,9 @@
             <span data-lang="uk">3 учасники</span>
         </div>
         <div class="float-card card-3">
-            <i class="ph-fill ph-arrow-clockwise"></i>
-            <span data-lang="en" class="active">Synced</span>
-            <span data-lang="uk">Синхронізовано</span>
+            <i class="ph-fill ph-ghost"></i>
+            <span data-lang="en" class="active">Milk — deleted</span>
+            <span data-lang="uk">Молоко — видалено</span>
         </div>
     </div>
 </section>
@@ -978,51 +999,61 @@
     </div>
 </section>
 
-<!-- ═══ Showcase 2: Collaboration ═══ -->
+<!-- ═══ Showcase 2: Full Visibility ═══ -->
 <section class="showcase-section blue-tint">
     <div class="showcase-grid reverse">
         <div class="showcase-text reveal">
             <div data-lang="en" class="active">
-                <div class="showcase-tag"><i class="ph ph-users-three"></i> Collaboration</div>
-                <h2>Real-time sync across all devices</h2>
-                <p>Share with a unique invite code. Everyone sees changes instantly — items added, bought, or claimed update on all connected devices in real time.</p>
+                <div class="showcase-tag"><i class="ph ph-eye"></i> Full Visibility</div>
+                <h2>Always know who's doing what</h2>
+                <p>No other shopping list gives you this level of transparency. See who claimed an item, who bought it, and what was deleted — all in real time. No guessing, no duplicates, no surprises.</p>
             </div>
             <div data-lang="uk">
-                <div class="showcase-tag"><i class="ph ph-users-three"></i> Співпраця</div>
-                <h2>Синхронізація в реальному часі на всіх пристроях</h2>
-                <p>Поділіться унікальним кодом. Кожен бачить зміни миттєво — додані, куплені чи зарезервовані товари оновлюються на всіх пристроях.</p>
+                <div class="showcase-tag"><i class="ph ph-eye"></i> Повна видимість</div>
+                <h2>Завжди знайте хто що робить</h2>
+                <p>Жоден інший список покупок не дає такого рівня прозорості. Бачте хто зарезервував товар, хто його купив, і що було видалено — все в реальному часі. Без здогадок, без дублікатів, без сюрпризів.</p>
             </div>
             <div class="benefit-cards">
                 <div class="benefit-card">
-                    <i class="ph ph-share-network"></i>
+                    <i class="ph ph-user-check"></i>
                     <div>
-                        <h4><span data-lang="en" class="active">Invite code</span><span data-lang="uk">Код запрошення</span></h4>
-                        <p><span data-lang="en" class="active">Share via any messenger in one tap.</span><span data-lang="uk">Поділіться через будь-який месенджер.</span></p>
+                        <h4><span data-lang="en" class="active">Item claiming</span><span data-lang="uk">Резервування</span></h4>
+                        <p><span data-lang="en" class="active">Tap to claim — others see you're handling it. No duplicates.</span><span data-lang="uk">Натисніть щоб зарезервувати — інші бачать що ви берете це на себе.</span></p>
                     </div>
                 </div>
                 <div class="benefit-card">
-                    <i class="ph ph-lightning"></i>
+                    <i class="ph ph-check-circle"></i>
                     <div>
-                        <h4><span data-lang="en" class="active">Instant updates</span><span data-lang="uk">Миттєві оновлення</span></h4>
-                        <p><span data-lang="en" class="active">Changes appear instantly, no refresh needed.</span><span data-lang="uk">Зміни з'являються миттєво, без перезавантаження.</span></p>
+                        <h4><span data-lang="en" class="active">Bought by</span><span data-lang="uk">Хто купив</span></h4>
+                        <p><span data-lang="en" class="active">Every purchased item shows who bought it and when.</span><span data-lang="uk">Кожен куплений товар показує хто і коли його купив.</span></p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <i class="ph ph-ghost"></i>
+                    <div>
+                        <h4><span data-lang="en" class="active">Ghost items</span><span data-lang="uk">Примарні товари</span></h4>
+                        <p><span data-lang="en" class="active">Deleted items stay visible briefly — nothing vanishes without context.</span><span data-lang="uk">Видалені товари залишаються на мить — нічого не зникає без контексту.</span></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="showcase-visual reveal">
             <div class="showcase-illustration">
-                <i class="ph ph-arrows-clockwise"></i>
-                <div class="illust-card" style="top: 15%; right: 10%;">
+                <i class="ph ph-eye"></i>
+                <div class="illust-card" style="top: 12%; right: 8%;">
                     <div class="dot blue"></div>
-                    <span style="font-size: 12px;">Device 1</span>
+                    <span style="font-size: 12px;">Cheese</span>
+                    <span style="font-size: 10px; color: var(--blue-600);">👤 claimed</span>
                 </div>
-                <div class="illust-card" style="bottom: 20%; left: 8%;">
+                <div class="illust-card" style="top: 48%; left: 6%;">
                     <div class="dot green"></div>
-                    <span style="font-size: 12px;">Device 2</span>
+                    <span style="font-size: 12px;">Eggs</span>
+                    <span style="font-size: 10px; color: var(--green-600);">✓ by Mom</span>
                 </div>
-                <div class="illust-card" style="top: 55%; left: 25%;">
+                <div class="illust-card" style="bottom: 15%; right: 12%; opacity: 0.5;">
                     <div class="dot rose"></div>
-                    <span style="font-size: 12px;">Device 3</span>
+                    <span style="font-size: 12px; text-decoration: line-through;">Milk</span>
+                    <span style="font-size: 10px; color: var(--ink-400);">👻 deleted</span>
                 </div>
             </div>
         </div>
@@ -1114,16 +1145,16 @@
             </p>
         </div>
 
-        <!-- Works Offline -->
+        <!-- Roles & Permissions -->
         <div class="bento-card reveal">
-            <div class="bento-icon blue"><i class="ph ph-wifi-slash"></i></div>
+            <div class="bento-icon violet"><i class="ph ph-users-four"></i></div>
             <h3>
-                <span data-lang="en" class="active">Works offline</span>
-                <span data-lang="uk">Працює офлайн</span>
+                <span data-lang="en" class="active">Roles & permissions</span>
+                <span data-lang="uk">Ролі та дозволи</span>
             </h3>
             <p>
-                <span data-lang="en" class="active">Shop without internet. Everything syncs when you're back online.</span>
-                <span data-lang="uk">Купуйте без інтернету. Все синхронізується при підключенні.</span>
+                <span data-lang="en" class="active">Owner, Co-owner, Editor, or Viewer. Control who can do what.</span>
+                <span data-lang="uk">Власник, Співвласник, Редактор або Глядач. Контролюйте хто що може.</span>
             </p>
         </div>
 
@@ -1135,8 +1166,8 @@
                 <span data-lang="uk">Кастомні теми</span>
             </h3>
             <p>
-                <span data-lang="en" class="active">11 color palettes, animated icons, and personalized skins.</span>
-                <span data-lang="uk">11 палітр, анімовані іконки та персоналізовані скіни.</span>
+                <span data-lang="en" class="active">10+ color palettes, 6 font styles, animated icons, and left-handed mode.</span>
+                <span data-lang="uk">10+ палітр, 6 стилів шрифтів, анімовані іконки та режим для лівшів.</span>
             </p>
         </div>
 
@@ -1268,6 +1299,11 @@
         </a>
         <a href="#" aria-label="Get it on Google Play">
             <img class="gplay-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+        </a>
+        <a href="https://app.shoplix.app/" class="web-app-btn" target="_blank" rel="noopener">
+            <i class="ph ph-browser"></i>
+            <span data-lang="en" class="active">Open Web App</span>
+            <span data-lang="uk">Відкрити в браузері</span>
         </a>
     </div>
 </section>
