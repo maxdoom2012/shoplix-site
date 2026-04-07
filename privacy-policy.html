@@ -92,22 +92,35 @@
         <!-- English -->
         <div id="lang-en" class="lang active">
             <h1>Privacy Policy for Shoplix</h1>
-            <p class="updated">Last updated: 2026-02-02</p>
+            <p class="updated">Last updated: 2026-04-08</p>
 
-            <h2>Introduction</h2>
+            <h2>1. Introduction</h2>
             <p>Shoplix ("we", "our", or "us") operates the Shoplix mobile application (the "App"). This Privacy Policy explains how we collect, use, and protect your information when you use our App.</p>
+            <p>By using Shoplix, you agree to the collection and use of information in accordance with this policy.</p>
 
-            <h2>Information We Collect</h2>
+            <h2>2. Information We Collect</h2>
 
-            <h3>Account Information</h3>
-            <p>We use Firebase Authentication to securely manage sign-in. Firebase Authentication stores:</p>
+            <h3>2.1 Account Information</h3>
+            <p>We use Firebase Authentication to manage sign-in. Depending on how you use the App:</p>
             <ul>
-                <li><strong>Email address</strong> - when you sign in with Google or Apple</li>
-                <li><strong>Display name</strong> - from your Google or Apple account</li>
-                <li><strong>Device identifier</strong> - for anonymous users who haven't signed in</li>
+                <li><strong>Anonymous users</strong> — a device identifier is generated automatically. No personal information is required.</li>
+                <li><strong>Sign in with Apple or Google</strong> — your email address and display name from your account are stored.</li>
+                <li><strong>Nickname</strong> — you may optionally set a display name visible to other list participants.</li>
             </ul>
 
-            <h3>Usage Data</h3>
+            <h3>2.2 Shopping List Data</h3>
+            <p>We store the shopping lists, items, templates, and related content you create. This data is synced across your devices and shared with users you invite to your lists.</p>
+
+            <h3>2.3 Subscription Data</h3>
+            <p>If you subscribe to Shoplix Premium, purchase transactions are processed entirely by Apple (App Store) or Google (Google Play). We do not collect or store payment information such as credit card numbers. We use RevenueCat to manage subscription status. RevenueCat may collect:</p>
+            <ul>
+                <li>Purchase history and subscription status</li>
+                <li>Anonymous device identifiers</li>
+                <li>App user ID (linked to your Firebase account)</li>
+            </ul>
+            <p>For details, see <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a>.</p>
+
+            <h3>2.4 Usage Data</h3>
             <p>We use Firebase Analytics to collect anonymous usage data, including:</p>
             <ul>
                 <li>App opens and screen views</li>
@@ -115,50 +128,79 @@
                 <li>Device type and operating system version</li>
             </ul>
 
-            <h3>Crash Reports</h3>
-            <p>We use Firebase Crashlytics to collect crash reports, which may include:</p>
+            <h3>2.5 Crash Reports &amp; Error Tracking</h3>
+            <p>We use Firebase Crashlytics and Sentry to collect crash and error reports, which may include:</p>
             <ul>
                 <li>Device state at the time of crash</li>
-                <li>Stack traces</li>
+                <li>Stack traces and error messages</li>
                 <li>Device model and OS version</li>
             </ul>
 
-            <h2>How We Use Your Information</h2>
+            <h3>2.6 Push Notifications</h3>
+            <p>If you enable push notifications, we store a device token via Firebase Cloud Messaging to deliver notifications about list updates.</p>
+
+            <h2>3. How We Use Your Information</h2>
             <ul>
-                <li><strong>To provide the service</strong> - Managing your shopping lists and syncing across devices</li>
-                <li><strong>To enable sharing</strong> - Allowing you to share lists with family and friends</li>
-                <li><strong>To improve the App</strong> - Analyzing usage patterns and fixing bugs</li>
+                <li><strong>To provide the service</strong> — managing your shopping lists, syncing across devices, and enabling real-time collaboration</li>
+                <li><strong>To enable sharing</strong> — allowing you to share lists with family and friends</li>
+                <li><strong>To manage subscriptions</strong> — verifying your Premium status and unlocking features</li>
+                <li><strong>To improve the App</strong> — analyzing usage patterns and fixing bugs</li>
+                <li><strong>To send notifications</strong> — informing you about list updates (if enabled)</li>
             </ul>
 
-            <h2>Data Sharing</h2>
-            <p>We do not sell your personal information. We share data only with:</p>
+            <h2>4. Third-Party Services</h2>
+            <p>We use the following third-party services that may collect data:</p>
             <ul>
-                <li><strong>Firebase (Google)</strong> - For authentication, analytics and crash reporting</li>
-                <li><strong>Other users</strong> - Only the list data you choose to share</li>
+                <li><strong>Firebase (Google)</strong> — authentication, analytics, crash reporting, cloud messaging, remote config, performance monitoring</li>
+                <li><strong>RevenueCat</strong> — subscription management and purchase validation</li>
+                <li><strong>Sentry</strong> — error tracking and performance monitoring</li>
+                <li><strong>Apple / Google</strong> — payment processing for subscriptions</li>
+            </ul>
+            <p>We do not sell your personal information to third parties.</p>
+
+            <h2>5. Data Sharing</h2>
+            <p>Your data is shared only in these cases:</p>
+            <ul>
+                <li><strong>With list participants</strong> — other users you invite can see list items, your nickname, and avatar</li>
+                <li><strong>With service providers</strong> — the third-party services listed above, solely to operate the App</li>
+                <li><strong>If required by law</strong> — to comply with legal obligations</li>
             </ul>
 
-            <h2>Data Retention</h2>
+            <h2>6. Data Storage &amp; Security</h2>
+            <ul>
+                <li>Data is stored on secure servers and transmitted using encryption (HTTPS/TLS)</li>
+                <li>Shopping list data is also stored locally on your device for offline access</li>
+                <li>We implement reasonable security measures, but no method of transmission over the Internet is 100% secure</li>
+            </ul>
+
+            <h2>7. Data Retention</h2>
             <ul>
                 <li>Account data is retained while your account is active</li>
-                <li>To delete your account and data, contact us at <a href="mailto:support@shoplix.app">support@shoplix.app</a></li>
-                <li>Anonymous usage data is retained for up to 14 months</li>
+                <li>Deleted lists are permanently removed after 30 days</li>
+                <li>Anonymous usage and analytics data is retained for up to 14 months</li>
+                <li>To delete your account and all associated data, contact us at <a href="mailto:support@shoplix.app">support@shoplix.app</a></li>
             </ul>
 
-            <h2>Your Rights</h2>
+            <h2>8. Your Rights</h2>
             <p>You have the right to:</p>
             <ul>
                 <li>Access your personal data</li>
+                <li>Request correction of inaccurate data</li>
                 <li>Request deletion of your account and associated data</li>
                 <li>Opt out of analytics (through device settings)</li>
+                <li>Withdraw consent for push notifications (through device settings)</li>
             </ul>
 
-            <h2>Children's Privacy</h2>
-            <p>Shoplix is not intended for children under 13. We do not knowingly collect personal information from children.</p>
+            <h2>9. Children's Privacy</h2>
+            <p>Shoplix is not intended for children under 13 (or under 16 in the EU). We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us.</p>
 
-            <h2>Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy in the App.</p>
+            <h2>10. International Data Transfers</h2>
+            <p>Your data may be transferred to and processed in countries other than your own. By using the App, you consent to such transfers. We ensure appropriate safeguards are in place.</p>
 
-            <h2>Contact Us</h2>
+            <h2>11. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the new policy in the App. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+
+            <h2>12. Contact Us</h2>
             <p>If you have questions about this Privacy Policy, please contact us at:</p>
             <p><strong>Email:</strong> <a href="mailto:privacy@shoplix.app">privacy@shoplix.app</a></p>
         </div>
@@ -166,73 +208,116 @@
         <!-- Ukrainian -->
         <div id="lang-uk" class="lang">
             <h1>Політика конфіденційності Shoplix</h1>
-            <p class="updated">Останнє оновлення: 2026-02-02</p>
+            <p class="updated">Останнє оновлення: 2026-04-08</p>
 
-            <h2>Вступ</h2>
+            <h2>1. Вступ</h2>
             <p>Shoplix ("ми", "наш") керує мобільним додатком Shoplix ("Додаток"). Ця Політика конфіденційності пояснює, як ми збираємо, використовуємо та захищаємо вашу інформацію.</p>
+            <p>Використовуючи Shoplix, ви погоджуєтеся зі збором та використанням інформації відповідно до цієї політики.</p>
 
-            <h2>Інформація, яку ми збираємо</h2>
+            <h2>2. Інформація, яку ми збираємо</h2>
 
-            <h3>Дані облікового запису</h3>
-            <p>Ми використовуємо Firebase Authentication для безпечного входу. Firebase Authentication зберігає:</p>
+            <h3>2.1 Дані облікового запису</h3>
+            <p>Ми використовуємо Firebase Authentication для входу. Залежно від способу використання:</p>
             <ul>
-                <li><strong>Email адреса</strong> - при вході через Google або Apple</li>
-                <li><strong>Ім'я</strong> - з вашого облікового запису Google або Apple</li>
-                <li><strong>Ідентифікатор пристрою</strong> - для анонімних користувачів</li>
+                <li><strong>Анонімні користувачі</strong> — автоматично створюється ідентифікатор пристрою. Особиста інформація не потрібна.</li>
+                <li><strong>Вхід через Apple або Google</strong> — зберігається email та ім'я з вашого облікового запису.</li>
+                <li><strong>Нікнейм</strong> — ви можете за бажанням встановити ім'я, видиме іншим учасникам списків.</li>
             </ul>
 
-            <h3>Дані використання</h3>
-            <p>Ми використовуємо Firebase Analytics для збору анонімних даних:</p>
+            <h3>2.2 Дані списків покупок</h3>
+            <p>Ми зберігаємо списки покупок, товари, шаблони та пов'язаний контент. Ці дані синхронізуються між вашими пристроями та доступні користувачам, яких ви запросили.</p>
+
+            <h3>2.3 Дані підписки</h3>
+            <p>Якщо ви підписуєтесь на Shoplix Преміум, платежі обробляються виключно Apple (App Store) або Google (Google Play). Ми не збираємо та не зберігаємо платіжні дані (номери карток тощо). Для управління підписками ми використовуємо RevenueCat, який може збирати:</p>
+            <ul>
+                <li>Історію покупок та статус підписки</li>
+                <li>Анонімні ідентифікатори пристрою</li>
+                <li>Ідентифікатор користувача (пов'язаний з Firebase)</li>
+            </ul>
+            <p>Детальніше: <a href="https://www.revenuecat.com/privacy" target="_blank">Політика конфіденційності RevenueCat</a>.</p>
+
+            <h3>2.4 Дані використання</h3>
+            <p>Firebase Analytics збирає анонімні дані:</p>
             <ul>
                 <li>Відкриття додатку та перегляд екранів</li>
                 <li>Використання функцій</li>
                 <li>Тип пристрою та версія ОС</li>
             </ul>
 
-            <h3>Звіти про збої</h3>
-            <p>Firebase Crashlytics збирає звіти про збої:</p>
+            <h3>2.5 Звіти про збої та помилки</h3>
+            <p>Firebase Crashlytics та Sentry збирають звіти про збої:</p>
             <ul>
                 <li>Стан пристрою на момент збою</li>
                 <li>Технічні деталі помилки</li>
                 <li>Модель пристрою та версія ОС</li>
             </ul>
 
-            <h2>Як ми використовуємо вашу інформацію</h2>
+            <h3>2.6 Push-сповіщення</h3>
+            <p>Якщо ви увімкнули push-сповіщення, ми зберігаємо токен пристрою через Firebase Cloud Messaging для надсилання сповіщень про оновлення списків.</p>
+
+            <h2>3. Як ми використовуємо вашу інформацію</h2>
             <ul>
-                <li><strong>Для надання сервісу</strong> - керування списками покупок та синхронізація</li>
-                <li><strong>Для спільного доступу</strong> - дозволяє ділитися списками з іншими</li>
-                <li><strong>Для покращення додатку</strong> - аналіз використання та виправлення помилок</li>
+                <li><strong>Для надання сервісу</strong> — керування списками, синхронізація між пристроями, спільна робота в реальному часі</li>
+                <li><strong>Для спільного доступу</strong> — дозволяє ділитися списками з родиною та друзями</li>
+                <li><strong>Для управління підписками</strong> — перевірка статусу Преміум та розблокування функцій</li>
+                <li><strong>Для покращення додатку</strong> — аналіз використання та виправлення помилок</li>
+                <li><strong>Для сповіщень</strong> — інформування про оновлення списків (якщо увімкнено)</li>
             </ul>
 
-            <h2>Передача даних</h2>
-            <p>Ми не продаємо ваші персональні дані. Ми передаємо дані лише:</p>
+            <h2>4. Сторонні сервіси</h2>
+            <p>Ми використовуємо наступні сторонні сервіси, які можуть збирати дані:</p>
             <ul>
-                <li><strong>Firebase (Google)</strong> - для автентифікації, аналітики та звітів про збої</li>
-                <li><strong>Іншим користувачам</strong> - тільки дані списків, якими ви вирішили поділитися</li>
+                <li><strong>Firebase (Google)</strong> — автентифікація, аналітика, звіти про збої, push-сповіщення, remote config, моніторинг продуктивності</li>
+                <li><strong>RevenueCat</strong> — управління підписками та валідація покупок</li>
+                <li><strong>Sentry</strong> — відстеження помилок та моніторинг продуктивності</li>
+                <li><strong>Apple / Google</strong> — обробка платежів за підписки</li>
+            </ul>
+            <p>Ми не продаємо ваші персональні дані третім сторонам.</p>
+
+            <h2>5. Передача даних</h2>
+            <p>Ваші дані передаються лише у таких випадках:</p>
+            <ul>
+                <li><strong>Учасникам списків</strong> — інші користувачі, яких ви запросили, бачать товари, ваш нікнейм та аватар</li>
+                <li><strong>Постачальникам послуг</strong> — сторонні сервіси, зазначені вище, виключно для роботи додатку</li>
+                <li><strong>За вимогою закону</strong> — для виконання правових зобов'язань</li>
             </ul>
 
-            <h2>Зберігання даних</h2>
+            <h2>6. Зберігання та безпека даних</h2>
+            <ul>
+                <li>Дані зберігаються на захищених серверах та передаються з використанням шифрування (HTTPS/TLS)</li>
+                <li>Дані списків також зберігаються локально на вашому пристрої для офлайн-доступу</li>
+                <li>Ми вживаємо належних заходів безпеки, але жоден метод передачі через Інтернет не є на 100% безпечним</li>
+            </ul>
+
+            <h2>7. Зберігання даних</h2>
             <ul>
                 <li>Дані облікового запису зберігаються поки ваш акаунт активний</li>
-                <li>Для видалення акаунту зверніться на <a href="mailto:support@shoplix.app">support@shoplix.app</a></li>
-                <li>Анонімні дані зберігаються до 14 місяців</li>
+                <li>Видалені списки остаточно видаляються через 30 днів</li>
+                <li>Анонімні дані аналітики зберігаються до 14 місяців</li>
+                <li>Для видалення акаунту та всіх пов'язаних даних зверніться на <a href="mailto:support@shoplix.app">support@shoplix.app</a></li>
             </ul>
 
-            <h2>Ваші права</h2>
+            <h2>8. Ваші права</h2>
             <p>Ви маєте право:</p>
             <ul>
                 <li>Отримати доступ до своїх даних</li>
-                <li>Запросити видалення свого акаунту та пов'язаних даних</li>
+                <li>Запросити виправлення неточних даних</li>
+                <li>Запросити видалення акаунту та пов'язаних даних</li>
                 <li>Відмовитися від аналітики (через налаштування пристрою)</li>
+                <li>Вимкнути push-сповіщення (через налаштування пристрою)</li>
             </ul>
 
-            <h2>Конфіденційність дітей</h2>
-            <p>Shoplix не призначений для дітей до 13 років. Ми свідомо не збираємо дані дітей.</p>
+            <h2>9. Конфіденційність дітей</h2>
+            <p>Shoplix не призначений для дітей до 13 років (або до 16 років у ЄС). Ми свідомо не збираємо дані дітей. Якщо ви вважаєте, що дитина надала нам особисті дані, зв'яжіться з нами.</p>
 
-            <h2>Зміни до цієї політики</h2>
-            <p>Ми можемо оновлювати цю Політику. Про зміни ми повідомимо через додаток.</p>
+            <h2>10. Міжнародна передача даних</h2>
+            <p>Ваші дані можуть передаватися та оброблятися в країнах, відмінних від вашої. Використовуючи додаток, ви погоджуєтесь на таку передачу. Ми забезпечуємо відповідний рівень захисту.</p>
 
-            <h2>Зв'язок з нами</h2>
+            <h2>11. Зміни до цієї політики</h2>
+            <p>Ми можемо оновлювати цю Політику. Про суттєві зміни ми повідомимо через додаток. Продовження використання додатку після змін означає прийняття оновленої політики.</p>
+
+            <h2>12. Зв'язок з нами</h2>
+            <p>Якщо у вас є запитання щодо цієї Політики, зверніться:</p>
             <p><strong>Email:</strong> <a href="mailto:privacy@shoplix.app">privacy@shoplix.app</a></p>
         </div>
     </div>
