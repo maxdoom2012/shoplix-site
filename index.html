@@ -733,10 +733,10 @@ function DarkProLanding() {
             <span>·</span>
             <button className={lang === 'uk' ? 'active' : ''} onClick={() => setLang('uk')}>UK</button>
           </div>
-          <button className="dp-nav-cta">
+          <a className="dp-nav-cta" href="#download">
             {tr('Download', 'Завантажити')}
             <i className="ph-bold ph-arrow-up-right" />
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -759,15 +759,15 @@ function DarkProLanding() {
               )}
             </p>
             <div className="dp-cta-row">
-              <button className="dp-btn dp-btn-primary">
+              <a className="dp-btn dp-btn-primary" href="https://apps.apple.com/app/id6759987277" target="_blank" rel="noopener" aria-label="Download on the App Store">
                 <i className="ph-bold ph-apple-logo" /> App Store
-              </button>
-              <button className="dp-btn dp-btn-ghost">
+              </a>
+              <a className="dp-btn dp-btn-ghost" href="https://play.google.com/store/apps/details?id=com.shoplix.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
                 <i className="ph-bold ph-google-play-logo" /> Google Play
-              </button>
-              <button className="dp-btn dp-btn-ghost">
+              </a>
+              <a className="dp-btn dp-btn-ghost" href="https://app.shoplix.app/" target="_blank" rel="noopener" aria-label={tr('Open Shoplix Web App', 'Відкрити веб-застосунок Shoplix')}>
                 <i className="ph-bold ph-globe" /> Web
-              </button>
+              </a>
             </div>
             <div className="dp-meta-row">
               <span>{tr('Free', 'Безкоштовно')}</span>
@@ -994,15 +994,15 @@ function DarkProLanding() {
           <em>{tr('Never twice.', 'Не купуй двічі.')}</em>
         </h2>
         <div className="dp-cta-row" style={{ justifyContent: 'center' }}>
-          <button className="dp-btn dp-btn-primary">
+          <a className="dp-btn dp-btn-primary" href="https://apps.apple.com/app/id6759987277" target="_blank" rel="noopener" aria-label="Download on the App Store">
             <i className="ph-bold ph-apple-logo" /> App Store
-          </button>
-          <button className="dp-btn dp-btn-ghost">
+          </a>
+          <a className="dp-btn dp-btn-ghost" href="https://play.google.com/store/apps/details?id=com.shoplix.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
             <i className="ph-bold ph-google-play-logo" /> Google Play
-          </button>
-          <button className="dp-btn dp-btn-ghost">
+          </a>
+          <a className="dp-btn dp-btn-ghost" href="https://app.shoplix.app/" target="_blank" rel="noopener" aria-label={tr('Open Shoplix Web App', 'Відкрити веб-застосунок Shoplix')}>
             <i className="ph-bold ph-globe" /> {tr('Open Web', 'Відкрити Веб')}
-          </button>
+          </a>
         </div>
       </section>
 
@@ -1010,9 +1010,9 @@ function DarkProLanding() {
       <footer className="dp-footer">
         <div>SHOPLIX · 2026 · UA</div>
         <div className="dp-footer-links">
-          <a>{tr('Privacy', 'Конфіденційність')}</a>
-          <a>{tr('Terms', 'Умови')}</a>
-          <a>support@shoplix.app</a>
+          <a href="privacy-policy.html">{tr('Privacy', 'Конфіденційність')}</a>
+          <a href="terms.html">{tr('Terms', 'Умови')}</a>
+          <a href="mailto:support@shoplix.app">support@shoplix.app</a>
         </div>
       </footer>
     </div>
