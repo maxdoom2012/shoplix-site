@@ -708,9 +708,14 @@ const { useEffect } = React;
 
 function DarkProLanding() {
   const [lang, setLang] = useState(() => {
-    const browserLang = (navigator.language || '').toLowerCase();
-    return browserLang.startsWith('uk') ? 'uk' : 'en';
+    const saved = localStorage.getItem('shoplix-lang');
+    if (saved === 'uk' || saved === 'en') return saved;
+    return (navigator.language || '').toLowerCase().startsWith('uk') ? 'uk' : 'en';
   });
+  useEffect(() => {
+    localStorage.setItem('shoplix-lang', lang);
+    document.documentElement.lang = lang;
+  }, [lang]);
   const tr = (en, uk) => lang === 'uk' ? uk : en;
 
   return (
