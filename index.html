@@ -707,7 +707,10 @@ const { useState } = React;
 const { useEffect } = React;
 
 function DarkProLanding() {
-  const [lang, setLang] = useState('en');
+  const [lang, setLang] = useState(() => {
+    const browserLang = (navigator.language || '').toLowerCase();
+    return browserLang.startsWith('uk') ? 'uk' : 'en';
+  });
   const tr = (en, uk) => lang === 'uk' ? uk : en;
 
   return (
