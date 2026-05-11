@@ -1,1375 +1,1063 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoplix — Shared Shopping Lists</title>
-    <meta name="description" content="Shoplix — shopping lists that actually understand how you shop. Two list types, item claiming, ghost items, and real-time sync.">
-    <meta name="theme-color" content="#1565C0">
-    <link rel="icon" type="image/png" href="app-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-    <style>
-        :root {
-            --blue-900: #0D47A1;
-            --blue-700: #1565C0;
-            --blue-600: #1976D2;
-            --blue-500: #2196F3;
-            --blue-400: #42A5F5;
-            --blue-100: #BBDEFB;
-            --blue-50: #E3F2FD;
-            --blue-wash: #F0F6FF;
-            --ink: #0F172A;
-            --ink-700: #334155;
-            --ink-500: #64748B;
-            --ink-400: #94A3B8;
-            --ink-200: #E2E8F0;
-            --ink-100: #F1F5F9;
-            --ink-50: #F8FAFC;
-            --white: #FFFFFF;
-            --green-600: #16A34A;
-            --green-500: #22C55E;
-            --green-100: #DCFCE7;
-            --green-50: #F0FDF4;
-            --amber-600: #D97706;
-            --amber-500: #F59E0B;
-            --amber-100: #FEF3C7;
-            --amber-50: #FFFBEB;
-            --rose-600: #E11D48;
-            --rose-50: #FFF1F2;
-            --violet-600: #7C3AED;
-            --violet-100: #EDE9FE;
-            --violet-50: #F5F3FF;
-            --radius-xl: 24px;
-            --radius-lg: 16px;
-            --radius-md: 12px;
-            --radius-sm: 8px;
-            --font-display: 'DM Serif Display', Georgia, serif;
-            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --shadow-sm: 0 1px 3px rgba(15,23,42,0.04), 0 1px 2px rgba(15,23,42,0.06);
-            --shadow-md: 0 4px 16px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.04);
-            --shadow-lg: 0 12px 40px rgba(15,23,42,0.08), 0 4px 12px rgba(15,23,42,0.04);
-            --shadow-xl: 0 20px 60px rgba(15,23,42,0.1), 0 8px 20px rgba(15,23,42,0.06);
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shoplix · Dark Pro</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
-        body {
-            font-family: var(--font-body);
-            color: var(--ink);
-            background: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
 
-        /* ── i18n ──────────────────────────────────── */
-        [data-lang] { display: none; }
-        [data-lang].active { display: block; }
-        span[data-lang] { display: none; }
-        span[data-lang].active { display: inline; }
+<link rel="stylesheet" href="prototype/styles.css" />
+<link rel="stylesheet" href="prototype/shoplix-ui.css" />
 
-        /* ── Container ─────────────────────────────── */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+<style>
+:root {
+  --dp-bg: #0a0b10;
+  --dp-bg-2: #0e1018;
+  --dp-card: #14161f;
+  --dp-card-2: #181b27;
+  --dp-line: rgba(255, 255, 255, 0.08);
+  --dp-line-strong: rgba(255, 255, 255, 0.14);
+  --dp-fg: #ECEEF3;
+  --dp-fg-2: rgba(236, 238, 243, 0.62);
+  --dp-fg-3: rgba(236, 238, 243, 0.42);
+  --dp-blue: #6382FF;
+  --dp-violet: #C18AFF;
+  --dp-green: #4ade80;
+}
 
-        /* ── Nav ───────────────────────────────────── */
-        .nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            padding: 12px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
-            background: rgba(255,255,255,0.82);
-            border-bottom: 1px solid rgba(226,232,240,0.6);
-            transition: box-shadow 0.3s ease;
-        }
-        .nav.scrolled { box-shadow: var(--shadow-sm); }
-        .nav-brand {
-            display: flex; align-items: center; gap: 10px;
-            text-decoration: none; color: var(--ink);
-        }
-        .nav-brand img { width: 36px; height: 36px; border-radius: 10px; }
-        .nav-brand span {
-            font-family: var(--font-display);
-            font-size: 22px;
-        }
-        .nav-right {
-            display: flex; align-items: center; gap: 12px;
-        }
-        .lang-toggle {
-            display: flex; gap: 2px;
-            background: var(--blue-50);
-            border-radius: 20px;
-            padding: 3px;
-        }
-        .lang-toggle button {
-            padding: 5px 14px;
-            border: none;
-            border-radius: 18px;
-            background: transparent;
-            color: var(--blue-700);
-            font-family: var(--font-body);
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.25s ease;
-        }
-        .lang-toggle button.active {
-            background: var(--blue-700);
-            color: white;
-            box-shadow: 0 2px 8px rgba(21,101,192,0.25);
-        }
-        .nav-cta {
-            display: none;
-            padding: 8px 20px;
-            background: var(--blue-700);
-            color: white;
-            border: none;
-            border-radius: 20px;
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-        .nav-cta:hover { background: var(--blue-900); transform: translateY(-1px); }
-        .nav-web {
-            display: none;
-            align-items: center;
-            gap: 5px;
-            padding: 8px 16px;
-            color: var(--ink-700);
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-        .nav-web i { font-size: 16px; color: var(--blue-600); }
-        .nav-web:hover { color: var(--blue-700); }
-        @media (min-width: 640px) { .nav-cta, .nav-web { display: inline-flex; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--dp-bg);
+  color: var(--dp-fg);
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01";
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; cursor: pointer; }
+button { cursor: pointer; font-family: inherit; border: 0; }
+img { display: block; max-width: 100%; }
 
+.dp-page { min-height: 100vh; }
 
-        /* ── Hero ──────────────────────────────────── */
-        .hero {
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 48px;
-            padding: 120px 24px 80px;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .hero::before {
-            content: '';
-            position: fixed;
-            top: -200px; right: -200px;
-            width: 900px; height: 900px;
-            background: radial-gradient(circle, rgba(25,118,210,0.06) 0%, transparent 65%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        .hero::after {
-            content: '';
-            position: fixed;
-            bottom: -200px; left: -200px;
-            width: 700px; height: 700px;
-            background: radial-gradient(circle, rgba(22,163,74,0.04) 0%, transparent 65%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: -1;
-        }
+/* ─── Nav ──────────────────────────────────────────────────────────── */
+.dp-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  border-bottom: 1px solid var(--dp-line);
+  background: rgba(10, 11, 16, 0.72);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+}
+.dp-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.dp-brand-mark {
+  width: 28px; height: 28px;
+  border-radius: 7px;
+  background: url('assets/app-icon.png') center/cover no-repeat;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
+}
+.dp-nav-links { display: flex; gap: 28px; font-size: 13.5px; color: var(--dp-fg-2); }
+.dp-nav-links a:hover { color: var(--dp-fg); }
+.dp-nav-right { display: flex; gap: 14px; align-items: center; }
+.dp-lang {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 11.5px; color: var(--dp-fg-3);
+  letter-spacing: 0.06em;
+  display: flex; gap: 8px;
+}
+.dp-lang button { background: transparent; color: inherit; padding: 0; font: inherit; }
+.dp-lang button.active { color: var(--dp-fg); }
+.dp-nav-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 16px; border-radius: 999px;
+  background: var(--dp-fg); color: var(--dp-bg);
+  font-size: 13.5px; font-weight: 600;
+  transition: background .15s;
+}
+.dp-nav-cta:hover { background: #C9D2FF; }
 
-        .hero-text { position: relative; z-index: 1; }
-        .hero-text h1 {
-            font-family: var(--font-display);
-            font-size: clamp(40px, 6vw, 64px);
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-        .hero-text h1 .highlight {
-            color: var(--blue-700);
-            position: relative;
-        }
-        .hero-text h1 .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 2px; left: 0; right: 0;
-            height: 8px;
-            background: var(--blue-100);
-            border-radius: 4px;
-            z-index: -1;
-        }
-        .hero-text .tagline {
-            font-size: clamp(17px, 2.5vw, 20px);
-            color: var(--ink-500);
-            max-width: 480px;
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
+/* ─── Hero ─────────────────────────────────────────────────────────── */
+.dp-hero {
+  position: relative;
+  padding: 80px 60px 100px;
+  overflow: hidden;
+}
+.dp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 30%, transparent 80%);
+          mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 30%, transparent 80%);
+  pointer-events: none;
+}
+.dp-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(99, 130, 255, 0.20), transparent 40%),
+    radial-gradient(circle at 90% 30%, rgba(193, 138, 255, 0.12), transparent 35%);
+  pointer-events: none;
+}
+.dp-hero-grid {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.dp-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px 6px 10px;
+  border-radius: 999px;
+  background: rgba(99, 130, 255, 0.10);
+  border: 1px solid rgba(99, 130, 255, 0.22);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: #A3B6FF;
+  margin-bottom: 28px;
+}
+.dp-eyebrow-dot {
+  width: 6px; height: 6px;
+  border-radius: 99px;
+  background: var(--dp-blue);
+  box-shadow: 0 0 8px var(--dp-blue);
+  animation: dpPulse 2s ease-in-out infinite;
+}
+@keyframes dpPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+.dp-h1 {
+  font-size: clamp(48px, 6vw, 84px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  color: #fff;
+  margin: 0 0 24px;
+}
+.dp-h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--dp-violet), var(--dp-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.dp-sub {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--dp-fg-2);
+  max-width: 540px;
+  margin: 0 0 36px;
+}
+.dp-cta-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.dp-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-weight: 600; font-size: 14.5px;
+  transition: all .15s;
+}
+.dp-btn-primary { background: var(--dp-fg); color: var(--dp-bg); }
+.dp-btn-primary:hover { background: #C9D2FF; transform: translateY(-1px); }
+.dp-btn-ghost {
+  background: transparent;
+  color: rgba(236, 238, 243, 0.85);
+  border: 1px solid var(--dp-line-strong);
+  font-weight: 500;
+}
+.dp-btn-ghost:hover { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.22); }
 
-        .hero-badges {
-            display: flex; flex-wrap: wrap; gap: 12px;
-            margin-bottom: 36px;
-        }
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 8px 16px;
-            background: var(--ink-50);
-            border: 1px solid var(--ink-200);
-            border-radius: 40px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--ink-700);
-        }
-        .hero-badge i { color: var(--blue-600); font-size: 16px; }
+.dp-meta-row {
+  display: flex; gap: 28px; flex-wrap: wrap;
+  margin-top: 44px;
+  padding-top: 28px;
+  border-top: 1px solid var(--dp-line);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 11.5px;
+  color: var(--dp-fg-3);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.dp-meta-row span { display: flex; align-items: center; gap: 8px; }
+.dp-meta-row span::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--dp-green);
+  border-radius: 99px;
+}
+.dp-meta-row span.muted::before { background: rgba(255, 255, 255, 0.3); }
 
-        .store-row {
-            display: flex; gap: 16px;
-            flex-wrap: wrap;
-        }
-        .store-row a {
-            display: block;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border-radius: var(--radius-sm);
-        }
-        .store-row a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-        }
-        .store-row { align-items: center; }
-        .store-row img { height: 52px; border-radius: var(--radius-sm); }
-        .gplay-badge { height: 76px !important; margin: -12px 0; }
+.dp-phone-stage {
+  position: relative;
+  display: grid; place-items: center;
+  min-height: 600px;
+}
+.dp-phone-stage::before {
+  content: '';
+  position: absolute;
+  inset: 5% 0;
+  border-radius: 60px;
+  background: radial-gradient(circle, rgba(99, 130, 255, 0.45) 0%, transparent 65%);
+  filter: blur(50px);
+  z-index: 0;
+}
+.dp-phone-stage > * { position: relative; z-index: 1; }
 
-        /* Phone Mockup */
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        .phone-mockup {
-            width: 280px;
-            height: 560px;
-            background: var(--ink);
-            border-radius: 44px;
-            padding: 12px;
-            box-shadow: var(--shadow-xl), 0 0 0 1px rgba(255,255,255,0.1) inset;
-            position: relative;
-            animation: phoneFloat 6s ease-in-out infinite;
-        }
-        @keyframes phoneFloat {
-            0%, 100% { transform: translateY(0) rotate(-2deg); }
-            50% { transform: translateY(-12px) rotate(-2deg); }
-        }
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            border-radius: 34px;
-            background: linear-gradient(135deg, var(--blue-50) 0%, var(--green-50) 50%, var(--amber-50) 100%);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        .phone-screen img {
-            width: 75%;
-            height: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.1));
-        }
-        .phone-notch {
-            position: absolute;
-            top: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 28px;
-            background: var(--ink);
-            border-radius: 20px;
-            z-index: 2;
-        }
+/* Floating callouts on phone */
+.dp-callout {
+  position: absolute;
+  z-index: 3;
+  background: rgba(20, 22, 31, 0.92);
+  border: 1px solid var(--dp-line-strong);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  animation: dpFloat 6s ease-in-out infinite;
+}
+.dp-callout strong { color: #fff; font-weight: 600; }
+.dp-callout span { color: var(--dp-fg-3); }
+.dp-callout i { color: var(--dp-blue); font-size: 18px; }
+.dp-callout-1 { top: 18%; left: -20px; }
+.dp-callout-2 { bottom: 22%; right: -10px; animation-delay: 2s; }
+.dp-callout-2 i { color: var(--dp-violet); }
+@keyframes dpFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
 
-        /* Floating elements around phone */
-        .float-card {
-            position: absolute;
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 12px 16px;
-            box-shadow: var(--shadow-lg);
-            display: flex; align-items: center; gap: 10px;
-            font-size: 13px;
-            font-weight: 500;
-            white-space: nowrap;
-            animation: floatCard 4s ease-in-out infinite;
-        }
-        .float-card i { font-size: 20px; }
-        .float-card.card-1 {
-            top: 15%; right: -20px;
-            animation-delay: 0s;
-        }
-        .float-card.card-1 i { color: var(--green-600); }
-        .float-card.card-2 {
-            bottom: 25%; left: -30px;
-            animation-delay: 1.5s;
-        }
-        .float-card.card-2 i { color: var(--blue-600); }
-        .float-card.card-3 {
-            bottom: 10%; right: -10px;
-            animation-delay: 3s;
-        }
-        .float-card.card-3 i { color: var(--amber-600); }
-        @keyframes floatCard {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
+/* ─── Section base ─────────────────────────────────────────────────── */
+.dp-section {
+  position: relative;
+  padding: 110px 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.dp-section-head { max-width: 720px; margin: 0 auto 64px; text-align: center; }
+.dp-section-eyebrow {
+  display: inline-block;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dp-fg-3);
+  margin-bottom: 14px;
+}
+.dp-h2 {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #fff;
+  margin: 0 0 18px;
+}
+.dp-h2 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--dp-violet), var(--dp-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.dp-section-sub {
+  font-size: 17px;
+  color: var(--dp-fg-2);
+  line-height: 1.6;
+  margin: 0;
+}
 
-        /* ── Feature Showcase (Alternating) ────────── */
-        .showcase-section {
-            padding: 100px 24px;
-            position: relative;
-            overflow: hidden;
-        }
-        .showcase-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            opacity: 0.5;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .showcase-section.green-tint { background: linear-gradient(135deg, var(--green-50) 0%, var(--white) 60%); }
-        .showcase-section.blue-tint { background: linear-gradient(135deg, var(--white) 40%, var(--blue-50) 100%); }
-        /* amber-tint kept for potential future use */
+/* ─── Two modes ────────────────────────────────────────────────────── */
+.dp-modes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.dp-mode-card {
+  position: relative;
+  border: 1px solid var(--dp-line);
+  background: linear-gradient(180deg, var(--dp-card) 0%, var(--dp-card-2) 100%);
+  border-radius: 24px;
+  padding: 40px 36px;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.dp-mode-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 200px;
+  background: radial-gradient(ellipse 80% 100% at 50% 0%, var(--dp-mode-glow, rgba(99, 130, 255, 0.18)), transparent);
+  pointer-events: none;
+}
+.dp-mode-card.event { --dp-mode-glow: rgba(193, 138, 255, 0.20); }
+.dp-mode-tag {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--dp-line-strong);
+  font-size: 12.5px; font-weight: 600;
+  margin-bottom: 18px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.dp-mode-tag i { color: var(--dp-blue); font-size: 14px; }
+.dp-mode-card.event .dp-mode-tag i { color: var(--dp-violet); }
+.dp-mode-title {
+  position: relative;
+  font-size: 32px; font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 10px;
+}
+.dp-mode-desc {
+  position: relative;
+  font-size: 15px; color: var(--dp-fg-2);
+  max-width: 360px;
+  line-height: 1.55;
+  margin: 0 0 32px;
+  min-height: 116px;
+}
+.dp-mode-phone {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 0;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5));
+}
+.dp-mode-bullets {
+  position: relative;
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 10px;
+  text-align: left; width: 100%;
+  max-width: 320px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+}
+.dp-mode-bullets li {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--dp-fg-2);
+  padding: 10px 0;
+  border-top: 1px dashed var(--dp-line);
+}
+.dp-mode-bullets li:first-child { border-top: 0; }
+.dp-mode-bullets i {
+  color: var(--dp-blue); font-size: 14px;
+  flex-shrink: 0;
+  font-family: 'phosphor';
+}
+.dp-mode-card.event .dp-mode-bullets i { color: var(--dp-violet); }
 
-        .showcase-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        .showcase-grid.reverse { direction: rtl; }
-        .showcase-grid.reverse > * { direction: ltr; }
+/* ─── Live awareness ───────────────────────────────────────────────── */
+.dp-live-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center; }
+.dp-live-feature {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 16px;
+  padding: 22px 0;
+  border-top: 1px solid var(--dp-line);
+}
+.dp-live-feature:last-child { border-bottom: 1px solid var(--dp-line); }
+.dp-live-feature i {
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  border-radius: 10px;
+  background: rgba(99, 130, 255, 0.10);
+  border: 1px solid rgba(99, 130, 255, 0.20);
+  color: var(--dp-blue);
+  font-size: 18px;
+}
+.dp-live-feature h4 { margin: 0 0 4px; font-size: 16px; font-weight: 600; color: #fff; letter-spacing: -0.01em; }
+.dp-live-feature p { margin: 0; font-size: 14.5px; color: var(--dp-fg-2); line-height: 1.5; }
+.dp-live-mock {
+  position: relative;
+  border: 1px solid var(--dp-line);
+  background: var(--dp-card);
+  border-radius: 18px;
+  padding: 32px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 12.5px;
+  color: var(--dp-fg-2);
+  min-height: 420px;
+}
+.dp-live-mock-head {
+  display: flex; justify-content: space-between;
+  font-size: 11px; color: var(--dp-fg-3); letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--dp-line);
+}
+.dp-live-mock-head .live-dot {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--dp-green);
+}
+.dp-live-mock-head .live-dot::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--dp-green);
+  border-radius: 99px;
+  box-shadow: 0 0 6px var(--dp-green);
+  animation: dpPulse 1.5s ease-in-out infinite;
+}
+.dp-live-row {
+  display: grid;
+  grid-template-columns: 80px 24px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--dp-line);
+}
+.dp-live-row:last-child { border-bottom: 0; }
+.dp-live-row .who { color: var(--dp-fg-3); font-size: 11px; }
+.dp-live-row .who.M { color: #A3B6FF; }
+.dp-live-row .who.A { color: #FFC36B; }
+.dp-live-row .who.O { color: var(--dp-violet); }
+.dp-live-row .arrow { color: var(--dp-fg-3); }
+.dp-live-row .item { color: var(--dp-fg); }
+.dp-live-row .item s { color: var(--dp-fg-3); text-decoration-color: var(--dp-fg-3); }
+.dp-live-row .time { font-size: 11px; color: var(--dp-fg-3); }
+.dp-live-row .badge {
+  font-size: 10.5px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--dp-green);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.dp-live-row .badge.claim { background: rgba(99, 130, 255, 0.12); color: var(--dp-blue); }
+.dp-live-row .badge.del { background: rgba(255, 100, 100, 0.10); color: #ff8a8a; }
 
-        .showcase-text .showcase-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-        }
-        .green-tint .showcase-tag { background: var(--green-100); color: var(--green-600); }
-        .blue-tint .showcase-tag { background: var(--blue-100); color: var(--blue-700); }
-        .amber-tint .showcase-tag { background: var(--amber-100); color: var(--amber-600); }
+/* ─── Smart Catalog ───────────────────────────────────────────────── */
+.dp-catalog {
+  border: 1px solid var(--dp-line);
+  background: linear-gradient(180deg, var(--dp-card) 0%, var(--dp-card-2) 100%);
+  border-radius: 24px;
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.dp-catalog-left h3 {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: #fff;
+  margin: 0 0 16px;
+}
+.dp-catalog-left p { font-size: 16px; color: var(--dp-fg-2); line-height: 1.55; margin: 0 0 24px; }
+.dp-catalog-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.dp-stat { display: flex; gap: 14px; align-items: flex-start; }
+.dp-stat strong {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: rgba(99, 130, 255, 0.10);
+  border: 1px solid rgba(99, 130, 255, 0.22);
+  color: var(--dp-blue);
+  flex-shrink: 0;
+}
+.dp-stat span {
+  padding-top: 8px;
+  line-height: 1.45;
+}
+.dp-stat span {
+  font-size: 13px; color: var(--dp-fg-3);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  letter-spacing: 0.04em;
+}
+.dp-catalog-right {
+  position: relative;
+  display: grid; place-items: center;
+  height: 100%;
+}
 
-        .showcase-text h2 {
-            font-family: var(--font-display);
-            font-size: clamp(28px, 4vw, 40px);
-            font-weight: 400;
-            letter-spacing: -0.01em;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-        .showcase-text > p {
-            font-size: 17px;
-            color: var(--ink-500);
-            line-height: 1.7;
-            margin-bottom: 32px;
-            max-width: 480px;
-        }
+/* ─── CTA ──────────────────────────────────────────────────────────── */
+.dp-cta {
+  margin: 0 60px 110px;
+  max-width: 1280px;
+  margin-left: auto; margin-right: auto;
+  border: 1px solid var(--dp-line);
+  background:
+    radial-gradient(ellipse 100% 100% at 50% 0%, rgba(99, 130, 255, 0.20), transparent 70%),
+    linear-gradient(180deg, var(--dp-card) 0%, var(--dp-card-2) 100%);
+  border-radius: 28px;
+  padding: 80px 56px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.dp-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent);
+          mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent);
+  pointer-events: none;
+}
+.dp-cta > * { position: relative; }
+.dp-cta h2 {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #fff;
+  margin: 0 0 18px;
+}
+.dp-cta h2 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--dp-violet), var(--dp-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.dp-cta p { font-size: 17px; color: var(--dp-fg-2); margin: 0 auto 36px; max-width: 540px; line-height: 1.55; }
 
-        .benefit-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .benefit-card {
-            display: flex; align-items: flex-start; gap: 14px;
-            padding: 16px 20px;
-            background: var(--white);
-            border: 1px solid var(--ink-200);
-            border-radius: var(--radius-md);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .benefit-card:hover {
-            transform: translateX(4px);
-            box-shadow: var(--shadow-md);
-        }
-        .benefit-card i {
-            font-size: 22px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-        .green-tint .benefit-card i { color: var(--green-600); }
-        .blue-tint .benefit-card i { color: var(--blue-600); }
-        .amber-tint .benefit-card i { color: var(--amber-600); }
+/* ─── Footer ───────────────────────────────────────────────────────── */
+.dp-footer {
+  border-top: 1px solid var(--dp-line);
+  padding: 40px 60px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px;
+  color: var(--dp-fg-3);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  letter-spacing: 0.04em;
+}
+.dp-footer-links { display: flex; gap: 24px; }
+.dp-footer-links a:hover { color: var(--dp-fg); }
 
-        .benefit-card h4 {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-        .benefit-card p {
-            font-size: 13px;
-            color: var(--ink-500);
-            line-height: 1.5;
-        }
+/* ─── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 980px) {
+  .dp-hero-grid, .dp-modes-grid, .dp-live-grid, .dp-catalog { grid-template-columns: 1fr; gap: 40px; }
+  .dp-hero { padding: 60px 24px 60px; }
+  .dp-section { padding: 70px 24px; }
+  .dp-cta { margin: 0 24px 70px; padding: 56px 28px; }
+  .dp-footer { padding: 32px 24px; flex-direction: column; gap: 16px; }
+  .dp-callout { display: none; }
+}
+/* ─── Animated background orbs ─── */
+.dp-bg-orbs {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  overflow: hidden;
+}
+.dp-orb {
+  position: absolute;
+  width: 560px; height: 560px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  will-change: transform;
+}
+.dp-orb-blue { background: #4254FF; top: -160px; left: -120px; animation: dp-drift-a 22s ease-in-out infinite alternate; }
+.dp-orb-violet { background: #8B5CF6; top: 30vh; right: -160px; animation: dp-drift-b 28s ease-in-out infinite alternate; }
+@keyframes dp-drift-a {
+  0% { transform: translate3d(0,0,0) scale(1); }
+  100% { transform: translate3d(160px, 120px, 0) scale(1.18); }
+}
+@keyframes dp-drift-b {
+  0% { transform: translate3d(0,0,0) scale(1.05); }
+  100% { transform: translate3d(-180px, 200px, 0) scale(.9); }
+}
+.dp-page { position: relative; z-index: 1; }
+html { scroll-behavior: smooth; }
 
-        /* Showcase visual (decorative) */
-        .showcase-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        .showcase-illustration {
-            width: 100%;
-            max-width: 420px;
-            aspect-ratio: 4 / 3;
-            border-radius: var(--radius-xl);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .green-tint .showcase-illustration {
-            background: linear-gradient(135deg, var(--green-100) 0%, var(--green-50) 100%);
-            border: 1px solid rgba(22,163,74,0.15);
-        }
-        .blue-tint .showcase-illustration {
-            background: linear-gradient(135deg, var(--blue-100) 0%, var(--blue-50) 100%);
-            border: 1px solid rgba(25,118,210,0.15);
-        }
-        .amber-tint .showcase-illustration {
-            background: linear-gradient(135deg, var(--amber-100) 0%, var(--amber-50) 100%);
-            border: 1px solid rgba(217,119,6,0.15);
-        }
-        .showcase-illustration i {
-            font-size: 80px;
-            opacity: 0.3;
-        }
-        .green-tint .showcase-illustration i { color: var(--green-600); }
-        .blue-tint .showcase-illustration i { color: var(--blue-600); }
-        .amber-tint .showcase-illustration i { color: var(--amber-600); }
+/* ─── Scroll reveal ─── */
+.dp-section-head,
+.dp-mode-card,
+.dp-live-feature,
+.dp-catalog-left,
+.dp-catalog-right,
+.dp-hero-copy,
+.dp-phone-stage,
+.dp-cta,
+.dp-footer {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+.dp-section-head.is-in,
+.dp-mode-card.is-in,
+.dp-live-feature.is-in,
+.dp-catalog-left.is-in,
+.dp-catalog-right.is-in,
+.dp-hero-copy.is-in,
+.dp-phone-stage.is-in,
+.dp-cta.is-in,
+.dp-footer.is-in {
+  opacity: 1;
+  transform: none;
+}
+/* Stagger live features */
+.dp-live-feature:nth-child(1) { transition-delay: .05s; }
+.dp-live-feature:nth-child(2) { transition-delay: .15s; }
+.dp-live-feature:nth-child(3) { transition-delay: .25s; }
+/* Stagger catalog stats inside catalog-left */
+.dp-catalog-left.is-in .dp-stat { animation: dp-fade-up .7s cubic-bezier(.2,.7,.2,1) both; }
+.dp-catalog-left.is-in .dp-stat:nth-child(1) { animation-delay: .15s; }
+.dp-catalog-left.is-in .dp-stat:nth-child(2) { animation-delay: .25s; }
+.dp-catalog-left.is-in .dp-stat:nth-child(3) { animation-delay: .35s; }
+.dp-catalog-left.is-in .dp-stat:nth-child(4) { animation-delay: .45s; }
+@keyframes dp-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+/* Hero stage: subtle continuous float */
+.dp-phone-stage.is-in > div { animation: dp-float 7s ease-in-out infinite; }
+@keyframes dp-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+/* Mode-card hover lift */
+.dp-mode-card { transition: opacity .9s, transform .9s, box-shadow .35s, border-color .35s; }
+.dp-mode-card.is-in:hover {
+  transform: translateY(-4px);
+  border-color: rgba(166, 178, 255, 0.18);
+  box-shadow: 0 30px 60px -30px rgba(20, 30, 90, 0.6);
+}
+/* Stat cards hover */
+.dp-stat { transition: background .25s, transform .25s, border-color .25s; }
+.dp-stat:hover { transform: translateY(-2px); border-color: rgba(166, 178, 255, 0.18); }
 
-        /* Floating mini-cards inside illustration */
-        .illust-card {
-            position: absolute;
-            background: var(--white);
-            border-radius: var(--radius-md);
-            padding: 10px 14px;
-            box-shadow: var(--shadow-md);
-            font-size: 13px;
-            font-weight: 500;
-            display: flex; align-items: center; gap: 8px;
-        }
-        .illust-card .dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .illust-card .dot.green { background: var(--green-500); }
-        .illust-card .dot.blue { background: var(--blue-500); }
-        .illust-card .dot.amber { background: var(--amber-500); }
-        .illust-card .dot.rose { background: var(--rose-600); }
-        .illust-card .line {
-            width: 60px; height: 4px;
-            border-radius: 2px;
-            background: var(--ink-200);
-        }
-        .illust-card .line.short { width: 36px; }
-        .illust-card .check { color: var(--green-600); font-weight: 700; }
+@media (prefers-reduced-motion: reduce) {
+  .dp-orb, .dp-phone-stage.is-in > div { animation: none !important; }
+  .dp-section-head, .dp-mode-card, .dp-live-feature, .dp-catalog-left,
+  .dp-catalog-right, .dp-hero-copy, .dp-phone-stage, .dp-cta, .dp-footer {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+}
 
-        /* ── How It Works ──────────────────────────── */
-        .how {
-            padding: 100px 24px;
-            background: var(--ink-50);
-            position: relative;
-        }
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(28px, 5vw, 42px);
-            font-weight: 400;
-            letter-spacing: -0.01em;
-            text-align: center;
-            margin-bottom: 12px;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: var(--ink-500);
-            font-size: 17px;
-            max-width: 520px;
-            margin: 0 auto 56px;
-            line-height: 1.6;
-        }
-        .how-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            max-width: 960px;
-            margin: 0 auto;
-            position: relative;
-        }
-        /* connecting line */
-        .how-steps::before {
-            content: '';
-            position: absolute;
-            top: 44px;
-            left: calc(16.66% + 36px);
-            right: calc(16.66% + 36px);
-            height: 2px;
-            background: linear-gradient(90deg, var(--blue-100), var(--blue-400), var(--blue-100));
-            border-radius: 1px;
-        }
-        .how-step {
-            text-align: center;
-            position: relative;
-        }
-        .step-num {
-            width: 88px; height: 88px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
-            color: var(--white);
-            font-family: var(--font-display);
-            font-size: 32px;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 24px;
-            box-shadow: 0 8px 24px rgba(21,101,192,0.25);
-            position: relative;
-            z-index: 1;
-        }
-        .how-step h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .how-step p {
-            font-size: 15px;
-            color: var(--ink-500);
-            line-height: 1.6;
-            max-width: 260px;
-            margin: 0 auto;
-        }
-
-        /* ── Marquee ───────────────────────────────── */
-        .marquee-section {
-            padding: 80px 0;
-            overflow: hidden;
-            background: var(--white);
-        }
-        .marquee-section .section-title { margin-bottom: 48px; }
-        .marquee-row {
-            display: flex;
-            gap: 16px;
-            animation: marqueeScroll 30s linear infinite;
-            width: max-content;
-            margin-bottom: 16px;
-        }
-        .marquee-row.reverse { animation-direction: reverse; }
-        .marquee-row.slow { animation-duration: 40s; }
-        @keyframes marqueeScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .marquee-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 24px;
-            background: var(--ink-50);
-            border: 1px solid var(--ink-200);
-            border-radius: 40px;
-            font-size: 15px;
-            font-weight: 500;
-            white-space: nowrap;
-            transition: all 0.25s ease;
-        }
-        .marquee-pill:hover {
-            background: var(--blue-50);
-            border-color: var(--blue-100);
-            transform: scale(1.03);
-        }
-        .marquee-pill i { font-size: 20px; color: var(--blue-600); }
-        .marquee-pill.green i { color: var(--green-600); }
-        .marquee-pill.amber i { color: var(--amber-600); }
-        .marquee-pill.rose i { color: var(--rose-600); }
-        .marquee-pill.violet i { color: var(--violet-600); }
-
-        /* ── Bento Grid ────────────────────────────── */
-        .bento { padding: 100px 24px; }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .bento-card {
-            background: var(--white);
-            border: 1px solid var(--ink-200);
-            border-radius: var(--radius-xl);
-            padding: 36px 32px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .bento-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: transparent;
-        }
-        .bento-card.span-2 { grid-column: span 2; }
-        .bento-card.tall { grid-row: span 2; display: flex; flex-direction: column; justify-content: center; }
-
-        .bento-card .bento-accent {
-            position: absolute;
-            top: 0; right: 0;
-            width: 200px; height: 200px;
-            border-radius: 50%;
-            opacity: 0.06;
-            pointer-events: none;
-            transform: translate(30%, -30%);
-        }
-
-        .bento-icon {
-            width: 56px; height: 56px;
-            border-radius: var(--radius-lg);
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 20px;
-            font-size: 26px;
-        }
-        .bento-icon.blue { background: var(--blue-50); color: var(--blue-600); }
-        .bento-icon.green { background: var(--green-50); color: var(--green-600); }
-        .bento-icon.amber { background: var(--amber-50); color: var(--amber-600); }
-        .bento-icon.rose { background: var(--rose-50); color: var(--rose-600); }
-        .bento-icon.violet { background: var(--violet-50); color: var(--violet-600); }
-
-        .bento-card h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-        .bento-card.span-2 h3 {
-            font-family: var(--font-display);
-            font-size: clamp(22px, 3vw, 28px);
-            font-weight: 400;
-        }
-        .bento-card p {
-            font-size: 15px;
-            color: var(--ink-500);
-            line-height: 1.6;
-        }
-        .bento-card .bento-tags {
-            display: flex; flex-wrap: wrap; gap: 8px;
-            margin-top: 16px;
-        }
-        .bento-card .bento-tag {
-            padding: 6px 14px;
-            background: var(--ink-50);
-            border: 1px solid var(--ink-200);
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--ink-700);
-        }
-
-        /* ── CTA Section ───────────────────────────── */
-        .cta-section {
-            padding: 100px 24px;
-            background: linear-gradient(135deg, var(--blue-700) 0%, var(--blue-900) 100%);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%; right: -20%;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            bottom: -40%; left: -10%;
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(34,197,94,0.1) 0%, transparent 60%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .cta-section h2 {
-            font-family: var(--font-display);
-            font-size: clamp(28px, 5vw, 44px);
-            color: var(--white);
-            margin-bottom: 16px;
-            position: relative; z-index: 1;
-        }
-        .cta-section p {
-            color: rgba(255,255,255,0.75);
-            font-size: 18px;
-            max-width: 480px;
-            margin: 0 auto 40px;
-            position: relative; z-index: 1;
-        }
-        .cta-section .store-row {
-            justify-content: center;
-            position: relative; z-index: 1;
-        }
-        .cta-mascot {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 32px;
-            border-radius: 30px;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
-            position: relative; z-index: 1;
-        }
-
-        /* ── Footer ────────────────────────────────── */
-        footer {
-            padding: 48px 24px;
-            text-align: center;
-            background: var(--ink-50);
-            border-top: 1px solid var(--ink-200);
-        }
-        .footer-links {
-            display: flex; gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 16px;
-        }
-        footer a {
-            color: var(--blue-700);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: opacity 0.2s;
-        }
-        footer a:hover { opacity: 0.7; }
-        .copyright {
-            font-size: 13px;
-            color: var(--ink-400);
-        }
-
-        /* ── Scroll Reveal ─────────────────────────── */
-        /* Content is visible by default. Animation only activates when JS adds .reveal-ready to html */
-        .reveal-ready .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .reveal-ready .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-ready .hero-text > * {
-            opacity: 0;
-            transform: translateY(24px);
-            animation: fadeUp 0.7s ease forwards;
-        }
-        .reveal-ready .hero-text > *:nth-child(1) { animation-delay: 0.05s; }
-        .reveal-ready .hero-text > *:nth-child(2) { animation-delay: 0.15s; }
-        .reveal-ready .hero-text > *:nth-child(3) { animation-delay: 0.25s; }
-        .reveal-ready .hero-text > *:nth-child(4) { animation-delay: 0.35s; }
-        .reveal-ready .hero-visual {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s ease 0.3s forwards;
-        }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ── Responsive ────────────────────────────── */
-        @media (max-width: 900px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 48px;
-                min-height: auto;
-                padding-top: 100px;
-                padding-bottom: 60px;
-            }
-            .hero-text { order: 1; }
-            .hero-visual { order: 2; }
-            .hero-text .tagline { margin-left: auto; margin-right: auto; }
-            .hero-badges { justify-content: center; }
-            .store-row { justify-content: center; }
-            .showcase-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-            .showcase-grid.reverse { direction: ltr; }
-            .showcase-text > p { margin-left: auto; margin-right: auto; }
-            .showcase-visual { order: -1; }
-            .benefit-card:hover { transform: none; }
-            .bento-grid { grid-template-columns: repeat(2, 1fr); }
-            .bento-card.span-2 { grid-column: span 2; }
-            .bento-card.tall { grid-row: span 1; }
-            .how-steps::before { display: none; }
-        }
-        @media (max-width: 640px) {
-            .hero { padding: 90px 20px 48px; }
-            .phone-mockup { width: 220px; height: 440px; border-radius: 36px; padding: 10px; }
-            .phone-screen { border-radius: 28px; }
-            .phone-notch { width: 100px; height: 24px; top: 10px; }
-            .float-card { display: none; }
-            .how-steps { grid-template-columns: 1fr; gap: 32px; }
-            .bento-grid { grid-template-columns: 1fr; }
-            .bento-card.span-2 { grid-column: span 1; }
-            .bento-card { padding: 28px 24px; }
-            .store-row { flex-direction: column; align-items: center; }
-            .store-row img { height: 48px; }
-            .gplay-badge { height: 72px !important; }
-            .showcase-section { padding: 64px 20px; }
-            .showcase-illustration { max-width: 300px; }
-        }
-    </style>
+</style>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="background:#0a0b10">
+    <defs>
+      <radialGradient id="bp-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#A6B2FF" stop-opacity="0.35"/>
+        <stop offset="60%" stop-color="#A6B2FF" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="100" height="100" fill="url(#bp-glow)"/>
+    <g transform="translate(50,50)">
+      <circle r="14" fill="none" stroke="#1a1d2a" stroke-width="2"/>
+      <circle r="14" fill="none" stroke="#A6B2FF" stroke-width="2"
+              stroke-dasharray="22 66" stroke-linecap="round"
+              transform="rotate(-90)">
+        <animateTransform attributeName="transform" type="rotate"
+                          from="0" to="360" dur="1.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="3" fill="#A6B2FF">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </svg>
+</template>
 </head>
 <body>
+<div id="root"></div>
 
-<!-- ═══ Nav ═══ -->
-<nav class="nav" id="nav">
-    <a href="#" class="nav-brand">
-        <img src="app-icon.png" alt="Shoplix">
-        <span>Shoplix</span>
-    </a>
-    <div class="nav-right">
-        <div class="lang-toggle">
-            <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
-            <button id="btn-uk" onclick="switchLang('uk')">UK</button>
-        </div>
-        <a href="https://app.shoplix.app/" class="nav-web" target="_blank" rel="noopener">
-            <i class="ph ph-browser"></i>
-            <span data-lang="en" class="active">Web App</span>
-            <span data-lang="uk">Веб-додаток</span>
-        </a>
-        <a href="#download" class="nav-cta">
-            <span data-lang="en" class="active">Download</span>
-            <span data-lang="uk">Завантажити</span>
-        </a>
-    </div>
-</nav>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-<!-- ═══ Hero ═══ -->
-<section class="hero">
-    <div class="hero-text">
-        <h1>
-            <span data-lang="en" class="active">Shopping lists that actually <span class="highlight">get it</span></span>
-            <span data-lang="uk">Списки покупок, які справді <span class="highlight">розуміють</span></span>
-        </h1>
+<script type="text/babel" src="prototype/shared.jsx"></script>
+<script type="text/babel" src="prototype/shoplix-ui.jsx"></script>
+<script type="text/babel" src="prototype/phone-demo.jsx"></script>
 
-        <p class="tagline">
-            <span data-lang="en" class="active">Not all shopping is the same. Household lists clean up after each trip. Event lists track who's bringing what. Shoplix handles both.</span>
-            <span data-lang="uk">Не всі покупки однакові. Домашні списки очищаються після кожного походу. Списки подій показують хто що несе. Shoplix працює з обома.</span>
-        </p>
+<script type="text/babel">
+const { useState } = React;
+const { useEffect } = React;
 
-        <div class="hero-badges">
-            <div class="hero-badge">
-                <i class="ph ph-list-checks"></i>
-                <span data-lang="en" class="active">Two list types</span>
-                <span data-lang="uk">Два типи списків</span>
-            </div>
-            <div class="hero-badge">
-                <i class="ph ph-eye"></i>
-                <span data-lang="en" class="active">Full visibility</span>
-                <span data-lang="uk">Повна видимість</span>
-            </div>
-            <div class="hero-badge">
-                <i class="ph ph-shield-check"></i>
-                <span data-lang="en" class="active">No sign-up</span>
-                <span data-lang="uk">Без реєстрації</span>
-            </div>
-        </div>
+function DarkProLanding() {
+  const [lang, setLang] = useState('uk');
+  const tr = (en, uk) => lang === 'uk' ? uk : en;
 
-        <div class="store-row">
-            <a href="https://apps.apple.com/app/id6759987277" target="_blank" rel="noopener" aria-label="Download on the App Store">
-                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.shoplix.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
-                <img class="gplay-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
-            </a>
+  return (
+    <div className="dp-page">
+      {/* ── Animated background orbs ── */}
+      <div className="dp-bg-orbs" aria-hidden="true">
+        <span className="dp-orb dp-orb-blue"></span>
+        <span className="dp-orb dp-orb-violet"></span>
+      </div>
+      {/* ── Nav ── */}
+      <nav className="dp-nav">
+        <div className="dp-brand">
+          <div className="dp-brand-mark" aria-label="Shoplix"></div>
+          <span>Shoplix</span>
         </div>
-    </div>
+        <div className="dp-nav-links">
+          <a href="#modes">{tr('Modes', 'Режими')}</a>
+          <a href="#live">{tr('Realtime', 'Наживо')}</a>
+          <a href="#catalog">{tr('Stats', 'Аналітика')}</a>
+          <a href="#reuse">{tr('Recipes', 'Рецепти')}</a>
+          <a href="#download">{tr('Get app', 'Завантажити')}</a>
+        </div>
+        <div className="dp-nav-right">
+          <div className="dp-lang">
+            <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
+            <span>·</span>
+            <button className={lang === 'uk' ? 'active' : ''} onClick={() => setLang('uk')}>UK</button>
+          </div>
+          <button className="dp-nav-cta">
+            {tr('Download', 'Завантажити')}
+            <i className="ph-bold ph-arrow-up-right" />
+          </button>
+        </div>
+      </nav>
 
-    <div class="hero-visual">
-        <div class="phone-mockup">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-                <img src="mascot.png" alt="Shoplix mascot">
+      {/* ── Hero ── */}
+      <section className="dp-hero">
+        <div className="dp-hero-grid">
+          <div className="dp-hero-copy">
+            <div className="dp-eyebrow">
+              <span className="dp-eyebrow-dot" />
+              REAL-TIME · {tr('SHARED LISTS', 'СПІЛЬНІ СПИСКИ')}
             </div>
-        </div>
-        <div class="float-card card-1">
-            <i class="ph-fill ph-check-circle"></i>
-            <span data-lang="en" class="active">Milk bought!</span>
-            <span data-lang="uk">Молоко куплено!</span>
-        </div>
-        <div class="float-card card-2">
-            <i class="ph-fill ph-users-three"></i>
-            <span data-lang="en" class="active">3 members</span>
-            <span data-lang="uk">3 учасники</span>
-        </div>
-        <div class="float-card card-3">
-            <i class="ph-fill ph-ghost"></i>
-            <span data-lang="en" class="active">Milk — deleted</span>
-            <span data-lang="uk">Молоко — видалено</span>
-        </div>
-    </div>
-</section>
-
-<!-- ═══ Showcase 1: Lists ═══ -->
-<section class="showcase-section green-tint">
-    <div class="showcase-grid">
-        <div class="showcase-text reveal">
-            <div data-lang="en" class="active">
-                <div class="showcase-tag"><i class="ph ph-list-checks"></i> List Types</div>
-                <h2>Two list types for every situation</h2>
-                <p>Household lists for everyday groceries — items vanish when bought. Event lists for parties and gatherings — claim items and keep the full history.</p>
-            </div>
-            <div data-lang="uk">
-                <div class="showcase-tag"><i class="ph ph-list-checks"></i> Типи списків</div>
-                <h2>Два типи списків для кожної ситуації</h2>
-                <p>Домашні списки для щоденних покупок — товари зникають після покупки. Списки подій для вечірок — резервуйте товари та зберігайте історію.</p>
-            </div>
-            <div class="benefit-cards">
-                <div class="benefit-card">
-                    <i class="ph ph-house"></i>
-                    <div>
-                        <h4><span data-lang="en" class="active">Household</span><span data-lang="uk">Домашній</span></h4>
-                        <p><span data-lang="en" class="active">Buy and done. Clean list every time.</span><span data-lang="uk">Купив — готово. Чистий список щоразу.</span></p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <i class="ph ph-confetti"></i>
-                    <div>
-                        <h4><span data-lang="en" class="active">Event</span><span data-lang="uk">Подія</span></h4>
-                        <p><span data-lang="en" class="active">Claim items. See who's bringing what.</span><span data-lang="uk">Резервуйте товари. Бачте, хто що несе.</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="showcase-visual reveal">
-            <div class="showcase-illustration">
-                <i class="ph ph-list-checks"></i>
-                <div class="illust-card" style="top: 20%; left: 10%;">
-                    <div class="dot green"></div>
-                    <div class="line"></div>
-                    <span class="check">&#10003;</span>
-                </div>
-                <div class="illust-card" style="top: 45%; right: 8%;">
-                    <div class="dot blue"></div>
-                    <div class="line"></div>
-                    <div class="line short"></div>
-                </div>
-                <div class="illust-card" style="bottom: 18%; left: 15%;">
-                    <div class="dot amber"></div>
-                    <div class="line short"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══ Showcase 2: Full Visibility ═══ -->
-<section class="showcase-section blue-tint">
-    <div class="showcase-grid reverse">
-        <div class="showcase-text reveal">
-            <div data-lang="en" class="active">
-                <div class="showcase-tag"><i class="ph ph-eye"></i> Full Visibility</div>
-                <h2>Always know who's doing what</h2>
-                <p>No other shopping list gives you this level of transparency. See who claimed an item, who bought it, and what was deleted — all in real time. No guessing, no duplicates, no surprises.</p>
-            </div>
-            <div data-lang="uk">
-                <div class="showcase-tag"><i class="ph ph-eye"></i> Повна видимість</div>
-                <h2>Завжди знайте хто що робить</h2>
-                <p>Жоден інший список покупок не дає такого рівня прозорості. Бачте хто зарезервував товар, хто його купив, і що було видалено — все в реальному часі. Без здогадок, без дублікатів, без сюрпризів.</p>
-            </div>
-            <div class="benefit-cards">
-                <div class="benefit-card">
-                    <i class="ph ph-user-check"></i>
-                    <div>
-                        <h4><span data-lang="en" class="active">Item claiming</span><span data-lang="uk">Резервування</span></h4>
-                        <p><span data-lang="en" class="active">Tap to claim — others see you're handling it. No duplicates.</span><span data-lang="uk">Натисніть щоб зарезервувати — інші бачать що ви берете це на себе.</span></p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <i class="ph ph-check-circle"></i>
-                    <div>
-                        <h4><span data-lang="en" class="active">Bought by</span><span data-lang="uk">Хто купив</span></h4>
-                        <p><span data-lang="en" class="active">Every purchased item shows who bought it and when.</span><span data-lang="uk">Кожен куплений товар показує хто і коли його купив.</span></p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <i class="ph ph-ghost"></i>
-                    <div>
-                        <h4><span data-lang="en" class="active">Ghost items</span><span data-lang="uk">Примарні товари</span></h4>
-                        <p><span data-lang="en" class="active">Deleted items stay visible briefly — nothing vanishes without context.</span><span data-lang="uk">Видалені товари залишаються на мить — нічого не зникає без контексту.</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="showcase-visual reveal">
-            <div class="showcase-illustration">
-                <i class="ph ph-eye"></i>
-                <div class="illust-card" style="top: 12%; right: 8%;">
-                    <div class="dot blue"></div>
-                    <span style="font-size: 12px;">Cheese</span>
-                    <span style="font-size: 10px; color: var(--blue-600);">👤 claimed</span>
-                </div>
-                <div class="illust-card" style="top: 48%; left: 6%;">
-                    <div class="dot green"></div>
-                    <span style="font-size: 12px;">Eggs</span>
-                    <span style="font-size: 10px; color: var(--green-600);">✓ by Mom</span>
-                </div>
-                <div class="illust-card" style="bottom: 15%; right: 12%; opacity: 0.5;">
-                    <div class="dot rose"></div>
-                    <span style="font-size: 12px; text-decoration: line-through;">Milk</span>
-                    <span style="font-size: 10px; color: var(--ink-400);">👻 deleted</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══ Bento Features ═══ -->
-<section class="bento">
-    <h2 class="section-title reveal">
-        <span data-lang="en" class="active">Everything you need</span>
-        <span data-lang="uk">Усе, що потрібно</span>
-    </h2>
-    <p class="section-subtitle reveal">
-        <span data-lang="en" class="active">Powerful features, zero friction. Just create a list and go.</span>
-        <span data-lang="uk">Потужні можливості, нуль зайвого. Просто створіть список і починайте.</span>
-    </p>
-
-    <div class="bento-grid">
-        <!-- Large: Smart Management -->
-        <div class="bento-card span-2 reveal">
-            <div class="bento-accent" style="background: var(--amber-500);"></div>
-            <div class="bento-icon amber"><i class="ph ph-shopping-cart"></i></div>
-            <h3>
-                <span data-lang="en" class="active">Manage items effortlessly</span>
-                <span data-lang="uk">Керуйте товарами без зусиль</span>
-            </h3>
-            <p>
-                <span data-lang="en" class="active">Autocomplete from your personal catalog, quantity chips for fast input, swipe gestures to buy or delete. Your catalog grows as you shop.</span>
-                <span data-lang="uk">Автодоповнення з вашого каталогу, чіпи кількості для швидкого введення, жести свайпу для покупки чи видалення.</span>
+            <h1 className="dp-h1">
+              {tr('Shop together.', 'Купуй разом.')}<br />
+              {tr('Don\u2019t buy ', 'Не купуй ')}<em>{tr('twice', 'двічі')}</em>.
+            </h1>
+            <p className="dp-sub">
+              {tr(
+                'A shopping list the whole household sees at once. Everyone adds, claims, and checks off in real time — no calls, no spreadsheets, no duplicate runs.',
+                'Список покупок, який вся родина бачить одночасно. Кожен додає, бронює і відмічає куплене наживо — без дзвінків, без таблиць, без дублів у магазині.'
+              )}
             </p>
-            <div class="bento-tags">
-                <span class="bento-tag"><span data-lang="en" class="active">Autocomplete</span><span data-lang="uk">Автодоповнення</span></span>
-                <span class="bento-tag"><span data-lang="en" class="active">Swipe gestures</span><span data-lang="uk">Жести свайпу</span></span>
-                <span class="bento-tag"><span data-lang="en" class="active">Quantity chips</span><span data-lang="uk">Чіпи кількості</span></span>
+            <div className="dp-cta-row">
+              <button className="dp-btn dp-btn-primary">
+                <i className="ph-bold ph-apple-logo" /> App Store
+              </button>
+              <button className="dp-btn dp-btn-ghost">
+                <i className="ph-bold ph-google-play-logo" /> Google Play
+              </button>
+              <button className="dp-btn dp-btn-ghost">
+                <i className="ph-bold ph-globe" /> Web
+              </button>
             </div>
-        </div>
-
-        <!-- Tall: Claim System -->
-        <div class="bento-card tall reveal">
-            <div class="bento-accent" style="background: var(--rose-600);"></div>
-            <div class="bento-icon rose"><i class="ph ph-user-plus"></i></div>
-            <h3>
-                <span data-lang="en" class="active">Claim system</span>
-                <span data-lang="uk">Резервування</span>
-            </h3>
-            <p>
-                <span data-lang="en" class="active">Tap any item to claim it. Your avatar appears so others know you're handling it. Works in all list types.</span>
-                <span data-lang="uk">Натисніть на товар, щоб зарезервувати. Ваш аватар з'явиться — інші бачитимуть. Працює у всіх списках.</span>
-            </p>
-        </div>
-
-        <!-- Unseen Updates -->
-        <div class="bento-card reveal">
-            <div class="bento-accent" style="background: var(--violet-600);"></div>
-            <div class="bento-icon violet"><i class="ph ph-eye"></i></div>
-            <h3>
-                <span data-lang="en" class="active">Unseen updates</span>
-                <span data-lang="uk">Непереглянуті зміни</span>
-            </h3>
-            <p>
-                <span data-lang="en" class="active">See what changed since your last visit. New items highlighted, deleted items shown briefly.</span>
-                <span data-lang="uk">Дізнайтесь, що змінилось. Нові товари підсвічені, видалені — показані на мить.</span>
-            </p>
-        </div>
-
-        <!-- Templates -->
-        <div class="bento-card reveal">
-            <div class="bento-icon blue"><i class="ph ph-copy-simple"></i></div>
-            <h3>
-                <span data-lang="en" class="active">Templates</span>
-                <span data-lang="uk">Шаблони</span>
-            </h3>
-            <p>
-                <span data-lang="en" class="active">Save reusable lists for regular shopping. Apply with one tap.</span>
-                <span data-lang="uk">Зберігайте шаблони для регулярних покупок. Застосуйте одним натиском.</span>
-            </p>
-        </div>
-
-        <!-- Product Catalog -->
-        <div class="bento-card reveal">
-            <div class="bento-icon green"><i class="ph ph-archive"></i></div>
-            <h3>
-                <span data-lang="en" class="active">Product catalog</span>
-                <span data-lang="uk">Каталог товарів</span>
-            </h3>
-            <p>
-                <span data-lang="en" class="active">Every product saved for reuse. Just start typing and it appears.</span>
-                <span data-lang="uk">Кожен товар збережено. Просто почніть вводити — він з'явиться.</span>
-            </p>
-        </div>
-
-        <!-- Roles & Permissions -->
-        <div class="bento-card reveal">
-            <div class="bento-icon violet"><i class="ph ph-users-four"></i></div>
-            <h3>
-                <span data-lang="en" class="active">Roles & permissions</span>
-                <span data-lang="uk">Ролі та дозволи</span>
-            </h3>
-            <p>
-                <span data-lang="en" class="active">Owner, Co-owner, Editor, or Viewer. Control who can do what.</span>
-                <span data-lang="uk">Власник, Співвласник, Редактор або Глядач. Контролюйте хто що може.</span>
-            </p>
-        </div>
-
-        <!-- Custom Themes -->
-        <div class="bento-card reveal">
-            <div class="bento-icon amber"><i class="ph ph-palette"></i></div>
-            <h3>
-                <span data-lang="en" class="active">Custom themes</span>
-                <span data-lang="uk">Кастомні теми</span>
-            </h3>
-            <p>
-                <span data-lang="en" class="active">10+ color palettes, 6 font styles, animated icons, and left-handed mode.</span>
-                <span data-lang="uk">10+ палітр, 6 стилів шрифтів, анімовані іконки та режим для лівшів.</span>
-            </p>
-        </div>
-
-        <!-- No Sign-up -->
-        <div class="bento-card reveal">
-            <div class="bento-icon green"><i class="ph ph-shield-check"></i></div>
-            <h3>
-                <span data-lang="en" class="active">No sign-up required</span>
-                <span data-lang="uk">Без реєстрації</span>
-            </h3>
-            <p>
-                <span data-lang="en" class="active">Start instantly. Create an account later if you want.</span>
-                <span data-lang="uk">Почніть миттєво. Створіть акаунт пізніше, якщо захочете.</span>
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- ═══ How It Works ═══ -->
-<section class="how">
-    <div data-lang="en" class="active">
-        <h2 class="section-title reveal">How it works</h2>
-        <p class="section-subtitle reveal">Start shopping together in under a minute.</p>
-        <div class="how-steps">
-            <div class="how-step reveal">
-                <div class="step-num">1</div>
-                <h3>Create a list</h3>
-                <p>Choose Household or Event type. Add a name and start adding items.</p>
+            <div className="dp-meta-row">
+              <span>{tr('Free', 'Безкоштовно')}</span>
+              <span>{tr('No sign-up', 'Без реєстрації')}</span>
+              <span className="muted">iOS · Android · Web</span>
             </div>
-            <div class="how-step reveal">
-                <div class="step-num">2</div>
-                <h3>Share the code</h3>
-                <p>Tap the menu, then Share. Send the invite code via any messenger.</p>
+          </div>
+          <div className="dp-phone-stage">
+            <div className="dp-callout dp-callout-1">
+              <i className="ph-fill ph-users-three" />
+              <div>
+                <strong>{tr('Shared in real time', 'Спільний список наживо')}</strong>
+                <div><span>{tr('every device · always up to date', 'на всіх пристроях одночасно')}</span></div>
+              </div>
             </div>
-            <div class="how-step reveal">
-                <div class="step-num">3</div>
-                <h3>Shop together</h3>
-                <p>Everyone sees updates in real time. Swipe to mark items as bought.</p>
+            <div className="dp-callout dp-callout-2">
+              <i className="ph-fill ph-user-circle-check" />
+              <div>
+                <strong>{tr('“I’ll grab it”', '«Я візьму це»')}</strong>
+                <div><span>{tr('claim items so nobody buys twice', 'бронюй товари — ніхто не купить двічі')}</span></div>
+              </div>
             </div>
+            <PhoneShell theme="aurora" size="lg">
+              <ScreenHome lang={lang} />
+            </PhoneShell>
+          </div>
         </div>
-    </div>
-    <div data-lang="uk">
-        <h2 class="section-title reveal">Як це працює</h2>
-        <p class="section-subtitle reveal">Почніть купувати разом менш ніж за хвилину.</p>
-        <div class="how-steps">
-            <div class="how-step reveal">
-                <div class="step-num">1</div>
-                <h3>Створіть список</h3>
-                <p>Оберіть тип — Домашній або Подія. Додайте назву і починайте наповнювати.</p>
-            </div>
-            <div class="how-step reveal">
-                <div class="step-num">2</div>
-                <h3>Поділіться кодом</h3>
-                <p>Натисніть меню, потім Поділитися. Надішліть код через будь-який месенджер.</p>
-            </div>
-            <div class="how-step reveal">
-                <div class="step-num">3</div>
-                <h3>Купуйте разом</h3>
-                <p>Кожен бачить оновлення в реальному часі. Свайпніть, щоб позначити як куплений.</p>
-            </div>
+      </section>
+
+      {/* ── Two modes ── */}
+      <section className="dp-section" id="modes">
+        <div className="dp-section-head">
+          <div className="dp-section-eyebrow">02 · {tr('Two modes', 'Два режими')}</div>
+          <h2 className="dp-h2">
+            {tr('Different lists, ', 'Різні списки, ')}
+            <em>{tr('different rules.', 'різні правила.')}</em>
+          </h2>
+          <p className="dp-section-sub">
+            {tr(
+              'Daily groceries aren’t the same as a birthday party. Pick the mode and the app behaves accordingly.',
+              'Щоденні покупки — не те саме, що вечірка. Обираєш режим — додаток поводиться відповідно.'
+            )}
+          </p>
         </div>
+        <div className="dp-modes-grid">
+          <div className="dp-mode-card">
+            <div className="dp-mode-tag">
+              <i className="ph-fill ph-house" /> {tr('Household', 'Домашній')}
+            </div>
+            <h3 className="dp-mode-title">{tr('Always clean & current', 'Завжди чистий і актуальний')}</h3>
+            <p className="dp-mode-desc">
+              {tr(
+                'Best for ongoing use. The app remembers your products, quantities, prices and photos for next time — perfect for tracking weekly and monthly spend.',
+                'Найкраще підходить для постійного використання. Додаток запамʼятовує ваші товари, кількість, ціну і фото для повторного додавання — ідеально для відстеження щотижневих і щомісячних витрат.'
+              )}
+            </p>
+            <div className="dp-mode-phone">
+              <PhoneShell theme="aurora" size="md">
+                <ScreenHome lang={lang} variant="b" />
+              </PhoneShell>
+            </div>
+          </div>
+          <div className="dp-mode-card event">
+            <div className="dp-mode-tag">
+              <i className="ph-fill ph-confetti" /> {tr('Event', 'Подія')}
+            </div>
+            <h3 className="dp-mode-title">{tr('Everything in plain sight', 'Все на виду')}</h3>
+            <p className="dp-mode-desc">
+              {tr(
+                'Bought items stay in a separate section of the list — you instantly see what’s already covered. Warns you if someone adds a duplicate. Spend stats per participant.',
+                'Куплене лишається в окремій секції списку — одразу видно, що вже принесли. Попереджає, якщо хтось додає дубль. Статистика витрат для кожного учасника.'
+              )}
+            </p>
+            <div className="dp-mode-phone">
+              <PhoneShell theme="lavender" size="md">
+                <ScreenParty lang={lang} />
+              </PhoneShell>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Live awareness ── */}
+      <section className="dp-section" id="live">
+        <div className="dp-section-head">
+          <div className="dp-section-eyebrow">03 · {tr('Realtime sync', 'Синхронізація')}</div>
+          <h2 className="dp-h2">
+            {tr('See changes ', 'Бачиш зміни ')}
+            <em>{tr('as they happen.', 'у момент, коли вони стаються.')}</em>
+          </h2>
+          <p className="dp-section-sub">
+            {tr(
+              'Every addition, edit, and check-off shows up on every device in seconds.',
+              'Кожне додавання, правка та відмітка зʼявляється на всіх пристроях за секунди.'
+            )}
+          </p>
+        </div>
+        <div className="dp-live-grid">
+          <div>
+            <div className="dp-live-feature">
+              <i className="ph-fill ph-user-circle" />
+              <div>
+                <h4>{tr('“I’ll grab it.”', '«Я візьму це»')}</h4>
+                <p>{tr('Tap an item’s avatar slot — your face shows up there so nobody buys the same milk on the way home.', 'Тап по слоту аватара — твоє фото зʼявляється там, і ніхто не купить те саме молоко дорогою додому.')}</p>
+              </div>
+            </div>
+            <div className="dp-live-feature">
+              <i className="ph-fill ph-eye" />
+              <div>
+                <h4>{tr('Nothing disappears silently', 'Нічого не зникає тишком')}</h4>
+                <p>{tr('Items added, bought, or deleted by someone else stay visible the first time you open the list after changes.', 'Додане, куплене чи видалене іншими лишається видимим при першому перегляді списку після змін.')}</p>
+              </div>
+            </div>
+            <div className="dp-live-feature">
+              <i className="ph-fill ph-bell-ringing" />
+              <div>
+                <h4>{tr('You see what changed', 'Видно що змінилось без тебе')}</h4>
+                <p>{tr('A counter on each list shows how many additions, edits, and check-offs you haven’t looked at yet.', 'Лічильник на кожному списку показує, скільки додавань, правок і відміток ти ще не переглянув.')}</p>
+              </div>
+            </div>
+          </div>
+          <div className="dp-phone-stage" style={{ minHeight: 'auto' }}>
+            <PhoneShell theme="aurora" size="lg">
+              <ScreenHome lang={lang} variant="c" />
+            </PhoneShell>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Statistics ── */}
+      <section className="dp-section" id="catalog">
+        <div className="dp-catalog">
+          <div className="dp-catalog-left">
+            <div className="dp-section-eyebrow" style={{ marginBottom: 14 }}>04 · {tr('Real budget intelligence', 'Справжня аналітика витрат')}</div>
+            <h3>{tr('Where the money ', 'Куди йдуть ')}<em style={{ background: 'linear-gradient(135deg, var(--dp-violet), var(--dp-blue))', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', fontStyle: 'normal' }}>{tr('actually went.', 'твої гроші.')}</em></h3>
+            <p>{tr(
+              'Shoplix tracks spend by category, by member and by product — with a per-product price history so you can see exactly when oat milk got expensive.',
+              'Shoplix рахує витрати по категоріях, по учасниках і по товарах — з історією цін для кожного товару, щоб бачити, коли твій улюблений товар подорожчав.'
+            )}</p>
+            <div className="dp-catalog-stats">
+              <div className="dp-stat">
+                <strong><i className="ph-fill ph-users-three" style={{ fontSize: 24 }} /></strong>
+                <span>{tr('By member — who bought how much', 'По учаснику — хто скільки купив')}</span>
+              </div>
+              <div className="dp-stat">
+                <strong><i className="ph-fill ph-tag" style={{ fontSize: 24 }} /></strong>
+                <span>{tr('By category — dairy, produce, meat…', 'По категорії — молочне, овочі, мʼясо…')}</span>
+              </div>
+              <div className="dp-stat">
+                <strong><i className="ph-fill ph-package" style={{ fontSize: 24 }} /></strong>
+                <span>{tr('By product — what you spend the most on', 'По товару — на що витрачаєш найбільше')}</span>
+              </div>
+              <div className="dp-stat">
+                <strong><i className="ph-fill ph-chart-line-up" style={{ fontSize: 24 }} /></strong>
+                <span>{tr('Price history — inflation per item', 'Історія цін — інфляція по товару')}</span>
+              </div>
+            </div>
+          </div>
+          <div className="dp-catalog-right">
+            <PhoneShell theme="ocean" size="md">
+              <ScreenStatistics lang={lang} />
+            </PhoneShell>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Templates & Recipes ── */}
+      <section className="dp-section" id="reuse">
+        <div className="dp-section-head">
+          <div className="dp-section-eyebrow">05 · {tr('Templates & Recipes', 'Шаблони і рецепти')}</div>
+          <h2 className="dp-h2">
+            {tr('Don’t start ', 'Не починай ')}
+            <em>{tr('from scratch.', 'з нуля.')}</em>
+          </h2>
+          <p className="dp-section-sub">
+            {tr(
+              'Save the lists you make every week and the recipes you cook every month — add their entire contents to any list in two taps.',
+              'Зберігай списки, які робиш щотижня, і рецепти, які готуєш щомісяця — додавай весь склад в будь-який список у два тапи.'
+            )}
+          </p>
+        </div>
+        <div className="dp-modes-grid">
+          <div className="dp-mode-card">
+            <div className="dp-mode-tag">
+              <i className="ph-fill ph-copy-simple" /> {tr('Templates', 'Шаблони')}
+            </div>
+            <h3 className="dp-mode-title">{tr('Your usual run, ready to go', 'Твій звичний список — одним тапом')}</h3>
+            <p className="dp-mode-desc">
+              {tr(
+                'Save any list as a template — weekly groceries, office snacks, your BBQ kit. Next time you need it, add the whole template to any list in one tap.',
+                'Збережи будь-який список як шаблон — тиждень, офісні снеки, набір для шашлику. Наступного разу додай весь шаблон у будь-який список одним тапом.'
+              )}
+            </p>
+            <div className="dp-mode-phone">
+              <PhoneShell theme="ocean" size="md">
+                <ScreenTemplates lang={lang} />
+              </PhoneShell>
+            </div>
+          </div>
+          <div className="dp-mode-card event">
+            <div className="dp-mode-tag">
+              <i className="ph-fill ph-book-open" /> {tr('Recipes', 'Рецепти')}
+            </div>
+            <h3 className="dp-mode-title">{tr('Ingredients straight into the list', 'Інгредієнти одразу в список')}</h3>
+            <p className="dp-mode-desc">
+              {tr(
+                'Keep your favourite recipes with full ingredient lists — or paste a URL or plain text and Shoplix imports the ingredients automatically. Tap a recipe and everything lands in your shopping list, deduped against what’s already there.',
+                'Зберігай улюблені рецепти з повним складом — або встав посилання чи звичайний текст, і Shoplix розумно розпізнає інгредієнти. Тап по рецепту — все потрапляє у список, з перевіркою на те, що вже є в списку.'
+              )}
+            </p>
+            <div className="dp-mode-phone">
+              <PhoneShell theme="lavender" size="md">
+                <ScreenRecipes lang={lang} />
+              </PhoneShell>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="dp-cta" id="download">
+        <h2>
+          {tr('Shop together. ', 'Купуй разом. ')}
+          <em>{tr('Never twice.', 'Не купуй двічі.')}</em>
+        </h2>
+        <div className="dp-cta-row" style={{ justifyContent: 'center' }}>
+          <button className="dp-btn dp-btn-primary">
+            <i className="ph-bold ph-apple-logo" /> App Store
+          </button>
+          <button className="dp-btn dp-btn-ghost">
+            <i className="ph-bold ph-google-play-logo" /> Google Play
+          </button>
+          <button className="dp-btn dp-btn-ghost">
+            <i className="ph-bold ph-globe" /> {tr('Open Web', 'Відкрити Веб')}
+          </button>
+        </div>
+      </section>
+
+      {/* ── Footer ── */}
+      <footer className="dp-footer">
+        <div>SHOPLIX · 2026 · UA</div>
+        <div className="dp-footer-links">
+          <a>{tr('Privacy', 'Конфіденційність')}</a>
+          <a>{tr('Terms', 'Умови')}</a>
+          <a>support@shoplix.app</a>
+        </div>
+      </footer>
     </div>
-</section>
+  );
+}
 
-<!-- ═══ Marquee ═══ -->
-<section class="marquee-section">
-    <h2 class="section-title">
-        <span data-lang="en" class="active">Packed with features</span>
-        <span data-lang="uk">Повний набір можливостей</span>
-    </h2>
-    <div class="marquee-row">
-        <div class="marquee-pill"><i class="ph ph-wifi-slash"></i><span data-lang="en" class="active">Works Offline</span><span data-lang="uk">Працює офлайн</span></div>
-        <div class="marquee-pill green"><i class="ph ph-vibrate"></i><span data-lang="en" class="active">Shake to Undo</span><span data-lang="uk">Скасування тряском</span></div>
-        <div class="marquee-pill amber"><i class="ph ph-squares-four"></i><span data-lang="en" class="active">Categories & Sorting</span><span data-lang="uk">Категорії та сортування</span></div>
-        <div class="marquee-pill violet"><i class="ph ph-palette"></i><span data-lang="en" class="active">Custom Themes</span><span data-lang="uk">Кастомні теми</span></div>
-        <div class="marquee-pill rose"><i class="ph ph-bell"></i><span data-lang="en" class="active">Push Notifications</span><span data-lang="uk">Push-сповіщення</span></div>
-        <div class="marquee-pill"><i class="ph ph-arrows-left-right"></i><span data-lang="en" class="active">Left / Right Handed</span><span data-lang="uk">Ліва / права рука</span></div>
-        <div class="marquee-pill green"><i class="ph ph-user"></i><span data-lang="en" class="active">Profile & Avatar</span><span data-lang="uk">Профіль та аватар</span></div>
-        <div class="marquee-pill amber"><i class="ph ph-shield-check"></i><span data-lang="en" class="active">No Sign-Up Required</span><span data-lang="uk">Без реєстрації</span></div>
-        <div class="marquee-pill violet"><i class="ph ph-eye"></i><span data-lang="en" class="active">Unseen Updates</span><span data-lang="uk">Непереглянуті зміни</span></div>
-        <div class="marquee-pill rose"><i class="ph ph-user-plus"></i><span data-lang="en" class="active">Claim Items</span><span data-lang="uk">Резервування</span></div>
-        <!-- Duplicate for seamless loop -->
-        <div class="marquee-pill"><i class="ph ph-wifi-slash"></i><span data-lang="en" class="active">Works Offline</span><span data-lang="uk">Працює офлайн</span></div>
-        <div class="marquee-pill green"><i class="ph ph-vibrate"></i><span data-lang="en" class="active">Shake to Undo</span><span data-lang="uk">Скасування тряском</span></div>
-        <div class="marquee-pill amber"><i class="ph ph-squares-four"></i><span data-lang="en" class="active">Categories & Sorting</span><span data-lang="uk">Категорії та сортування</span></div>
-        <div class="marquee-pill violet"><i class="ph ph-palette"></i><span data-lang="en" class="active">Custom Themes</span><span data-lang="uk">Кастомні теми</span></div>
-        <div class="marquee-pill rose"><i class="ph ph-bell"></i><span data-lang="en" class="active">Push Notifications</span><span data-lang="uk">Push-сповіщення</span></div>
-        <div class="marquee-pill"><i class="ph ph-arrows-left-right"></i><span data-lang="en" class="active">Left / Right Handed</span><span data-lang="uk">Ліва / права рука</span></div>
-        <div class="marquee-pill green"><i class="ph ph-user"></i><span data-lang="en" class="active">Profile & Avatar</span><span data-lang="uk">Профіль та аватар</span></div>
-        <div class="marquee-pill amber"><i class="ph ph-shield-check"></i><span data-lang="en" class="active">No Sign-Up Required</span><span data-lang="uk">Без реєстрації</span></div>
-        <div class="marquee-pill violet"><i class="ph ph-eye"></i><span data-lang="en" class="active">Unseen Updates</span><span data-lang="uk">Непереглянуті зміни</span></div>
-        <div class="marquee-pill rose"><i class="ph ph-user-plus"></i><span data-lang="en" class="active">Claim Items</span><span data-lang="uk">Резервування</span></div>
-    </div>
-    <div class="marquee-row reverse slow">
-        <div class="marquee-pill violet"><i class="ph ph-copy-simple"></i><span data-lang="en" class="active">Templates</span><span data-lang="uk">Шаблони</span></div>
-        <div class="marquee-pill"><i class="ph ph-archive"></i><span data-lang="en" class="active">Product Catalog</span><span data-lang="uk">Каталог товарів</span></div>
-        <div class="marquee-pill rose"><i class="ph ph-hand-swipe-right"></i><span data-lang="en" class="active">Swipe Gestures</span><span data-lang="uk">Жести свайпу</span></div>
-        <div class="marquee-pill green"><i class="ph ph-user-plus"></i><span data-lang="en" class="active">Claim Items</span><span data-lang="uk">Резервування</span></div>
-        <div class="marquee-pill amber"><i class="ph ph-hash"></i><span data-lang="en" class="active">Invite Codes</span><span data-lang="uk">Коди запрошення</span></div>
-        <div class="marquee-pill"><i class="ph ph-house"></i><span data-lang="en" class="active">Household Lists</span><span data-lang="uk">Домашні списки</span></div>
-        <div class="marquee-pill violet"><i class="ph ph-confetti"></i><span data-lang="en" class="active">Event Lists</span><span data-lang="uk">Списки подій</span></div>
-        <div class="marquee-pill rose"><i class="ph ph-device-mobile"></i><span data-lang="en" class="active">iOS & Android</span><span data-lang="uk">iOS та Android</span></div>
-        <!-- Duplicate for seamless loop -->
-        <div class="marquee-pill violet"><i class="ph ph-copy-simple"></i><span data-lang="en" class="active">Templates</span><span data-lang="uk">Шаблони</span></div>
-        <div class="marquee-pill"><i class="ph ph-archive"></i><span data-lang="en" class="active">Product Catalog</span><span data-lang="uk">Каталог товарів</span></div>
-        <div class="marquee-pill rose"><i class="ph ph-hand-swipe-right"></i><span data-lang="en" class="active">Swipe Gestures</span><span data-lang="uk">Жести свайпу</span></div>
-        <div class="marquee-pill green"><i class="ph ph-user-plus"></i><span data-lang="en" class="active">Claim Items</span><span data-lang="uk">Резервування</span></div>
-        <div class="marquee-pill amber"><i class="ph ph-hash"></i><span data-lang="en" class="active">Invite Codes</span><span data-lang="uk">Коди запрошення</span></div>
-        <div class="marquee-pill"><i class="ph ph-house"></i><span data-lang="en" class="active">Household Lists</span><span data-lang="uk">Домашні списки</span></div>
-        <div class="marquee-pill violet"><i class="ph ph-confetti"></i><span data-lang="en" class="active">Event Lists</span><span data-lang="uk">Списки подій</span></div>
-        <div class="marquee-pill rose"><i class="ph ph-device-mobile"></i><span data-lang="en" class="active">iOS & Android</span><span data-lang="uk">iOS та Android</span></div>
-    </div>
-</section>
+ReactDOM.createRoot(document.getElementById('root')).render(<DarkProLanding />);
 
-<!-- ═══ CTA ═══ -->
-<section class="cta-section" id="download">
-    <img src="mascot.png" alt="Shoplix mascot" class="cta-mascot">
-    <h2>
-        <span data-lang="en" class="active">Ready to shop smarter?</span>
-        <span data-lang="uk">Готові купувати розумніше?</span>
-    </h2>
-    <p>
-        <span data-lang="en" class="active">Download Shoplix for free and start sharing lists with your family today.</span>
-        <span data-lang="uk">Завантажте Shoplix безкоштовно та почніть ділитися списками з родиною вже сьогодні.</span>
-    </p>
-    <div class="store-row">
-        <a href="https://apps.apple.com/app/id6759987277" target="_blank" rel="noopener" aria-label="Download on the App Store">
-            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-us?size=250x83" alt="Download on the App Store">
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.shoplix.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
-            <img class="gplay-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
-        </a>
-    </div>
-</section>
-
-<!-- ═══ Footer ═══ -->
-<footer>
-    <div class="footer-links">
-        <a href="privacy-policy.html">
-            <span data-lang="en" class="active">Privacy Policy</span>
-            <span data-lang="uk">Політика конфіденційності</span>
-        </a>
-        <a href="terms.html">
-            <span data-lang="en" class="active">Terms of Service</span>
-            <span data-lang="uk">Умови використання</span>
-        </a>
-        <a href="mailto:support@shoplix.app">support@shoplix.app</a>
-    </div>
-    <p class="copyright">&copy; 2026 Shoplix</p>
-</footer>
-
-<script>
-    // Scroll reveal (must be defined first — other code depends on it)
-    var revealObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.01 });
-
-    function observeReveals() {
-        document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
-            revealObserver.observe(el);
-        });
-    }
-
-    // Enable reveal animations
-    document.documentElement.classList.add('reveal-ready');
-    observeReveals();
-
-    // Language
-    function switchLang(lang) {
-        document.querySelectorAll('[data-lang]').forEach(function(el) {
-            el.classList.toggle('active', el.dataset.lang === lang);
-        });
-        document.querySelectorAll('.lang-toggle button').forEach(function(el) {
-            el.classList.remove('active');
-        });
-        document.getElementById('btn-' + lang).classList.add('active');
-        localStorage.setItem('shoplix-lang', lang);
-        observeReveals();
-    }
-
-    // Restore language
-    var saved = localStorage.getItem('shoplix-lang');
-    if (saved) switchLang(saved);
-
-    // Nav scroll effect
-    window.addEventListener('scroll', function() {
-        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+// Scroll-reveal: fade-up sections, cards, and features as they enter the viewport.
+(function wireReveal() {
+  const REVEAL_SELECTORS = [
+    '.dp-section-head',
+    '.dp-mode-card',
+    '.dp-live-feature',
+    '.dp-catalog-left',
+    '.dp-catalog-right',
+    '.dp-hero-copy',
+    '.dp-phone-stage',
+    '.dp-cta',
+    '.dp-footer',
+  ].join(',');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      }
     });
-
-    // Fallback: reveal all after 2s
-    setTimeout(function() {
-        document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
-            el.classList.add('visible');
-        });
-    }, 2000);
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  function scan() {
+    document.querySelectorAll(REVEAL_SELECTORS).forEach((el) => {
+      if (!el.classList.contains('is-watched')) {
+        el.classList.add('is-watched');
+        io.observe(el);
+      }
+    });
+  }
+  // React renders async — retry until elements appear.
+  let tries = 0;
+  const tick = () => {
+    scan();
+    if (++tries < 20) setTimeout(tick, 80);
+  };
+  tick();
+})();
 </script>
 </body>
 </html>
