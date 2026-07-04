@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Page not found — Shoplix</title>
+<link rel="icon" type="image/png" href="/app-icon.png" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: #0a0b10;
+    color: #ECEEF3;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 24px;
+    overflow: hidden;
+  }
+  .wrap { position: relative; z-index: 1; max-width: 460px; }
+  .orb {
+    position: fixed; width: 520px; height: 520px; border-radius: 50%;
+    filter: blur(120px); opacity: 0.3; pointer-events: none; z-index: 0;
+  }
+  .orb-a { background: #4254FF; top: -160px; left: -140px; }
+  .orb-b { background: #8B5CF6; bottom: -180px; right: -140px; }
+  .mark {
+    width: 56px; height: 56px; border-radius: 14px; margin: 0 auto 28px;
+    background: url('/app-icon.png') center/cover no-repeat;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
+  }
+  .code {
+    font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #6382FF; font-weight: 600; margin-bottom: 14px;
+  }
+  h1 {
+    font-size: clamp(28px, 6vw, 40px); font-weight: 600; line-height: 1.1;
+    letter-spacing: -0.02em; color: #fff; margin-bottom: 14px;
+  }
+  p { font-size: 16px; line-height: 1.55; color: rgba(236,238,243,0.62); margin-bottom: 32px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 22px; border-radius: 12px;
+    background: #ECEEF3; color: #0a0b10;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    transition: background .15s, transform .15s;
+  }
+  .btn:hover { background: #C9D2FF; transform: translateY(-1px); }
+</style>
+</head>
+<body>
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <div class="wrap">
+    <div class="mark" aria-label="Shoplix"></div>
+    <div class="code">404</div>
+    <h1>This page went shopping</h1>
+    <p>The link you followed doesn’t exist or has moved. Let’s get you back to the list.</p>
+    <a class="btn" href="/">Back to Shoplix</a>
+  </div>
+</body>
+</html>

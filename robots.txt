@@ -1,0 +1,7 @@
+# Shoplix — https://shoplix.app
+# Allow crawling of everything, including render-critical JS/CSS in /prototype/ and /assets/.
+User-agent: *
+Allow: /
+Disallow: /src/
+
+Sitemap: https://shoplix.app/sitemap.xml

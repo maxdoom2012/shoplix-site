@@ -1,0 +1,15 @@
+{
+  "name": "shoplix-site-build",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Build-time static renderer for the Shoplix landing page. Renders the React mockup components to static HTML (ReactDOMServer) so the page is fully crawlable — no client-side React/Babel is shipped.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

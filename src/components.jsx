@@ -1,23 +1,11 @@
-// Shoplix UI — drawn-from-scratch React components mimicking the real app.
-// Each screen is a self-contained component that renders inside <PhoneShell>.
-// Designed to be easily themed via CSS vars set on the shell.
-//
-// Components:
-//   <PhoneShell theme="aurora|lavender|ember" size="lg|md|sm" tilt="-2deg" animated>{children}</PhoneShell>
-//   <ScreenHome animated lang> — household list with claimed/bought items
-//   <ScreenParty lang> — event list with bought section + progress
-//   <ScreenMyLists theme lang> — list of lists with themed cards
-//   <ScreenStatistics lang>
-//   <ScreenTemplates lang>
-//   <ScreenRecipes lang>
-//   <ScreenHistory lang>
-//   <ScreenSettings lang>
-
+// Shoplix UI mockup components — ported verbatim from prototype/shoplix-ui.jsx,
+// adapted to an ES module for build-time static rendering (ReactDOMServer).
+// Markup is identical to the original runtime components, so visuals are unchanged.
+import React from 'react';
 const { useEffect: useEffSx, useState: useStateSx } = React;
 
 // ── PhoneShell — the device frame with status bar and themed background ──
-function PhoneShell({ theme = 'aurora', size = 'md', tilt = '0deg', children, className = '' }) {
-  // size scales the whole phone
+export function PhoneShell({ theme = 'aurora', size = 'md', tilt = '0deg', children, className = '' }) {
   const widths = { xs: 200, sm: 240, md: 280, lg: 320, xl: 360 };
   const w = widths[size] || widths.md;
   const h = Math.round(w * 2.16); // roughly 9:19.5 + bezel
@@ -122,8 +110,8 @@ function BottomTabs({ active = 'lists', lang }) {
   );
 }
 
-// ── Screen: Home (Household) — animated for hero ───────
-function ScreenHome({ lang = 'en', animated = false, variant = 'a' }) {
+// ── Screen: Home (Household) — animated flag unused on landing (static render) ───────
+export function ScreenHome({ lang = 'en', animated = false, variant = 'a' }) {
   const [milkClaimed, setMilkClaimed] = useStateSx(false);
   const [eggsBought, setEggsBought] = useStateSx(false);
   const [eggsRemoved, setEggsRemoved] = useStateSx(false);
@@ -146,7 +134,7 @@ function ScreenHome({ lang = 'en', animated = false, variant = 'a' }) {
     return () => { timers.forEach(clearTimeout); };
   }, [animated]);
 
-  // Variant C — Realtime section: 3 freshly added (unseen) + 2 just-bought (ghost) inline
+  // Variant C — Realtime section: freshly added (unseen) + just-bought (ghost) inline
   if (variant === 'c') {
     const unseenBar = (
       <span style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 3, background: '#c084fc', borderRadius: '0 2px 2px 0', zIndex: 2 }} />
@@ -260,7 +248,7 @@ function ScreenHome({ lang = 'en', animated = false, variant = 'a' }) {
 }
 
 // ── Screen: Party (Event) ─────────────────
-function ScreenParty({ lang = 'en' }) {
+export function ScreenParty({ lang = 'en' }) {
   return (
     <>
       <TitleBar icon="🎉" title={lang === 'uk' ? 'Вечірка' : 'Party'} />
@@ -294,64 +282,8 @@ function ScreenParty({ lang = 'en' }) {
   );
 }
 
-// ── Screen: My Lists — themed ─────────────────
-function ScreenMyLists({ lang = 'en', theme = 'aurora' }) {
-  return (
-    <>
-      <div className="sx-app-header">
-        <i className="ph ph-question" />
-        <span className="sx-app-title">Shoplix</span>
-        <div className="sx-app-right">
-          <i className="ph ph-users-three" />
-          <div className="sx-app-avatar">MA<span className="sx-app-dot" /></div>
-        </div>
-      </div>
-
-      <div className="sx-page-head">
-        <h2><i className="ph ph-list-checks" /> {lang === 'uk' ? 'Мої списки' : 'My Lists'}</h2>
-        <p>{lang === 'uk' ? 'Створи новий або приєднайся' : 'Create a new one or join an existing list'}</p>
-      </div>
-
-      <div className="sx-lists">
-        <div className="sx-list-card sx-list-christmas">
-          <span className="sx-list-emoji">❄️</span>
-          <div className="sx-list-text">
-            <div className="sx-list-name">{lang === 'uk' ? 'Різдво' : 'Christmas'}</div>
-            <div className="sx-list-meta">{lang === 'uk' ? 'Порожньо' : 'Empty'} · Event</div>
-          </div>
-          <i className="ph ph-dots-three-vertical" />
-          <div className="sx-snow"><span>❄</span><span>❄</span><span>·</span><span>❄</span><span>✦</span></div>
-        </div>
-
-        <div className="sx-list-card">
-          <span className="sx-list-emoji">🎉</span>
-          <div className="sx-list-text">
-            <div className="sx-list-name">{lang === 'uk' ? 'Вечірка' : 'Party'}</div>
-            <div className="sx-list-meta">3/6 · Event</div>
-            <div className="sx-list-progress"><span style={{ width: '50%' }} /></div>
-          </div>
-          <i className="ph ph-dots-three-vertical" />
-        </div>
-
-        <div className="sx-list-card">
-          <span className="sx-list-emoji">🏡</span>
-          <div className="sx-list-text">
-            <div className="sx-list-name">{lang === 'uk' ? 'Домашній' : 'Home'}</div>
-            <div className="sx-list-meta">{lang === 'uk' ? '3 товари' : '3 items'} · Household</div>
-          </div>
-          <i className="ph ph-dots-three-vertical" />
-        </div>
-      </div>
-
-      <button className="sx-fab"><i className="ph-bold ph-plus" /> {lang === 'uk' ? 'Створити' : 'Create'}</button>
-
-      <BottomTabs active="lists" lang={lang} />
-    </>
-  );
-}
-
 // ── Screen: Statistics ─────────────────
-function ScreenStatistics({ lang = 'en' }) {
+export function ScreenStatistics({ lang = 'en' }) {
   const cats = [
     { emoji: '🥩', name: lang === 'uk' ? 'Мʼясо' : 'Meat', amount: lang === 'uk' ? '₴4000' : '$99', pct: 100 },
     { emoji: '🥬', name: lang === 'uk' ? 'Овочі' : 'Vegetables', amount: lang === 'uk' ? '₴3300' : '$81.99', pct: 82 },
@@ -374,7 +306,7 @@ function ScreenStatistics({ lang = 'en' }) {
       <div className="sx-stat-summary">
         <div>
           <div className="sx-stat-label">{lang === 'uk' ? 'Витрачено' : 'Spent'}</div>
-          <div className="sx-stat-spent">{lang === 'uk' ? '₴11 500' : '$286.99'}</div>
+          <div className="sx-stat-spent">{lang === 'uk' ? '₴11 500' : '$286.99'}</div>
         </div>
         <div>
           <div className="sx-stat-label">{lang === 'uk' ? 'Заплановано' : 'Planned'}</div>
@@ -405,7 +337,7 @@ function ScreenStatistics({ lang = 'en' }) {
 }
 
 // ── Screen: Templates ─────────────────
-function ScreenTemplates({ lang = 'en' }) {
+export function ScreenTemplates({ lang = 'en' }) {
   const tpls = [
     { name: lang === 'uk' ? 'Офісні снеки' : 'Office snacks', count: 6 },
     { name: 'BBQ', count: 6 },
@@ -444,7 +376,7 @@ function ScreenTemplates({ lang = 'en' }) {
 }
 
 // ── Screen: Recipes ─────────────────
-function ScreenRecipes({ lang = 'en' }) {
+export function ScreenRecipes({ lang = 'en' }) {
   const recipes = [
     { name: lang === 'uk' ? 'Борщ' : 'Borscht', meta: lang === 'uk' ? '4 порції · 90 хв' : '4 servings · 90 min', color: '#dc2626', emoji: '🥣' },
     { name: lang === 'uk' ? 'Рис' : 'Fried rice', meta: lang === 'uk' ? '1 порція · 30 хв' : '1 serving · 30 min', color: '#fbbf24', emoji: '🍚' },
@@ -481,99 +413,3 @@ function ScreenRecipes({ lang = 'en' }) {
     </>
   );
 }
-
-// ── Screen: History ─────────────────
-function ScreenHistory({ lang = 'en' }) {
-  const items = [
-    { emoji: '🧊', name: lang === 'uk' ? 'Котлети' : 'Frozen cutlets', price: lang === 'uk' ? '₴200' : '$5', time: '15:20' },
-    { emoji: '🌭', name: lang === 'uk' ? 'Ковбаса' : 'Sausage', price: lang === 'uk' ? '₴4000' : '$99', qty: '99', time: '15:20' },
-    { emoji: '🌾', name: lang === 'uk' ? 'Вівсянка' : 'Oatmeal', price: lang === 'uk' ? '₴2600' : '$66', time: '15:20' },
-    { emoji: '🥔', name: lang === 'uk' ? 'Картопля' : 'Potatoes', price: lang === 'uk' ? '₴1050' : '$25.99', time: '15:18' },
-  ];
-  return (
-    <>
-      <TitleBar title={lang === 'uk' ? 'Історія' : 'History'} right={null} />
-      <div className="sx-history-search">
-        <i className="ph ph-magnifying-glass" />
-        <span>{lang === 'uk' ? 'Пошук' : 'Search by name'}</span>
-      </div>
-      <div className="sx-history-tabs">
-        <span>All</span>
-        <span className="sx-history-tab-active">{lang === 'uk' ? 'Куплено' : 'Bought'}</span>
-        <span>{lang === 'uk' ? 'Видалено' : 'Deleted'}</span>
-      </div>
-      <div className="sx-history-day">{lang === 'uk' ? 'Сьогодні' : 'Today'}</div>
-      <div className="sx-history-list">
-        {items.map((it, i) => (
-          <div key={i} className="sx-history-item">
-            <span className="sx-history-emoji">{it.emoji}</span>
-            <div className="sx-history-main">
-              <div className="sx-history-name">{it.name}</div>
-              <div className="sx-history-meta">
-                <span className="sx-history-price">{it.price}</span>
-                {it.qty && <span> · {it.qty}</span>}
-              </div>
-            </div>
-            <div className="sx-history-tag">{lang === 'uk' ? 'Куплено' : 'Bought'}</div>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-}
-
-// ── Screen: List Settings ─────────────────
-function ScreenSettings({ lang = 'en' }) {
-  const rows = [
-    { icon: 'ph-house', label: lang === 'uk' ? 'Назва списку' : 'List Name', value: lang === 'uk' ? 'Домашній' : 'Home', arrow: true },
-    { icon: 'ph-palette', label: lang === 'uk' ? 'Іконка' : 'Icon', value: '🏡' },
-    { icon: 'ph-paint-brush', label: lang === 'uk' ? 'Тема' : 'Theme', value: '🌌' },
-    { icon: 'ph-users-three', label: lang === 'uk' ? 'Учасники' : 'Members', value: '2', arrow: true },
-    { icon: 'ph-bell', label: lang === 'uk' ? 'Сповіщення' : 'Notifications', sub: lang === 'uk' ? 'Push сповіщення' : 'Push notifications about list changes', expand: true },
-    { icon: 'ph-eye', label: lang === 'uk' ? 'Зміни від інших' : 'Highlight changes from others', sub: lang === 'uk' ? 'Увімкнено' : 'Enabled', toggle: true },
-  ];
-  return (
-    <>
-      <TitleBar title={lang === 'uk' ? 'Налаштування списку' : 'List Settings'} right={null} />
-      <div className="sx-settings">
-        {rows.map((r, i) => (
-          <div key={i} className="sx-setting-row">
-            <i className={`ph ${r.icon}`} />
-            <div className="sx-setting-text">
-              <div className="sx-setting-label">{r.label}</div>
-              {r.sub && <div className="sx-setting-sub">{r.sub}</div>}
-              {r.value && !r.toggle && <div className="sx-setting-value">{r.value}</div>}
-            </div>
-            {r.arrow && <i className="ph ph-caret-right" />}
-            {r.expand && <i className="ph ph-caret-down" />}
-            {r.toggle && <div className="sx-toggle"><span /></div>}
-          </div>
-        ))}
-      </div>
-    </>
-  );
-}
-
-// Back-compat aliases for older variants
-function UIScreenHousehold({ lang = 'en', accent }) {
-  return (
-    <PhoneShell theme="blue" w={300} h={620}>
-      <ScreenHome lang={lang} animated={false} />
-    </PhoneShell>
-  );
-}
-function UIScreenEvent({ lang = 'en', accent }) {
-  return (
-    <PhoneShell theme="orange" w={300} h={620}>
-      <ScreenParty lang={lang} />
-    </PhoneShell>
-  );
-}
-
-// Export all
-Object.assign(window, {
-  PhoneShell,
-  ScreenHome, ScreenParty, ScreenMyLists, ScreenStatistics,
-  UIScreenHousehold, UIScreenEvent,
-  ScreenTemplates, ScreenRecipes, ScreenHistory, ScreenSettings,
-});
