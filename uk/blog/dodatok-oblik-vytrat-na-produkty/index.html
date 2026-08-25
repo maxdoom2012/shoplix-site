@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js')</script>
+  <title>Облік витрат на продукти: список покупок і бюджет в одному додатку</title>
+  <meta name="description" content="Чому облік продуктового бюджету не виживає в банківських додатках і таблицях — і як список покупок, у якому ціни вказуються прямо під час покупок, показує витрати по людях, категоріях і товарах." />
+  <link rel="canonical" href="https://shoplix.app/uk/blog/dodatok-oblik-vytrat-na-produkty/" />
+  <link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
+  <link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/dodatok-oblik-vytrat-na-produkty/" />
+  <link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Shoplix" />
+  <meta property="og:locale" content="uk_UA" />
+  <meta property="og:title" content="Облік витрат на продукти: список покупок і бюджет в одному додатку" />
+  <meta property="og:description" content="Чому продуктовий бюджет не виживає в банківських додатках і таблицях — і як список покупок із цінами показує витрати по людях, категоріях і товарах." />
+  <meta property="og:url" content="https://shoplix.app/uk/blog/dodatok-oblik-vytrat-na-produkty/" />
+  <meta property="og:image" content="https://shoplix.app/app-icon.png" />
+  <meta property="article:published_time" content="2026-08-26" />
+  <meta property="article:modified_time" content="2026-08-26" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Облік витрат на продукти без таблиць" />
+  <meta name="twitter:description" content="Список покупок, у якому ціни вказуються під час покупок — і бюджет складається сам." />
+  <meta name="twitter:image" content="https://shoplix.app/app-icon.png" />
+  <link rel="icon" type="image/png" href="/app-icon.png" />
+  <link rel="apple-touch-icon" href="/app-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <link rel="stylesheet" href="/prototype/shoplix-ui.css" />
+  <link rel="stylesheet" href="/landing.css" />
+  <link rel="stylesheet" href="/article.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Shoplix", "item": "https://shoplix.app/uk/" },
+          { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://shoplix.app/uk/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Облік витрат на продукти" }
+        ]
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Облік витрат на продукти: список покупок і бюджет в одному додатку",
+        "description": "Чому облік продуктового бюджету не виживає в банківських додатках і таблицях — і як список покупок, у якому ціни вказуються прямо під час покупок, показує витрати по людях, категоріях і товарах.",
+        "image": "https://shoplix.app/app-icon.png",
+        "datePublished": "2026-08-26",
+        "dateModified": "2026-08-26",
+        "inLanguage": "uk",
+        "mainEntityOfPage": "https://shoplix.app/uk/blog/dodatok-oblik-vytrat-na-produkty/",
+        "author": { "@type": "Organization", "name": "Команда Shoplix", "url": "https://shoplix.app/uk/" },
+        "publisher": { "@type": "Organization", "name": "Shoplix", "url": "https://shoplix.app/uk/", "logo": { "@type": "ImageObject", "url": "https://shoplix.app/app-icon.png" } }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Як найпростіше вести облік витрат на продукти?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Вказуйте ціну прямо в списку покупок, коли відмічаєте товар купленим — список і так знає, що куплено, ким і коли. Додатки на кшталт Shoplix далі самі будують звіти по категоріях, членах сім'ї і товарах — без чеків і таблиць." }
+          },
+          {
+            "@type": "Question",
+            "name": "Який додаток показує витрати на продукти по членах сім'ї?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Shoplix розбиває витрати по учасниках, категоріях і товарах у безкоштовній версії, з періодами тиждень/місяць/рік і довільним діапазоном. AnyList показує суму списку в платному тарифі Complete, Listonic веде ціни товарів і суму списку — але витрат по кожній людині не рахує жоден із них." }
+          },
+          {
+            "@type": "Question",
+            "name": "Чи записує Shoplix ціни автоматично?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Shoplix запам'ятовує ціну, одиницю виміру і фото, які ви востаннє вказали для товару, і підставляє їх наступного разу, чесно перерахувавши ціну під нову кількість — найчастіше нічого вводити вже не треба. Чеки він не сканує: статистику й історію цін живить ціна, введена один раз для товару." }
+          },
+          {
+            "@type": "Question",
+            "name": "Статистика витрат у Shoplix безкоштовна?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Так. Уся статистика — витрати по учасниках, категоріях і товарах, історія цін, порівняння періодів — входить у безкоштовну версію, без реклами і реєстрації, на iOS, Android та в браузері." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<div class="dp-page">
+  <div class="dp-bg-orbs" aria-hidden="true"><span class="dp-orb dp-orb-blue"></span><span class="dp-orb dp-orb-violet"></span></div>
+  <nav class="dp-nav">
+    <a class="dp-brand" href="/uk/"><span class="dp-brand-mark" aria-label="Shoplix"></span><span>Shoplix</span></a>
+    <div class="dp-nav-links"><a href="/uk/">Головна</a><a href="/uk/blog/">Блог</a><a href="/uk/#download">Завантажити</a></div>
+    <div class="dp-nav-right">
+      <div class="dp-lang"><a href="/en/blog/grocery-list-app-that-tracks-spending/" hreflang="en">EN</a><span>·</span><a href="/uk/blog/dodatok-oblik-vytrat-na-produkty/" class="active" hreflang="uk">UK</a></div>
+      <a class="dp-nav-cta" href="/uk/#download">Завантажити<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+    </div>
+  </nav>
+
+  <main class="ar-main">
+    <nav class="ar-crumbs" aria-label="Хлібні крихти">
+      <a href="/uk/">Shoplix</a><span class="sep">/</span><a href="/uk/blog/">Блог</a><span class="sep">/</span><span>Облік витрат на продукти</span>
+    </nav>
+
+    <header>
+      <span class="ar-eyebrow">Гайд · Бюджет</span>
+      <h1 class="ar-h1">Облік витрат на продукти <em>без таблиць</em>: список покупок, що рахує сам</h1>
+      <p class="ar-lead">Найпростіший спосіб знати, скільки сім'я витрачає на продукти — не бюджетний додаток, не чеки і не таблиця, а ціна, вказана прямо в списку, коли ви відмічаєте товар купленим. Список і так знає, що куплено, ким і коли; ціна — єдине відсутнє поле. Розповідаємо, чому решта методів не приживається, і як цей виглядає на практиці.</p>
+      <div class="ar-byline">
+        <span>Команда Shoplix</span>
+        <span class="dot">Опубліковано 26.08.2026</span>
+        <span class="dot">Оновлено 26.08.2026</span>
+      </div>
+    </header>
+
+    <div class="ar-prose">
+      <p><strong>Чесно попереджаємо:</strong> Shoplix — наш застосунок, спільний список покупок із вбудованою статистикою витрат, тож ми тут зацікавлена сторона. У порівнянні нижче чесно перелічені альтернативи — включно з випадком, коли права відповідь — звичайна таблиця.</p>
+
+      <div class="ar-toc">
+        <p class="ar-toc-title">У цьому гайді</p>
+        <ol>
+          <li><a href="#why-fail">Чому облік продуктового бюджету не виживає</a></li>
+          <li><a href="#the-fix">Рішення: записувати в момент покупки</a></li>
+          <li><a href="#checklist">Що має вміти трекер витрат на продукти</a></li>
+          <li><a href="#options">Порівняння варіантів</a></li>
+          <li><a href="#how-it-works">Як це працює у Shoplix</a></li>
+          <li><a href="#get-started">Почати за три кроки</a></li>
+          <li><a href="#faq">Часті питання</a></li>
+        </ol>
+      </div>
+
+      <h2 id="why-fail">Чому облік продуктового бюджету не виживає</h2>
+      <p>Більшість сімей, які беруться рахувати витрати на їжу, кидають за місяць — і дисципліна тут ні до чого. У кожного зі звичних методів є структурна вада:</p>
+      <ul>
+        <li><strong>Банківський додаток звалює все в купу.</strong> Банк бачить одну транзакцію в супермаркеті — а в тому чеку їжа, засіб для посуду, наповнювач для кота і зарядка для телефона. «Продукти: 14 200 ₴» не каже нічого, з чим можна працювати, а готівкові покупки взагалі зникають.</li>
+        <li><strong>Сканування чеків — забагато тертя.</strong> Фотографувати кожен чек, виправляти помилки розпізнавання, перекладати позиції по категоріях — це друга робота. Зазвичай все закінчується на третьому тижні.</li>
+        <li><strong>Таблиці помирають від занедбаності.</strong> Вони чудово працюють до першого вечора, коли ніхто нічого не вніс — і діра робить усю таблицю «неправильною». У спільних господарствах ще гірше: чия це взагалі таблиця?</li>
+        <li><strong>Жоден метод не відповідає на справжні питання.</strong> Яка категорія виросла минулого місяця? Хто скільки витратив? Коли подорожчало молоко? Загальні суми цього не скажуть — потрібні дані по товарах, з датами і покупцями.</li>
+      </ul>
+      <p>Спільна вада всіх методів: вони рахують витрати <em>після</em> факту, окремим інструментом, як окремий обов'язок. Обов'язки, відірвані від самої дії, пропускаються.</p>
+
+      <h2 id="the-fix">Рішення: записувати в момент покупки</h2>
+      <p>Список покупок — єдиний інструмент, яким сім'я вже користується <em>під час</em> покупок. Коли товар відмічають купленим, список уже знає майже все, що потрібно бюджету: сам товар, його категорію, дату і хто купив. Додайте одне поле — ціну — і повна картина витрат складається сама, як побічний ефект покупок, які ви й так робили.</p>
+      <p>Це і є ідея списків із вбудованою статистикою: без другого інструмента, без вечірнього внесення даних, без суперечок, чия черга оновлювати таблицю. Коли ціну можна вказати просто в списку, не перемикаючись на інший застосунок, вона справді записується.</p>
+
+      <h2 id="checklist">Що має вміти трекер витрат на продукти</h2>
+      <p>Якщо обираєте застосунок під цю задачу, ось що відрізняє справжній трекер від списку з сумою внизу:</p>
+      <ul>
+        <li><strong>Ціна в момент покупки</strong> — вказується чи підставляється тоді, коли товар відмічають купленим, а не відновлюється потім по пам'яті.</li>
+        <li><strong>Розбивка по категоріях</strong> — «м'ясо виросло на 30% цього місяця» — це дія; одна загальна сума — ні.</li>
+        <li><strong>Розбивка по учасниках</strong> — необхідна спільним господарствам і для розрахунків після подій.</li>
+        <li><strong>Історія цін по товару</strong> — єдиний спосіб бачити інфляцію на продуктах, які купуєте саме ви. І вона має враховувати фасування: ціна за кілограм, а не за пачку.</li>
+        <li><strong>Порівняння періодів</strong> — цей тиждень проти минулого, цей місяць проти минулого, одним поглядом.</li>
+        <li><strong>Мінімум тертя для всієї сім'ї</strong> — якщо внесення ціни перетворюється на окремий ритуал або кожному членові сім'ї потрібен акаунт, у даних будуть діри.</li>
+      </ul>
+
+      <h2 id="options">Порівняння варіантів</h2>
+      <div class="ar-table-wrap">
+        <table class="ar-table">
+          <thead>
+            <tr><th>Метод</th><th>Запис при покупці</th><th>По категоріях</th><th>По людях</th><th>Історія цін</th><th>Зусилля</th></tr>
+          </thead>
+          <tbody>
+            <tr class="hl"><td>Shoplix</td><td class="yes">Так, у самому списку</td><td class="yes">Так</td><td class="yes">Так</td><td class="yes">Так, за кг/л/шт</td><td>Секунди на товар</td></tr>
+            <tr><td>AnyList (Complete)</td><td class="yes">Так, сума списку</td><td class="no">Ні</td><td class="no">Ні</td><td class="no">Порівняння цін магазинів</td><td>Низькі</td></tr>
+            <tr><td>Listonic</td><td class="yes">Так, сума списку</td><td class="no">Ні</td><td class="no">Ні</td><td class="no">Ні</td><td>Низькі</td></tr>
+            <tr><td>Банківський додаток</td><td class="no">Постфактум</td><td class="no">Одна купа «Продукти»</td><td class="no">Лише по картках</td><td class="no">Ні</td><td>Нульові, але дані марні</td></tr>
+            <tr><td>Таблиця</td><td class="no">Вечірнє внесення</td><td class="yes">Якщо збудуєте</td><td class="yes">Якщо збудуєте</td><td class="yes">Якщо збудуєте</td><td>Високі, і накопичуються</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:var(--dp-fg-3)">Перевірено в серпні 2026 (Shoplix — за кодом застосунку; інші — за офіційними сайтами). Таблиця залишається правильним вибором, якщо потрібна нестандартна аналітика, якої не дає жоден застосунок — ціна цього вибору: вести її вічно.</p>
+
+      <h2 id="how-it-works">Як це працює у Shoplix</h2>
+      <p>У <a href="/uk/">Shoplix</a> статистика витрат — безкоштовна базова функція спільного списку, а не платний додаток. На практиці це виглядає так:</p>
+      <ul>
+        <li><strong>Вкажіть ціну один раз.</strong> Купивши молоко, відкрийте його в списку і впишіть ціну та кількість — загальну ціну або за одиницю, як написано на ціннику. Наступного разу Shoplix сам підставить минулу ціну, чесно перерахувавши її під нову кількість — здебільшого достатньо просто відмітити товар купленим.</li>
+        <li><strong>Статистика складається сама.</strong> Екран статистики показує витрати за тиждень, місяць, рік чи довільний період — з відсотком зміни проти попереднього періоду — у трьох розрізах: по учасниках, по категоріях, по товарах.</li>
+        <li><strong>Провалюйтесь до відповіді.</strong> Тап по категорії — її товари; тап по товару — історія його ціни, зведена до кілограма, літра чи штуки, щоб різні фасування можна було порівнювати. «Коли подорожчало молоко?» — три тапи.</li>
+        <li><strong>Події розраховуються самі.</strong> У списку події (вечірка, пікнік, спільна поїздка) покупки кожного учасника рахуються окремо — розділити витрати після свята означає глянути на один екран, а не відновлювати чеки.</li>
+      </ul>
+      <div class="ar-phone ar-phones"><div class="sx-phone sx-theme-ocean " style="width:280px;height:605px;transform:rotate(0deg)"><div class="sx-pinhole"></div><div class="sx-screen"><div class="sx-statusbar"><span>9:41</span><div class="sx-status-icons"><i class="ph-fill ph-cell-signal-high"></i><i class="ph-fill ph-wifi-high"></i><span class="sx-batt"></span></div></div><div class="sx-titlebar"><i class="ph ph-arrow-left sx-tb-back"></i><div class="sx-tb-icon"></div><div class="sx-tb-text"><div class="sx-tb-title">Статистика</div></div><div class="sx-tb-right"><i class="ph ph-calendar-blank"></i></div></div><div class="sx-stat-tabs"><span class="sx-stat-tab sx-stat-tab-active">Тиждень</span><span class="sx-stat-tab">Місяць</span><span class="sx-stat-tab">Рік</span><i class="ph ph-calendar-blank"></i></div><div class="sx-stat-summary"><div><div class="sx-stat-label">Витрачено</div><div class="sx-stat-spent">₴11 500</div></div><div><div class="sx-stat-label">Заплановано</div><div class="sx-stat-planned">₴200</div></div></div><div class="sx-stat-subtabs"><span class="sx-stat-subtab-active">За учасником</span><span>За категорією</span><span>За товаром</span></div><div class="sx-stat-list"><div class="sx-stat-row"><span class="ar-mock-avatar" style="background:#7c5cff">МА</span><div class="sx-stat-row-main"><div class="sx-stat-row-name">Марія</div><div class="ar-mock-sub">18 покупок</div></div><div class="sx-stat-row-amount">₴5200</div></div><div class="sx-stat-row"><span class="ar-mock-avatar" style="background:#0ea5e9">ОЛ</span><div class="sx-stat-row-main"><div class="sx-stat-row-name">Олег</div><div class="ar-mock-sub">14 покупок</div></div><div class="sx-stat-row-amount">₴4100</div></div><div class="sx-stat-row"><span class="ar-mock-avatar" style="background:#f59e0b">АН</span><div class="sx-stat-row-main"><div class="sx-stat-row-name">Аня</div><div class="ar-mock-sub">9 покупок</div></div><div class="sx-stat-row-amount">₴2200</div></div></div></div></div><div class="sx-phone sx-theme-ocean " style="width:280px;height:605px;transform:rotate(0deg)"><div class="sx-pinhole"></div><div class="sx-screen"><div class="sx-statusbar"><span>9:41</span><div class="sx-status-icons"><i class="ph-fill ph-cell-signal-high"></i><i class="ph-fill ph-wifi-high"></i><span class="sx-batt"></span></div></div><div class="sx-titlebar"><i class="ph ph-arrow-left sx-tb-back"></i><div class="sx-tb-icon"></div><div class="sx-tb-text"><div class="sx-tb-title">Статистика</div></div><div class="sx-tb-right"><i class="ph ph-calendar-blank"></i></div></div><div class="sx-stat-tabs"><span class="sx-stat-tab sx-stat-tab-active">Тиждень</span><span class="sx-stat-tab">Місяць</span><span class="sx-stat-tab">Рік</span><i class="ph ph-calendar-blank"></i></div><div class="sx-stat-summary"><div><div class="sx-stat-label">Витрачено</div><div class="sx-stat-spent">₴11 500</div></div><div><div class="sx-stat-label">Заплановано</div><div class="sx-stat-planned">₴200</div></div></div><div class="sx-stat-subtabs"><span>За учасником</span><span class="sx-stat-subtab-active">За категорією</span><span>За товаром</span></div><div class="sx-stat-list"><div class="sx-stat-row"><span class="sx-stat-emoji">🥩</span><div class="sx-stat-row-main"><div class="sx-stat-row-name">Мʼясо</div><div class="sx-stat-bar"><span style="width:100%"></span></div></div><div class="sx-stat-row-amount">₴4000</div></div><div class="sx-stat-row"><span class="sx-stat-emoji">🥬</span><div class="sx-stat-row-main"><div class="sx-stat-row-name">Овочі</div><div class="sx-stat-bar"><span style="width:82%"></span></div></div><div class="sx-stat-row-amount">₴3300</div></div><div class="sx-stat-row"><span class="sx-stat-emoji">🌾</span><div class="sx-stat-row-main"><div class="sx-stat-row-name">Крупи та паста</div><div class="sx-stat-bar"><span style="width:66%"></span></div></div><div class="sx-stat-row-amount">₴2600</div></div><div class="sx-stat-row"><span class="sx-stat-emoji">🍞</span><div class="sx-stat-row-main"><div class="sx-stat-row-name">Випічка</div><div class="sx-stat-bar"><span style="width:15%"></span></div></div><div class="sx-stat-row-amount">₴600</div></div><div class="sx-stat-row"><span class="sx-stat-emoji">🍿</span><div class="sx-stat-row-main"><div class="sx-stat-row-name">Снеки</div><div class="sx-stat-bar"><span style="width:13%"></span></div></div><div class="sx-stat-row-amount">₴500</div></div><div class="sx-stat-row"><span class="sx-stat-emoji">🥛</span><div class="sx-stat-row-main"><div class="sx-stat-row-name">Молочне</div><div class="sx-stat-bar"><span style="width:8%"></span></div></div><div class="sx-stat-row-amount">₴300</div></div></div></div></div><div class="sx-phone sx-theme-ocean " style="width:280px;height:605px;transform:rotate(0deg)"><div class="sx-pinhole"></div><div class="sx-screen"><div class="sx-statusbar"><span>9:41</span><div class="sx-status-icons"><i class="ph-fill ph-cell-signal-high"></i><i class="ph-fill ph-wifi-high"></i><span class="sx-batt"></span></div></div><div class="sx-titlebar"><i class="ph ph-arrow-left sx-tb-back"></i><div class="sx-tb-icon"></div><div class="sx-tb-text"><div class="sx-tb-title">Історія цін</div></div><div class="sx-tb-right"><i class="ph ph-calendar-blank"></i></div></div><div class="ar-mock-caption"><span class="sx-stat-emoji">🥛</span>Молоко <span>· ціна за л</span></div><div class="ar-mock-stats"><div class="ar-mock-stat"><b>₴38</b><i>Найнижча</i></div><div class="ar-mock-stat"><b>₴43</b><i>Середня</i></div><div class="ar-mock-stat"><b>₴52</b><i>Остання</i></div><div class="ar-mock-stat"><b>₴52</b><i>Найвища</i></div></div><div class="ar-mock-chart"><span class="ar-mock-bar" style="height:36%"></span><span class="ar-mock-bar" style="height:44%"></span><span class="ar-mock-bar" style="height:40%"></span><span class="ar-mock-bar" style="height:52%"></span><span class="ar-mock-bar" style="height:48%"></span><span class="ar-mock-bar hi" style="height:64%"></span><span class="ar-mock-bar hi" style="height:80%"></span><span class="ar-mock-bar hi" style="height:100%"></span></div><div class="ar-mock-months"><span>трав</span><span>черв</span><span>лип</span><span>серп</span></div><div class="sx-history-list"><div class="sx-history-item"><span class="sx-history-emoji">🥛</span><div class="sx-history-main"><div class="sx-history-name">25 серп · 2 л</div><div class="sx-history-meta">Від попереднього +8%</div></div><span class="sx-history-price">₴52/л</span><span class="sx-history-tag">Макс</span></div><div class="sx-history-item"><span class="sx-history-emoji">🥛</span><div class="sx-history-main"><div class="sx-history-name">22 лип · 1 л</div><div class="sx-history-meta">Від попереднього +9%</div></div><span class="sx-history-price">₴48/л</span></div><div class="sx-history-item"><span class="sx-history-emoji">🥛</span><div class="sx-history-main"><div class="sx-history-name">30 черв · 1 л</div><div class="sx-history-meta">Від попереднього +2%</div></div><span class="sx-history-price">₴44/л</span></div></div></div></div></div>
+      <p>Список спільний і синхронізується в реальному часі, тож ціни, внесені будь-ким із сім'ї, потрапляють в одну статистику — обов'язок не висить на одній людині. І все це працює без реєстрації, без реклами і офлайн.</p>
+
+      <h2 id="get-started">Почати за три кроки</h2>
+      <ol>
+        <li><strong>Створіть список у Shoplix і поділіться ним</strong> з тими, хто ходить за покупками — це посилання, акаунти не потрібні.</li>
+        <li><strong>Вказуйте ціни перші дві-три закупівлі.</strong> Далі автопідстановка знатиме більшість ваших звичних товарів, і облік майже не потребуватиме дій.</li>
+        <li><strong>Відкрийте статистику наприкінці місяця.</strong> Спершу гляньте на розбивку по категоріях і найбільші товари — саме там живуть сюрпризи, і саме там економія реально змінює підсумок.</li>
+      </ol>
+
+      <div class="ar-cta">
+        <p class="ar-cta-title">Куди насправді йдуть гроші на продукти</p>
+        <p>Безкоштовна статистика по учасниках, категоріях і товарах — вбудована у спільний список, без реклами і реєстрації.</p>
+        <div class="dp-cta-row" style="justify-content:center">
+          <a class="dp-btn dp-btn-primary" href="https://apps.apple.com/app/id6759987277" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.03 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702z"/></svg> App Store</a>
+          <a class="dp-btn dp-btn-ghost" href="https://play.google.com/store/apps/details?id=com.shoplix.app" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg> Google Play</a>
+          <a class="dp-btn dp-btn-ghost" href="https://app.shoplix.app/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Відкрити веб-версію</a>
+        </div>
+      </div>
+
+      <h2 id="faq">Часті питання</h2>
+      <div class="ar-faq">
+        <details>
+          <summary>Як найпростіше вести облік витрат на продукти?</summary>
+          <p>Вказуйте ціну прямо в списку покупок, коли відмічаєте товар купленим — список і так знає, що куплено, ким і коли. Додатки на кшталт Shoplix далі самі будують звіти по категоріях, членах сім'ї і товарах — без чеків і таблиць.</p>
+        </details>
+        <details>
+          <summary>Який додаток показує витрати на продукти по членах сім'ї?</summary>
+          <p>Shoplix розбиває витрати по учасниках, категоріях і товарах у безкоштовній версії, з періодами тиждень/місяць/рік і довільним діапазоном. AnyList показує суму списку в платному тарифі Complete, Listonic веде ціни товарів і суму списку — але витрат по кожній людині не рахує жоден із них.</p>
+        </details>
+        <details>
+          <summary>Чи записує Shoplix ціни автоматично?</summary>
+          <p>Shoplix запам'ятовує ціну, одиницю виміру і фото, які ви востаннє вказали для товару, і підставляє їх наступного разу, чесно перерахувавши ціну під нову кількість — найчастіше нічого вводити вже не треба. Чеки він не сканує: статистику й історію цін живить ціна, введена один раз для товару.</p>
+        </details>
+        <details>
+          <summary>Статистика витрат у Shoplix безкоштовна?</summary>
+          <p>Так. Уся статистика — витрати по учасниках, категоріях і товарах, історія цін, порівняння періодів — входить у безкоштовну версію, без реклами і реєстрації, на iOS, Android та в браузері.</p>
+        </details>
+      </div>
+
+      <p>Спершу обираєте сам застосунок для списків? Почніть з огляду <a href="/uk/blog/naikrashchi-dodatky-spysok-pokupok/">найкращих додатків для списку покупок 2026</a> або <a href="/uk/blog/shoplix-chy-listonic/">порівняння Shoplix і Listonic</a>.</p>
+    </div>
+  </main>
+
+  <footer class="dp-footer">
+    <div>SHOPLIX · 2026 · UA</div>
+    <div class="dp-footer-links"><a href="/uk/blog/">Блог</a><a href="/privacy-policy.html">Приватність</a><a href="/terms.html">Умови</a><a href="mailto:support@shoplix.app">support@shoplix.app</a></div>
+  </footer>
+</div>
+</body>
+</html>

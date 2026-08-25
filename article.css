@@ -90,6 +90,10 @@
 .ar-prose li { margin-bottom: 8px; }
 .ar-prose a { color: #A3B6FF; }
 .ar-prose a:hover { text-decoration: underline; }
+.ar-prose a.dp-btn, .ar-prose a.dp-btn:hover { text-decoration: none; }
+.ar-prose a.dp-btn-primary, .ar-prose a.dp-btn-primary:hover { color: var(--dp-bg); }
+.ar-prose a.dp-btn-ghost { color: rgba(236, 238, 243, 0.85); }
+.ar-prose a.dp-btn-ghost:hover { color: var(--dp-fg); }
 .ar-prose strong { color: var(--dp-fg); }
 
 /* ── Table of contents ── */
@@ -262,9 +266,65 @@
   font-weight: 500;
   letter-spacing: -0.02em;
   color: #fff;
-  margin: 0 0 10px;
+  margin: 0 auto 10px;
+  max-width: none;
+  text-align: center;
 }
 .ar-cta p { margin: 0 auto 22px; max-width: 460px; font-size: 15px; color: var(--dp-fg-2); line-height: 1.55; }
+
+/* ── Phone mockup embed ── */
+.ar-phone {
+  display: grid;
+  place-items: center;
+  margin: 36px 0 16px;
+}
+.ar-phone .sx-phone { filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5)); }
+.ar-phones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+  /* Break out of the article column so three phones fit in one row */
+  width: min(888px, calc(100vw - 40px));
+  margin-inline: calc((100% - min(888px, calc(100vw - 40px))) / 2);
+}
+
+/* Mockup extras: buyer avatars & price-history chart */
+.ar-mock-avatar {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 9px; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+.ar-mock-sub { font-size: 9px; color: var(--sx-text-dim); margin-top: 2px; }
+.ar-mock-caption {
+  display: flex; align-items: center; gap: 6px;
+  margin: 0 12px 10px; padding: 8px 10px;
+  background: var(--sx-card); border-radius: 10px;
+  font-size: 10px; color: var(--sx-text); font-weight: 600;
+}
+.ar-mock-caption span { color: var(--sx-text-dim); font-weight: 400; }
+.ar-mock-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 0 12px 10px; }
+.ar-mock-stat { background: var(--sx-card); border-radius: 8px; padding: 6px 4px; text-align: center; }
+.ar-mock-stat b { display: block; font-size: 10px; font-weight: 700; color: var(--sx-text); }
+.ar-mock-stat i { font-style: normal; font-size: 8px; color: var(--sx-text-dim); }
+.ar-mock-chart {
+  display: flex; align-items: flex-end; gap: 5px;
+  height: 110px; margin: 0 12px; padding: 10px 10px 0;
+  background: var(--sx-card);
+  border-radius: var(--sx-radius) var(--sx-radius) 0 0;
+}
+.ar-mock-bar { flex: 1; border-radius: 3px 3px 0 0; background: var(--sx-accent); opacity: .9; }
+.ar-mock-bar.hi { background: #f87171; }
+.ar-mock-months {
+  display: flex; justify-content: space-between;
+  margin: 0 12px 12px; padding: 5px 10px 8px;
+  background: var(--sx-card);
+  border-radius: 0 0 var(--sx-radius) var(--sx-radius);
+  font-size: 8px; color: var(--sx-text-dim);
+}
 
 /* ── Blog index ── */
 .ar-post-list { display: grid; gap: 18px; margin-top: 40px; }
