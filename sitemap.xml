@@ -20,6 +20,60 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://shoplix.app/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shoplix.app/uk/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shoplix.app/en/blog/best-shared-shopping-list-apps/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/naikrashchi-dodatky-spysok-pokupok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://shoplix.app/uk/blog/naikrashchi-dodatky-spysok-pokupok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/naikrashchi-dodatky-spysok-pokupok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://shoplix.app/en/blog/shoplix-vs-listonic/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/shoplix-chy-listonic/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://shoplix.app/uk/blog/shoplix-chy-listonic/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/shoplix-chy-listonic/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://shoplix.app/privacy-policy.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>yearly</changefreq>

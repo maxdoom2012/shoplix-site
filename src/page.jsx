@@ -26,6 +26,7 @@ export function LandingPage({ lang }) {
           <a href="#live">{tr('Realtime', 'Наживо')}</a>
           <a href="#catalog">{tr('Stats', 'Аналітика')}</a>
           <a href="#reuse">{tr('Recipes', 'Рецепти')}</a>
+          <a href={lang === 'uk' ? '/uk/blog/' : '/en/blog/'}>{tr('Blog', 'Блог')}</a>
           <a href="#download">{tr('Get app', 'Завантажити')}</a>
         </div>
         <div className="dp-nav-right">
@@ -264,8 +265,8 @@ export function LandingPage({ lang }) {
             <h3 className="dp-mode-title">{tr('Your usual run, ready to go', 'Твій звичний список — одним тапом')}</h3>
             <p className="dp-mode-desc">
               {tr(
-                'Save any list as a template — weekly groceries, office snacks, your BBQ kit. Next time you need it, add the whole template to any list in one tap.',
-                'Збережи будь-який список як шаблон — тиждень, офісні снеки, набір для шашлику. Наступного разу додай весь шаблон у будь-який список одним тапом.'
+                'Create templates for the shops you repeat — weekly groceries, office snacks, your BBQ kit — and add the whole template to any list in one tap.',
+                'Створи шаблони для повторюваних закупівель — тиждень, офісні снеки, набір для шашлику — і додавай весь шаблон у будь-який список одним тапом.'
               )}
             </p>
             <div className="dp-mode-phone">
@@ -294,6 +295,49 @@ export function LandingPage({ lang }) {
         </div>
       </section>
 
+      {/* ── Everyday speed: voice, barcode, offline, widgets ── */}
+      <section className="dp-section" id="speed">
+        <div className="dp-section-head">
+          <div className="dp-section-eyebrow">06 · {tr('Everyday speed', 'Швидкість щодня')}</div>
+          <h2 className="dp-h2">
+            {tr('Add items ', 'Додавай ')}<em>{tr('your way.', 'як зручно.')}</em>
+          </h2>
+          <p className="dp-section-sub">
+            {tr('Voice, barcode, autocomplete — and it all works offline.', 'Голос, штрих-код, автодоповнення — і все працює офлайн.')}
+          </p>
+        </div>
+        <div className="dp-catalog-stats" style={{ maxWidth: 880, margin: '0 auto' }}>
+          <div className="dp-stat">
+            <strong><i className="ph-fill ph-microphone" style={{ fontSize: 24 }} /></strong>
+            <span>{tr(
+              'Voice input — say “milk, bread, two kilos of apples” and get separate items with quantities',
+              'Голосове введення — скажіть «молоко, хліб, два кіло яблук», і це стануть окремі товари з кількостями'
+            )}</span>
+          </div>
+          <div className="dp-stat">
+            <strong><i className="ph-fill ph-barcode" style={{ fontSize: 24 }} /></strong>
+            <span>{tr(
+              'Barcode scanner — point the camera at a product and Shoplix recognizes it',
+              'Сканер штрих-кодів — наведіть камеру на продукт, і Shoplix розпізнає його'
+            )}</span>
+          </div>
+          <div className="dp-stat">
+            <strong><i className="ph-fill ph-cloud-slash" style={{ fontSize: 24 }} /></strong>
+            <span>{tr(
+              'Works offline — the list keeps working with no signal and syncs when you’re back online',
+              'Працює офлайн — навіть без мережі, а зміни синхронізуються, щойно з’явиться з’єднання'
+            )}</span>
+          </div>
+          <div className="dp-stat">
+            <strong><i className="ph-fill ph-squares-four" style={{ fontSize: 24 }} /></strong>
+            <span>{tr(
+              'Home-screen widgets — check off and claim items without opening the app',
+              'Віджети на головному екрані — викреслюйте і бронюйте, не відкриваючи застосунок'
+            )}</span>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ── */}
       <section className="dp-cta" id="download">
         <h2>
@@ -317,6 +361,7 @@ export function LandingPage({ lang }) {
       <footer className="dp-footer">
         <div>SHOPLIX · 2026 · UA</div>
         <div className="dp-footer-links">
+          <a href={lang === 'uk' ? '/uk/blog/' : '/en/blog/'}>{tr('Blog', 'Блог')}</a>
           <a href="/privacy-policy.html">{tr('Privacy', 'Конфіденційність')}</a>
           <a href="/terms.html">{tr('Terms', 'Умови')}</a>
           <a href="mailto:support@shoplix.app">support@shoplix.app</a>
