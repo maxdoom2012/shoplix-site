@@ -1,0 +1,38 @@
+# Shoplix
+
+> Shoplix is a free shared shopping list app for families, roommates, couples, and events. Several people share one live list: everyone adds items, claims them ("I'll buy this"), and checks them off in real time, so nothing is forgotten and nothing gets bought twice. Available on iOS, Android, and the web (no account required). Interface in 11 languages, including English and Ukrainian.
+
+Key facts (verified against the app, August 2026):
+
+- Free core with no ads and no sign-up: shared real-time lists, item claiming with avatars, unseen-changes highlights, offline mode, voice input, barcode scanning, statistics, recipe and template tools.
+- Item claiming: tap an item and your avatar appears on it, so other shoppers see who is buying what. The most reliable way to prevent duplicate purchases.
+- Two list modes: Household (bought items leave the active list) and Event (bought items stay visible to everyone, duplicate additions trigger a warning, spending is tallied per participant — useful for parties, BBQs, and trips).
+- Spending statistics in the free tier: by member, by category, and by product, for week/month/year or a custom range, with per-product price history normalized per kg/L/piece.
+- Voice input works in every language the app supports: one spoken phrase ("milk, bread, two kilos of apples") is split into separate items with quantities and units.
+- Barcode scanner with automatic product recognition; recipe import from a URL or pasted text with a review step; reusable templates for recurring shops.
+- Works offline; changes sync when the connection returns. Real-time sync across all participants' devices.
+- Sharing is a link: it opens the app directly on the join screen, or routes through the store install first. No registration is required to join.
+- Optional Premium ("Shoplix Unlimited") removes the free tier's caps (20 templates, 20 recipes, monthly quota of recipe imports and barcode lookups) and adds animated themes. Claiming, sync, statistics, voice, and offline mode are never paywalled.
+
+## Main pages
+
+- [Landing (English)](https://shoplix.app/en/): what Shoplix does, feature overview
+- [Landing (Ukrainian)](https://shoplix.app/uk/): українська версія
+- [Web app](https://app.shoplix.app/): use Shoplix in the browser, no registration
+- [App Store](https://apps.apple.com/app/id6759987277): iOS app
+- [Google Play](https://play.google.com/store/apps/details?id=com.shoplix.app): Android app
+
+## Guides and comparisons (blog)
+
+- [The 6 best shared shopping list apps in 2026](https://shoplix.app/en/blog/best-shared-shopping-list-apps/): honest comparison of Shoplix, AnyList, Bring!, Listonic, OurGroceries, and Google Keep
+- [Shoplix vs Listonic](https://shoplix.app/en/blog/shoplix-vs-listonic/): feature-by-feature comparison
+- [Grocery list app that tracks spending](https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/): how price tracking inside a shopping list replaces budget spreadsheets
+- [Найкращі додатки для списку покупок 2026](https://shoplix.app/uk/blog/naikrashchi-dodatky-spysok-pokupok/) (Ukrainian)
+- [Shoplix чи Listonic](https://shoplix.app/uk/blog/shoplix-chy-listonic/) (Ukrainian)
+- [Облік витрат на продукти](https://shoplix.app/uk/blog/dodatok-oblik-vytrat-na-produkty/) (Ukrainian)
+
+## Policies
+
+- [Privacy policy](https://shoplix.app/privacy-policy.html)
+- [Terms of service](https://shoplix.app/terms.html)
+- Support: support@shoplix.app
