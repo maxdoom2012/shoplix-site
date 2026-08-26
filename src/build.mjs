@@ -28,7 +28,7 @@ const META = {
     ogLocale: 'en_US',
     title: 'Shoplix — Shared shopping list app that syncs in real time',
     description:
-      'Shoplix is a free shared shopping list app for families and events. Add, claim, and check off items in real time so nobody buys twice — on iOS, Android, and the web.',
+      'Free shared shopping list app for families and events. Add, claim, and check off items in real time so nobody buys twice — on iOS, Android, and the web.',
     ogTitle: 'Shoplix — Shared shopping list, in real time',
   },
   uk: {
@@ -36,7 +36,7 @@ const META = {
     ogLocale: 'uk_UA',
     title: 'Shoplix — спільний список покупок із синхронізацією в реальному часі',
     description:
-      'Shoplix — безкоштовний спільний список покупок для сім’ї та подій. Додавайте, бронюйте і відмічайте куплене в реальному часі, щоб ніхто не купив двічі. iOS, Android і веб.',
+      'Безкоштовний спільний список покупок для сім’ї та подій. Додавайте, бронюйте і відмічайте куплене в реальному часі, щоб ніхто не купив двічі. iOS, Android, веб.',
     ogTitle: 'Shoplix — спільний список покупок у реальному часі',
   },
 };
