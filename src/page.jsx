@@ -7,6 +7,9 @@ import { PhoneShell, ScreenHome, ScreenParty, ScreenStatistics, ScreenTemplates,
 export function LandingPage({ lang }) {
   const tr = (en, uk) => (lang === 'uk' ? uk : en);
   const other = lang === 'uk' ? '/en/' : '/uk/';
+  // Store links carry campaign attribution (App Store Connect campaign + Play UTM referrer).
+  const appStoreUrl = 'https://apps.apple.com/app/apple-store/id6759987277?pt=128613636&ct=shoplix-site&mt=8';
+  const playUrl = `https://play.google.com/store/apps/details?id=com.shoplix.app&referrer=utm_source%3Dshoplix.app%26utm_medium%3Dweb%26utm_campaign%3D${lang}-landing`;
 
   return (
     <div className="dp-page">
@@ -67,10 +70,10 @@ export function LandingPage({ lang }) {
               )}
             </p>
             <div className="dp-cta-row">
-              <a className="dp-btn dp-btn-primary" href="https://apps.apple.com/app/id6759987277" target="_blank" rel="noopener" aria-label="Download on the App Store">
+              <a className="dp-btn dp-btn-primary" href={appStoreUrl} target="_blank" rel="noopener" aria-label="Download on the App Store">
                 <i className="ph-bold ph-apple-logo" /> App Store
               </a>
-              <a className="dp-btn dp-btn-ghost" href="https://play.google.com/store/apps/details?id=com.shoplix.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+              <a className="dp-btn dp-btn-ghost" href={playUrl} target="_blank" rel="noopener" aria-label="Get it on Google Play">
                 <i className="ph-bold ph-google-play-logo" /> Google Play
               </a>
               <a className="dp-btn dp-btn-ghost" href="https://app.shoplix.app/" target="_blank" rel="noopener" aria-label={tr('Open Shoplix Web App', 'Відкрити веб-застосунок Shoplix')}>
@@ -345,10 +348,10 @@ export function LandingPage({ lang }) {
           <em>{tr('Never twice.', 'Не купуй двічі.')}</em>
         </h2>
         <div className="dp-cta-row" style={{ justifyContent: 'center' }}>
-          <a className="dp-btn dp-btn-primary" href="https://apps.apple.com/app/id6759987277" target="_blank" rel="noopener" aria-label="Download on the App Store">
+          <a className="dp-btn dp-btn-primary" href={appStoreUrl} target="_blank" rel="noopener" aria-label="Download on the App Store">
             <i className="ph-bold ph-apple-logo" /> App Store
           </a>
-          <a className="dp-btn dp-btn-ghost" href="https://play.google.com/store/apps/details?id=com.shoplix.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+          <a className="dp-btn dp-btn-ghost" href={playUrl} target="_blank" rel="noopener" aria-label="Get it on Google Play">
             <i className="ph-bold ph-google-play-logo" /> Google Play
           </a>
           <a className="dp-btn dp-btn-ghost" href="https://app.shoplix.app/" target="_blank" rel="noopener" aria-label={tr('Open Shoplix Web App', 'Відкрити веб-застосунок Shoplix')}>
