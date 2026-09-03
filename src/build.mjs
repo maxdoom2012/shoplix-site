@@ -60,6 +60,19 @@ function jsonLd(lang) {
   const data = [
     {
       '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Shoplix',
+      url: `${SITE}/`,
+      logo: OG_IMAGE,
+      email: 'support@shoplix.app',
+      sameAs: [
+        'https://x.com/ShoplixApp',
+        'https://apps.apple.com/app/id6759987277',
+        'https://play.google.com/store/apps/details?id=com.shoplix.app',
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'Shoplix',
       url: `${SITE}/${lang}/`,
@@ -110,6 +123,7 @@ function documentHtml(lang, bodyHtml) {
   <title>${attr(m.title)}</title>
   <meta name="description" content="${attr(m.description)}" />
   <link rel="canonical" href="${SITE}/${lang}/" />
+  <meta name="apple-itunes-app" content="app-id=6759987277, app-argument=${SITE}/${lang}/" />
   ${hreflangLinks()}
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Shoplix" />

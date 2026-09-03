@@ -367,7 +367,7 @@ export function LandingPage({ lang }) {
           <a href={lang === 'uk' ? '/uk/blog/' : '/en/blog/'}>{tr('Blog', 'Блог')}</a>
           <a href="/privacy-policy.html">{tr('Privacy', 'Конфіденційність')}</a>
           <a href="/terms.html">{tr('Terms', 'Умови')}</a>
-          <a href="mailto:support@shoplix.app">support@shoplix.app</a>
+          <a href="https://x.com/ShoplixApp" target="_blank" rel="me noopener">X</a><a href="mailto:support@shoplix.app">support@shoplix.app</a>
         </div>
       </footer>
     </div>
