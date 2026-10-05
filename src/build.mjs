@@ -168,18 +168,124 @@ function rootRedirectHtml() {
   <link rel="canonical" href="${SITE}/en/" />
   ${hreflangLinks()}
   <link rel="icon" type="image/png" href="/app-icon.png" />
+  <link rel="apple-touch-icon" href="/app-icon.png" />
   <meta http-equiv="refresh" content="0; url=/en/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="${FONTS}" rel="stylesheet" />
+  <link rel="stylesheet" href="/landing.css" />
   <script>
     (function () {
       var l = (navigator.language || navigator.userLanguage || '').toLowerCase();
       location.replace(l.indexOf('uk') === 0 ? '/uk/' : '/en/');
     })();
   </script>
+  <style>
+    .root-gateway {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 48px 24px;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .root-gateway h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 600;
+      color: #fff;
+      margin: 20px 0 14px;
+      line-height: 1.15;
+    }
+    .root-gateway p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--dp-fg-2);
+      margin: 0 0 24px;
+    }
+    .root-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      text-align: left;
+      margin: 28px 0;
+      width: 100%;
+    }
+    .root-feat-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--dp-line);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+    .root-feat-card strong {
+      display: block;
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .root-feat-card span {
+      font-size: 13px;
+      color: var(--dp-fg-3);
+      line-height: 1.5;
+    }
+    .root-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+  </style>
+  ${jsonLd('en')}
 </head>
 <body>
-  <p style="font-family:system-ui,sans-serif;padding:24px">
-    Redirecting to Shoplix — <a href="/en/">English</a> · <a href="/uk/">Українською</a>.
-  </p>
+  <div class="dp-page">
+    <div class="dp-bg-orbs" aria-hidden="true"><span class="dp-orb dp-orb-blue"></span><span class="dp-orb dp-orb-violet"></span></div>
+    <main class="root-gateway">
+      <div class="dp-brand-mark" style="width:56px;height:56px;margin:0 auto" aria-label="Shoplix"></div>
+      <h1>Shoplix — Real-Time Shared Shopping List App</h1>
+      <p>
+        Free, real-time shared shopping list application for families, couples, and events.
+        Add, claim, and check off items in real time so nobody buys twice — on iOS, Android, and the web.
+      </p>
+
+      <div class="root-btn-group">
+        <a class="dp-btn dp-btn-primary" href="/en/">Continue in English</a>
+        <a class="dp-btn dp-btn-ghost" href="/uk/">Перейти українською</a>
+      </div>
+
+      <div class="root-features">
+        <div class="root-feat-card">
+          <strong>⚡ Real-Time Sync</strong>
+          <span>Instant WebSocket updates across all phones with &ldquo;I&rsquo;ll grab it&rdquo; item claiming.</span>
+        </div>
+        <div class="root-feat-card">
+          <strong>🏡 Two List Modes</strong>
+          <span>Family Lists auto-clear checked items. Event Lists preserve history &amp; track participant spend.</span>
+        </div>
+        <div class="root-feat-card">
+          <strong>📊 Budget Intelligence</strong>
+          <span>Log item prices at check-off to track grocery inflation and category spending over time.</span>
+        </div>
+        <div class="root-feat-card">
+          <strong>🔒 Anonymous-First</strong>
+          <span>Start immediately without accounts or passwords. 100% offline-first reliability with SQLite.</span>
+        </div>
+      </div>
+
+      <div class="dp-meta-row" style="margin-top:12px">
+        <a href="https://apps.apple.com/app/id6759987277" target="_blank" rel="noopener">App Store</a>
+        <span>·</span>
+        <a href="https://play.google.com/store/apps/details?id=com.shoplix.app" target="_blank" rel="noopener">Google Play</a>
+        <span>·</span>
+        <a href="https://app.shoplix.app/" target="_blank" rel="noopener">Web App</a>
+        <span>·</span>
+        <a href="/en/blog/">Blog</a>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
 `;

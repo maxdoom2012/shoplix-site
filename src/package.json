@@ -5,7 +5,8 @@
   "type": "module",
   "description": "Build-time static renderer for the Shoplix landing page. Renders the React mockup components to static HTML (ReactDOMServer) so the page is fully crawlable — no client-side React/Babel is shipped.",
   "scripts": {
-    "build": "node build.mjs"
+    "build": "node build.mjs",
+    "indexnow": "node submit-indexnow.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.24.2",

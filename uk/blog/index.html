@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.add('js')</script>
-  <title>Блог Shoplix — списки покупок, бюджет і сімейна координація</title>
-  <meta name="description" content="Гайди та чесні порівняння про спільні списки покупок, продуктовий бюджет і сімейну координацію — від команди застосунку Shoplix." />
+  <title>Блог Shoplix — спільні списки покупок, бюджети та координація</title>
+  <meta name="description" content="Блог Shoplix: практичні ґайди та чесні порівняння застосунків для списків покупок, ведення продуктового бюджету та координації покупок у сім'ї." />
   <link rel="canonical" href="https://shoplix.app/uk/blog/" />
   <meta name="apple-itunes-app" content="app-id=6759987277, app-argument=https://shoplix.app/uk/blog/" />
   <link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -14,13 +14,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Shoplix" />
   <meta property="og:locale" content="uk_UA" />
-  <meta property="og:title" content="Блог Shoplix" />
-  <meta property="og:description" content="Гайди та чесні порівняння про спільні списки покупок, продуктовий бюджет і сімейну координацію." />
+  <meta property="og:title" content="Блог Shoplix — спільні списки покупок, бюджети та координація" />
+  <meta property="og:description" content="Блог Shoplix: практичні ґайди та чесні порівняння застосунків для списків покупок, ведення продуктового бюджету та координації покупок у сім'ї." />
   <meta property="og:url" content="https://shoplix.app/uk/blog/" />
   <meta property="og:image" content="https://shoplix.app/app-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Блог Shoplix" />
-  <meta name="twitter:description" content="Гайди та чесні порівняння про спільні списки покупок і продуктовий бюджет." />
+  <meta name="twitter:title" content="Блог Shoplix — спільні списки покупок, бюджети та координація" />
+  <meta name="twitter:description" content="Практичні ґайди та чесні порівняння спільних списків покупок і продуктового бюджету від команди Shoplix." />
   <meta name="twitter:image" content="https://shoplix.app/app-icon.png" />
   <link rel="icon" type="image/png" href="/app-icon.png" />
   <link rel="apple-touch-icon" href="/app-icon.png" />
@@ -79,6 +79,32 @@
         <span class="date">25.08.2026</span>
       </a>
     </div>
+
+    <section class="ar-prose" style="margin-top:64px;border-top:1px solid var(--dp-line);padding-top:48px">
+      <h2>Про що блог Shoplix</h2>
+      <p>Ми створили Shoplix, щоб позбавити сім'ї та друзів від щоденного побутового хаосу: нескінченних уточнень у месенджерах, забутих покупок і купленого двічі молока. У цьому блозі ми ділимося практичним досвідом оптимізації сімейних покупок, аналітикою продуктової інфляції та чесними технічними оглядами інструментів продуктивності.</p>
+      
+      <h3>Тематичні напрямки</h3>
+      <ul>
+        <li><strong>Синхронізація та координація:</strong> Як реальний час (SignalR) та функція «I’ll grab it» (бронювання аватаркою) виключають дублікати та замінюють дзвінки з супермаркету.</li>
+        <li><strong>Продуктовий бюджет та аналітика цін:</strong> Чому банківські виписки не показують реальної картини витрат на їжу, і як фіксація цін при купівлі розкриває інфляцію окремих продуктів.</li>
+        <li><strong>Чесні порівняння застосунків:</strong> Об'єктивні розбори Shoplix, Listonic, Bring!, AnyList та інших сервісів — із плюсами, мінусами та сценаріями, коли краще вибрати інший застосунок.</li>
+      </ul>
+
+      <h2 style="margin-top:48px">Часті запитання (FAQ)</h2>
+      
+      <h3>Як Shoplix допомагає не купувати товари двічі?</h3>
+      <p>У Shoplix є функція бронювання: ви натискаєте на товар, і на ньому з'являється ваша аватарка («Я куплю»). Усі інші учасники списку бачать це на своїх екранах миттєво через веб-сокети. Крім того, у режимі подій (Event List) застосунок попереджає, якщо хтось намагається додати продукт, який уже є у списку.</p>
+
+      <h3>Чим сімейні списки відрізняються від списків для подій?</h3>
+      <p>У щоденному сімейному списку (Family List) куплені товари автоматично зникають (м'яке видалення), щоб список залишався чистим і компактним. У списках подій (Event List — вечірка, подорож, барбекю) куплені позиції не видаляються, а переміщуються у блок купленого зі збереженням історії та підрахунком витрат по кожному учаснику.</p>
+
+      <h3>Чи потрібна обов'язкова реєстрація?</h3>
+      <p>Ні. Shoplix побудований за принципом Anonymous-First. Ви можете завантажити застосунок і одразу створювати та ділитися списками за посиланням без введення пошти чи створення пароля. За бажанням ви можете прив'язати акаунт Apple або Google пізніше.</p>
+
+      <h3>Чи працює застосунок офлайн?</h3>
+      <p>Так. Shoplix зберігає дані в локальній базі SQLite на пристрої. Ви можете переглядати, додавати та викреслювати товари навіть у підвальному супермаркеті без зв'язку — усі зміни автоматично синхронізуються із сервером та іншими пристроями, щойно з'явиться інтернет.</p>
+    </section>
 
     <div class="ar-cta" style="margin-top:56px">
       <p class="ar-cta-title">Спробуйте Shoplix</p>

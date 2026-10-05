@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.add('js')</script>
   <title>Shoplix Blog — Shopping Lists, Budgets, and Household Coordination</title>
-  <meta name="description" content="Guides and honest comparisons about shared shopping lists, grocery budgets, and household coordination — from the team behind the Shoplix app." />
+  <meta name="description" content="Guides and honest comparisons about shared shopping lists, grocery budgets, and household coordination — from the team behind the Shoplix real-time app." />
   <link rel="canonical" href="https://shoplix.app/en/blog/" />
   <meta name="apple-itunes-app" content="app-id=6759987277, app-argument=https://shoplix.app/en/blog/" />
   <link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -14,13 +14,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Shoplix" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Shoplix Blog" />
-  <meta property="og:description" content="Guides and honest comparisons about shared shopping lists, grocery budgets, and household coordination." />
+  <meta property="og:title" content="Shoplix Blog — Shopping Lists, Budgets, and Household Coordination" />
+  <meta property="og:description" content="Guides and honest comparisons about shared shopping lists, grocery budgets, and household coordination — from the team behind the Shoplix real-time app." />
   <meta property="og:url" content="https://shoplix.app/en/blog/" />
   <meta property="og:image" content="https://shoplix.app/app-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Shoplix Blog" />
-  <meta name="twitter:description" content="Guides and honest comparisons about shared shopping lists and grocery budgets." />
+  <meta name="twitter:title" content="Shoplix Blog — Shopping Lists, Budgets, and Household Coordination" />
+  <meta name="twitter:description" content="Guides and honest comparisons about shared shopping lists, grocery budgets, and household coordination." />
   <meta name="twitter:image" content="https://shoplix.app/app-icon.png" />
   <link rel="icon" type="image/png" href="/app-icon.png" />
   <link rel="apple-touch-icon" href="/app-icon.png" />
@@ -79,6 +79,32 @@
         <span class="date">Aug 25, 2026</span>
       </a>
     </div>
+
+    <section class="ar-prose" style="margin-top:64px;border-top:1px solid var(--dp-line);padding-top:48px">
+      <h2>About the Shoplix Blog</h2>
+      <p>We built Shoplix to eliminate everyday shopping friction for families, couples, and roommates: frantic calls from the store aisle, forgotten groceries, and duplicate cartons of milk. In this blog, our engineering and product team shares practical guides on household coordination, grocery budget tracking, and objective comparisons of list apps.</p>
+      
+      <h3>Core Topics We Cover</h3>
+      <ul>
+        <li><strong>Real-Time Sync &amp; Coordination:</strong> How WebSockets, instant claiming badges (&ldquo;I&rsquo;ll grab it&rdquo;), and auto-clearing lists prevent duplicate buys without noise.</li>
+        <li><strong>Grocery Budget Intelligence:</strong> Why post-purchase banking categorization fails to curb grocery spend, and how logging item prices at check-off reveals true food inflation.</li>
+        <li><strong>Unbiased App Comparisons:</strong> In-depth breakdowns comparing Shoplix against alternatives like Listonic, Bring!, AnyList, and OurGroceries — including honest notes on when another app is a better fit.</li>
+      </ul>
+
+      <h2 style="margin-top:48px">Frequently Asked Questions (FAQ)</h2>
+      
+      <h3>How does Shoplix prevent people from buying the same item twice?</h3>
+      <p>Shoplix features a live item claiming system: tap any product avatar slot, and your face or initials appear on it instantly across everyone&rsquo;s phone (&ldquo;I&rsquo;ll grab it&rdquo;). In Event Lists, the app also warns you immediately if someone attempts to add an item that is already on the list.</p>
+
+      <h3>How do Family Lists differ from Event Lists?</h3>
+      <p>In a continuous Family List (daily groceries, pharmacy), items soft-delete and disappear when checked off, keeping the list clean. In an Event List (BBQ party, holiday trip), purchased items stay visible in a dedicated completed section with an audit trail and spend breakdown per participant.</p>
+
+      <h3>Can I use Shoplix without creating an account?</h3>
+      <p>Yes. Shoplix operates on an Anonymous-First architecture powered by device-based tokens. You can install the app and start sharing lists immediately with zero registration, passwords, or personal data collection. Apple or Google sign-in is completely optional.</p>
+
+      <h3>Does Shoplix work offline without cell reception?</h3>
+      <p>Yes. All lists and changes are saved locally in SQLite on your device first. You can browse, add, and check off items deep inside a supermarket basement without a connection. As soon as connectivity returns, your changes sync smoothly with automatic 409 conflict resolution.</p>
+    </section>
 
     <div class="ar-cta" style="margin-top:56px">
       <p class="ar-cta-title">Try Shoplix while you're here</p>
