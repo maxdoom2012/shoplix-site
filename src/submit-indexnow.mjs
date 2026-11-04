@@ -11,7 +11,10 @@ const SITEMAP_PATH = join(SRC, '..', 'sitemap.xml');
 const HOST = 'shoplix.app';
 const KEY = '16b41ed77811418989f22b2fe62e0852';
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
-const ENDPOINT = 'https://api.indexnow.org/indexnow';
+const ENDPOINTS = [
+  'https://www.bing.com/indexnow',
+  'https://api.indexnow.org/indexnow',
+];
 
 async function main() {
   console.log(`[IndexNow] Reading URLs from ${SITEMAP_PATH}...`);
@@ -39,23 +42,27 @@ async function main() {
     urlList,
   };
 
-  console.log(`\n[IndexNow] Sending POST request to ${ENDPOINT}...`);
-  const res = await fetch(ENDPOINT, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json; charset=utf-8',
-    },
-    body: JSON.stringify(payload),
-  });
+  for (const endpoint of ENDPOINTS) {
+    console.log(`\n[IndexNow] Sending POST request to ${endpoint}...`);
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+        body: JSON.stringify(payload),
+      });
 
-  const text = await res.text();
-  console.log(`[IndexNow] HTTP Status: ${res.status} ${res.statusText}`);
-
-  if (res.status === 200 || res.status === 202) {
-    console.log('[IndexNow] Success! URLs successfully submitted to search engines.');
-  } else {
-    console.error(`[IndexNow] Error: ${text || 'Unexpected response'}`);
-    process.exit(1);
+      console.log(`[IndexNow] ${endpoint} -> ${res.status} ${res.statusText}`);
+      if (res.status === 200 || res.status === 202) {
+        console.log(`[IndexNow] Success on ${endpoint}`);
+      } else {
+        const text = await res.text();
+        console.warn(`[IndexNow] Warning from ${endpoint}: ${text}`);
+      }
+    } catch (err) {
+      console.error(`[IndexNow] Failed to ping ${endpoint}:`, err.message);
+    }
   }
 }
 

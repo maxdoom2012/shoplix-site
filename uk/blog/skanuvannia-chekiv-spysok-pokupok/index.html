@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js')</script>
+  <title>Сканування чеків у списку покупок Shoplix: ціни і вага без ручного введення</title>
+  <meta name="description" content="Як сканування паперових та електронних чеків у Shoplix звільняє від введення кількості, ваги і цін у магазині та автоматично оновлює статистику витрат." />
+  <link rel="canonical" href="https://shoplix.app/uk/blog/skanuvannia-chekiv-spysok-pokupok/" />
+  <meta name="apple-itunes-app" content="app-id=6759987277, app-argument=https://shoplix.app/uk/blog/skanuvannia-chekiv-spysok-pokupok/" />
+  <link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
+  <link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/skanuvannia-chekiv-spysok-pokupok/" />
+  <link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/receipt-scanning-shopping-list/" />
+  <link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/receipt-scanning-shopping-list/" />
+  <link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/receipt-scanning-shopping-list/" />
+  <link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/receipt-scanning-shopping-list/" />
+  <link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/receipt-scanning-shopping-list/" />
+  <link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
+  <link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
+  <link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+  <link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Shoplix" />
+  <meta property="og:locale" content="uk_UA" />
+  <meta property="og:title" content="Сканування чеків у списку покупок Shoplix: ціни і вага за секунди" />
+  <meta property="og:description" content="Не витрачайте час у магазині на введення ваги та реальних цін. Сфотографуйте паперовий чек або зробіть скріншот електронного — Shoplix звірить усе зі списком." />
+  <meta property="og:url" content="https://shoplix.app/uk/blog/skanuvannia-chekiv-spysok-pokupok/" />
+  <meta property="og:image" content="https://shoplix.app/app-icon.png" />
+  <meta property="article:published_time" content="2026-11-04" />
+  <meta property="article:modified_time" content="2026-11-04" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Сканування чеків у Shoplix: ціни та кількість за секунди" />
+  <meta name="twitter:description" content="Фото паперового чека або скріншот електронного чека автоматично підставляє ціни, вагу та спонтанні покупки у ваш список." />
+  <meta name="twitter:image" content="https://shoplix.app/app-icon.png" />
+  <link rel="icon" type="image/png" href="/app-icon.png" />
+  <link rel="apple-touch-icon" href="/app-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <link rel="stylesheet" href="/prototype/shoplix-ui.css" />
+  <link rel="stylesheet" href="/landing.css" />
+  <link rel="stylesheet" href="/article.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shoplix","item":"https://shoplix.app/uk/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://shoplix.app/uk/blog/"},{"@type":"ListItem","position":3,"name":"Сканування чеків у списку покупок"}]},{"@type":"BlogPosting","headline":"Сканування чеків у списку покупок Shoplix: ціни і вага без ручного введення","description":"Як сканування паперових та електронних чеків у Shoplix позбавляє потреби вводити кількість, вагу й ціни в магазині та автоматично оновлює статистику витрат.","image":"https://shoplix.app/app-icon.png","datePublished":"2026-11-04","dateModified":"2026-11-04","inLanguage":"uk","mainEntityOfPage":"https://shoplix.app/uk/blog/skanuvannia-chekiv-spysok-pokupok/","author":{"@type":"Organization","name":"Команда Shoplix","url":"https://shoplix.app/uk/"},"publisher":{"@type":"Organization","name":"Shoplix","url":"https://shoplix.app/uk/","logo":{"@type":"ImageObject","url":"https://shoplix.app/app-icon.png"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Чи можна сканувати електронні чеки з додатків супермаркетів і банків?","acceptedAnswer":{"@type":"Answer","text":"Так. Зробіть 1–5 скріншотів електронного чека в додатку супермаркету, служби доставки чи банку та оберіть їх із галереї — Shoplix розпізнає позиції так само точно, як і з фото паперового чека."}},{"@type":"Question","name":"Як сфотографувати довгий чек із великої закупівлі?","acceptedAnswer":{"@type":"Answer","text":"Сфотографуйте паперовий чек по частинах (від 2 до 5 кадрів) із невеликим перекриттям. Shoplix автоматично склеїть частини чека і прибере дублікати рядків на стиках."}},{"@type":"Question","name":"Чи потрібно вказувати кількість і ціну товару перед походом у магазин?","acceptedAnswer":{"@type":"Answer","text":"Ні. Достатньо додати у список просто назви продуктів (наприклад, «Яблука», «Молоко», «Сир»). Після сканування чека Shoplix сам проставить фактичну вагу, кількість і реальну ціну."}},{"@type":"Question","name":"Що буде з незрозумілими касовими скороченнями в моїй статистиці?","acceptedAnswer":{"@type":"Answer","text":"Shoplix автоматично зіставляє касові рядки (наприклад, «МОЛ.СЕЛ.2.5% ПЕТ 900Г») зі звичними назвами товарів у вашому списку та каталозі («Молоко»). На екрані звірки можна в один тап перемкнути назву між варіантом із каталогу та повною назвою з чека."}},{"@type":"Question","name":"Скільки сканувань чеків доступно у безкоштовній версії Shoplix?","acceptedAnswer":{"@type":"Answer","text":"У безкоштовному тарифі доступно 10 сканувань чеків на місяць (цього вистачає на 2–3 великі закупівлі щотижня), а з підпискою Shoplix Premium — до 150 сканувань на місяць. Лічильник оновлюється 1-го числа кожного місяця."}}]}]}</script>
+</head>
+<body>
+<div class="dp-page">
+  <div class="dp-bg-orbs" aria-hidden="true"><span class="dp-orb dp-orb-blue"></span><span class="dp-orb dp-orb-violet"></span></div>
+  <nav class="dp-nav">
+    <a class="dp-brand" href="/uk/"><span class="dp-brand-mark" aria-label="Shoplix"></span><span>Shoplix</span></a>
+    <div class="dp-nav-links"><a href="/uk/">Головна</a><a href="/uk/blog/">Блог</a><a href="/uk/#download">Завантажити</a></div>
+    <div class="dp-nav-right">
+      <details class="dp-lang-menu"><summary class="dp-lang-btn" aria-label="Language"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>UK</span><svg class="dp-lang-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="dp-lang-list"><a class="dp-lang-item" href="/en/blog/receipt-scanning-shopping-list/" hreflang="en"><span>English</span><span class="dp-lang-code">EN</span></a><a class="dp-lang-item active" href="/uk/blog/skanuvannia-chekiv-spysok-pokupok/" hreflang="uk"><span>Українська</span><span class="dp-lang-code">UK</span></a><a class="dp-lang-item" href="/de/blog/receipt-scanning-shopping-list/" hreflang="de"><span>Deutsch</span><span class="dp-lang-code">DE</span></a><a class="dp-lang-item" href="/es/blog/receipt-scanning-shopping-list/" hreflang="es"><span>Español</span><span class="dp-lang-code">ES</span></a><a class="dp-lang-item" href="/fr/blog/receipt-scanning-shopping-list/" hreflang="fr"><span>Français</span><span class="dp-lang-code">FR</span></a><a class="dp-lang-item" href="/it/blog/receipt-scanning-shopping-list/" hreflang="it"><span>Italiano</span><span class="dp-lang-code">IT</span></a><a class="dp-lang-item" href="/nl/blog/receipt-scanning-shopping-list/" hreflang="nl"><span>Nederlands</span><span class="dp-lang-code">NL</span></a><a class="dp-lang-item" href="/pl/blog/receipt-scanning-shopping-list/" hreflang="pl"><span>Polski</span><span class="dp-lang-code">PL</span></a><a class="dp-lang-item" href="/pt/blog/receipt-scanning-shopping-list/" hreflang="pt"><span>Português</span><span class="dp-lang-code">PT</span></a><a class="dp-lang-item" href="/ro/blog/receipt-scanning-shopping-list/" hreflang="ro"><span>Română</span><span class="dp-lang-code">RO</span></a></div></details>
+      <a class="dp-nav-cta" href="/uk/#download">Завантажити<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+    </div>
+  </nav>
+  <main class="ar-main">
+    <nav class="ar-crumbs" aria-label="Хлібні крихти"><a href="/uk/">Shoplix</a><span class="sep">/</span><a href="/uk/blog/">Блог</a><span class="sep">/</span><span>Сканування чеків у списку покупок</span></nav>
+    <header>
+      <span class="ar-eyebrow">Нова функція · Швидкість і бюджет</span>
+      <h1 class="ar-h1">Сканування чеків у Shoplix: забудьте про <em>введення цін і ваги</em> в магазині</h1>
+      <p class="ar-lead">Більше не потрібно вгадувати точну вагу вдома, переписувати грами біля ваг у супермаркеті чи вводити ціни з кошиком у руках. Додавайте в список лише назви товарів, спокійно купуйте, а після каси просто сфотографуйте паперовий чек або зробіть скріншот електронного — Shoplix сам проставить реальні ціни, точну кількість і вагу.</p>
+      <div class="ar-byline"><span>Команда Shoplix</span><span class="dot">Опубліковано 04.11.2026</span><span class="dot">Оновлено 04.11.2026</span></div>
+    </header>
+    <div class="ar-prose">
+      <div class="ar-toc">
+        <p class="ar-toc-title">У цій статті</p>
+        <ol>
+          <li><a href="#problem">Чому ручне введення цін і ваги в магазині втомлює</a></li>
+          <li><a href="#workflow">Як це працює на практиці: купуйте без зупинок, скануйте після каси</a></li>
+          <li><a href="#three-buckets">Як працює звірка чека зі списком</a></li>
+          <li><a href="#clean-catalog">Зрозумілі назви замість касових скорочень і контроль суми</a></li>
+          <li><a href="#comparison">Ручне введення vs окремі сканери чеків vs Shoplix</a></li>
+          <li><a href="#how-to-start">Як відсканувати свій перший чек</a></li>
+          <li><a href="#faq">Часті питання (FAQ)</a></li>
+        </ol>
+      </div>
+
+      <h2 id="problem">1. Чому ручне введення цін і ваги в магазині втомлює</h2>
+      <p>Ми додали <a href="/uk/blog/dodatok-oblik-vytrat-na-produkty/">статистику витрат у Shoplix</a>, щоб сім’ї бачили реальну картину продуктового бюджету без таблиць. Коли ви забігаєте в магазин біля дому по 2–3 позиції, автопідстановка минулої ціни працює чудово. Але під час великої закупівлі на 20–30 товарів у супермаркеті вводити все вручну незручно з трьох причин:</p>
+      <ul>
+        <li><strong>Неможливо наперед знати точну вагу.</strong> Вдома ви записуєте у список «Яблука», «Куряче філе» або «Сир». Скільки заважить конкретний шматок чи пакет у магазині — <code>0.68 кг</code> чи <code>1.34 кг</code> — стане відомо лише на вагах.</li>
+        <li><strong>Незручно вводити цифри з кошиком у руках.</strong> Стояти з візком посеред ряду, відкривати картку кожного товару, вписувати грами з наклейки й точні ціни з цінників — це зайва морока просто під час покупок.</li>
+        <li><strong>Спонтанні покупки не потрапляють у бюджет.</strong> Якщо ви взяли на касі каву, шоколадку чи йогурт, якого не було в списку, ніхто не хоче вручну вносити його у список просто заради обліку — і в статистиці з’являються прогалини.</li>
+      </ul>
+      <p>Саме тому ми додали в <a href="/uk/">Shoplix</a> <strong>сканування та звірку чеків</strong> — щоб ви просто купували за списком, а точні ціни, вагу й кількість застосунок підтягував із чека сам.</p>
+
+      <h2 id="workflow">2. Як це працює на практиці: купуйте без зупинок, скануйте після каси</h2>
+      <p>Зі сканером чеків планування та похід у магазин стають значно простішими:</p>
+      <ul>
+        <li><strong>Вдома — не треба вказувати кількість і вагу.</strong> Додавайте товари у список просто за назвою (текстом або голосом). Shoplix не копіює стару вагу з попереднього разу, зате показує на картці останню відому ціну товару для орієнтиру.</li>
+        <li><strong>У магазині — просто відмічайте куплене.</strong> Кладете товар у кошик — відмічаєте його одним тапом у списку, не відкриваючи редактор ціни чи кількості. А якщо поспішаєте, можна навіть не викреслювати все підряд: сканер чека сам позначить позиції купленими.</li>
+        <li><strong>Після каси — фото паперового чека або скріншот електронного.</strong> Відкрийте меню списку (<strong>⋮ → Сканувати чек</strong>) або перейдіть в <strong>Історію → іконка чека</strong> у верхній панелі та додайте від 1 до 5 зображень:
+          <ul>
+            <li><strong>Паперовий чек:</strong> сфотографуйте камерою. Якщо чек довгий — зробіть 2–5 послідовних фото з невеликим перекриттям, і Shoplix автоматично склеїть їх без дублювання позицій.</li>
+            <li><strong>Електронний чек:</strong> зробіть скріншот чека у додатку супермаркету (Сільпо, АТБ, Novus, Фора, Metro тощо), служби доставки або мобільного банку та оберіть його з галереї.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2 id="three-buckets">3. Як працює звірка чека зі списком</h2>
+      <p>Звичайні сканери чеків просто розпізнають текст і складають його в окремий список, ніяк не пов’язаний із вашим плануванням покупок. Shoplix працює інакше: він звіряє чек безпосередньо з вашим списком покупок та історією за цей день. Якщо касир пробив два однакові товари окремими рядками, застосунок сам об’єднає їх в одну позицію та підсумує кількість і вартість.</p>
+      <p>Перед збереженням відкривається екран <strong>«Звірка чека»</strong>, де всі розпізнані товари розкладені у три зрозумілі секції:</p>
+      <ol>
+        <li><strong>Оновити ціни в Історії:</strong> якщо ви вже відмітили товар купленим у магазині, Shoplix знайде його в історії за цей день і оновить фактичну вагу, кількість та ціну з чека. Зміни одразу видно на картці: наприклад, <code><s>1 кг</s> → 1.34 кг • <s>₴60</s> → ₴78.50</code>.</li>
+        <li><strong>Позначити купленим зі списку:</strong> товари, які залишилися невідміченими в активному списку, але є в чеку, автоматично переносяться в куплені одразу з реальною ціною та кількістю.</li>
+        <li><strong>Додати в Історію (поза списком):</strong> спонтанні покупки з чека, яких не було у вашому списку, одразу записуються в Історію як куплені та розкладаються по відповідних категоріях. Так вони не засмічують активний список, але повністю враховуються у статистиці витрат.</li>
+      </ol>
+
+      <div class="ar-phone ar-phones"><div class="sx-phone sx-theme-aurora" style="width:280px;height:605px"><div class="sx-pinhole"></div><div class="sx-screen"><div class="sx-statusbar"><span>9:41</span><div class="sx-status-icons"><i class="ph-fill ph-cell-signal-high"></i><i class="ph-fill ph-wifi-high"></i><span class="sx-batt"></span></div></div><div class="sx-titlebar"><i class="ph ph-arrow-left sx-tb-back"></i><div class="sx-tb-icon">🛒</div><div class="sx-tb-text"><div class="sx-tb-title">Закупи на тиждень</div></div><div class="sx-tb-right"><i class="ph ph-receipt"></i><i class="ph ph-dots-three-vertical"></i></div></div><div class="sx-list-body"><div class="sx-section sx-section-active"><span class="sx-section-emoji">🍎</span><span class="sx-section-label">Фрукти та овочі</span><span class="sx-section-count">2</span></div><div class="sx-item sx-item-bought"><div class="sx-cart sx-check"><i class="ph-bold ph-check"></i></div><div class="sx-item-name">Яблука Гала</div><div class="sx-item-qty">₴60</div></div><div class="sx-item sx-item-bought"><div class="sx-cart sx-check"><i class="ph-bold ph-check"></i></div><div class="sx-item-name">Томати черрі</div><div class="sx-item-qty">₴95</div></div><div class="sx-section"><span class="sx-section-emoji">🥛</span><span class="sx-section-label">Молочне</span><span class="sx-section-count">3</span></div><div class="sx-item sx-item-bought"><div class="sx-cart sx-check"><i class="ph-bold ph-check"></i></div><div class="sx-item-name">Молоко 2.5%</div><div class="sx-item-qty">₴42</div></div><div class="sx-item"><div class="sx-cart"><i class="ph ph-shopping-cart"></i></div><div class="sx-item-name">Вершкове масло</div><div class="sx-item-qty">₴82</div></div><div class="sx-item"><div class="sx-cart"><i class="ph ph-shopping-cart"></i></div><div class="sx-item-name">Сир Гауда</div><div class="sx-item-qty">₴90</div></div></div><div class="sx-add-bar"><i class="ph ph-receipt"></i><span>Меню ⋮ → Сканувати чек після каси</span></div></div></div><div class="sx-phone sx-theme-aurora" style="width:280px;height:605px"><div class="sx-pinhole"></div><div class="sx-screen"><div class="sx-statusbar"><span>9:41</span><div class="sx-status-icons"><i class="ph-fill ph-cell-signal-high"></i><i class="ph-fill ph-wifi-high"></i><span class="sx-batt"></span></div></div><div class="sx-titlebar"><i class="ph ph-arrow-left sx-tb-back"></i><div class="sx-tb-text"><div class="sx-tb-title">Звірка чека</div></div><div class="sx-tb-right"><i class="ph ph-receipt"></i></div></div><div style="margin:0 10px 6px;padding:8px 10px;background:var(--sx-card);border-radius:12px;display:flex;justify-content:space-between;align-items:center;border:1px solid var(--sx-border)"><div><div style="font-size:8.5px;color:var(--sx-text-dim)">Обрано на суму</div><div style="font-size:14px;font-weight:700;color:var(--sx-accent)">₴412.50</div></div><div style="text-align:right"><div style="font-size:8.5px;color:var(--sx-text-dim)">Сума за чеком: ₴412.50</div><div style="font-size:8.5px;font-weight:600;color:#4ade80">✓ Сума збігається</div></div></div><div class="sx-list-body" style="gap:0"><div style="font-size:9px;font-weight:600;color:var(--sx-accent);padding:4px 4px 2px">Оновити ціни в Історії</div><div style="display:flex;align-items:center;gap:6px;background:var(--sx-card);border-radius:10px;padding:6px 8px;margin-bottom:4px"><div class="sx-cart sx-check" style="width:18px;height:18px;border-radius:5px"><i class="ph-bold ph-check" style="font-size:10px"></i></div><div style="flex:1;min-width:0"><div style="font-size:10px;font-weight:600">Яблука Гала</div><div style="font-size:8.5px;color:var(--sx-text-dim)"><s>1 кг</s> → 1.34 кг • <s>₴60</s> → <b style="color:var(--sx-accent)">₴78.50</b></div></div></div><div style="display:flex;align-items:center;gap:6px;background:var(--sx-card);border-radius:10px;padding:6px 8px;margin-bottom:4px"><div class="sx-cart sx-check" style="width:18px;height:18px;border-radius:5px"><i class="ph-bold ph-check" style="font-size:10px"></i></div><div style="flex:1;min-width:0"><div style="font-size:10px;font-weight:600">Молоко 2.5%</div><div style="font-size:8.5px;color:var(--sx-text-dim)">2 л • <s>₴84</s> → <b style="color:var(--sx-accent)">₴92.00</b></div></div></div><div style="font-size:9px;font-weight:600;color:var(--sx-accent);padding:4px 4px 2px">Позначити купленим зі списку</div><div style="display:flex;align-items:center;gap:6px;background:var(--sx-card);border-radius:10px;padding:6px 8px;margin-bottom:4px"><div class="sx-cart sx-check" style="width:18px;height:18px;border-radius:5px"><i class="ph-bold ph-check" style="font-size:10px"></i></div><div style="flex:1;min-width:0"><div style="font-size:10px;font-weight:600">Вершкове масло</div><div style="font-size:8.5px;color:var(--sx-text-dim)">200 г • <b style="color:var(--sx-accent)">₴84.00</b></div></div></div><div style="display:flex;align-items:center;gap:6px;background:var(--sx-card);border-radius:10px;padding:6px 8px;margin-bottom:4px"><div class="sx-cart sx-check" style="width:18px;height:18px;border-radius:5px"><i class="ph-bold ph-check" style="font-size:10px"></i></div><div style="flex:1;min-width:0"><div style="font-size:10px;font-weight:600">Сир Гауда</div><div style="font-size:8.5px;color:var(--sx-text-dim)">0.28 кг • <b style="color:var(--sx-accent)">₴90.00</b></div></div></div><div style="font-size:9px;font-weight:600;color:var(--sx-accent);padding:4px 4px 2px">Додати в Історію (поза списком)</div><div style="display:flex;align-items:center;gap:6px;background:var(--sx-card);border-radius:10px;padding:6px 8px"><div class="sx-cart sx-check" style="width:18px;height:18px;border-radius:5px"><i class="ph-bold ph-check" style="font-size:10px"></i></div><div style="flex:1;min-width:0"><div style="font-size:10px;font-weight:600">Чорний шоколад</div><div style="font-size:8.5px;color:var(--sx-text-dim)">100 г • <b style="color:var(--sx-accent)">₴68.00</b></div></div></div></div><div style="margin:auto 10px 10px;padding:8px 12px;border-radius:12px;background:var(--sx-accent);color:#081120;font-weight:700;font-size:10.5px;text-align:center">✓ Застосувати (5)</div></div></div><div class="sx-phone sx-theme-ocean" style="width:280px;height:605px"><div class="sx-pinhole"></div><div class="sx-screen"><div class="sx-statusbar"><span>9:41</span><div class="sx-status-icons"><i class="ph-fill ph-cell-signal-high"></i><i class="ph-fill ph-wifi-high"></i><span class="sx-batt"></span></div></div><div class="sx-titlebar"><i class="ph ph-arrow-left sx-tb-back"></i><div class="sx-tb-text"><div class="sx-tb-title">Історія цін</div></div><div class="sx-tb-right"><i class="ph ph-calendar-blank"></i></div></div><div class="ar-mock-caption"><span class="sx-stat-emoji">🍎</span>Яблука Гала <span>· ціна за кг</span></div><div class="ar-mock-stats"><div class="ar-mock-stat"><b>₴45</b><i>Найнижча</i></div><div class="ar-mock-stat"><b>₴53</b><i>Середня</i></div><div class="ar-mock-stat"><b>₴58.58</b><i>Остання</i></div><div class="ar-mock-stat"><b>₴58.58</b><i>Найвища</i></div></div><div class="ar-mock-chart"><span class="ar-mock-bar" style="height:48%"></span><span class="ar-mock-bar" style="height:55%"></span><span class="ar-mock-bar" style="height:52%"></span><span class="ar-mock-bar" style="height:64%"></span><span class="ar-mock-bar hi" style="height:78%"></span><span class="ar-mock-bar hi" style="height:100%"></span></div><div class="ar-mock-months"><span>вер</span><span>жов</span><span>лис</span></div><div class="sx-history-list"><div class="sx-history-item"><span class="sx-history-emoji">🍎</span><div class="sx-history-main"><div class="sx-history-name">4 лис · 1.34 кг</div><div class="sx-history-meta">Від попереднього +5%</div></div><span class="sx-history-price">₴58.58/кг</span><span class="sx-history-tag">Макс</span></div><div class="sx-history-item"><span class="sx-history-emoji">🍎</span><div class="sx-history-main"><div class="sx-history-name">24 жов · 0.92 кг</div><div class="sx-history-meta">Від попереднього +9%</div></div><span class="sx-history-price">₴55.98/кг</span></div><div class="sx-history-item"><span class="sx-history-emoji">🍎</span><div class="sx-history-main"><div class="sx-history-name">10 жов · 1.20 кг</div><div class="sx-history-meta">Від попереднього +2%</div></div><span class="sx-history-price">₴50.00/кг</span></div></div></div></div></div>
+
+      <h2 id="clean-catalog">4. Зрозумілі назви замість касових скорочень і контроль суми</h2>
+      <p>Головна проблема традиційних сканерів чеків — касові абревіатури. Якщо в одному магазині пробили <code>МОЛ.СЕЛ.2.5% ПЕТ 900Г</code>, а в іншому — <code>МОЛОКО ЯГОТИНСЬКЕ 2.6%</code>, звичайний сканер створить два окремі товари з касовими назвами, і статистика по молоку розіб’ється на частини.</p>
+      <p>У Shoplix касові скорочення не псують ваш каталог і статистику:</p>
+      <ul>
+        <li><strong>Автоматична прив’язка до вашого каталогу і списку:</strong> скорочений рядок із чека зіставляється зі звичною назвою у вашому списку («Молоко»), тому вся статистика витрат і графік цін ведуться по одному товару.</li>
+        <li><strong>Вибір назви в один тап:</strong> натисніть на будь-яку позицію на екрані звірки, щоб обрати між <strong>«Каталог / список»</strong> (ваша коротка назва) та <strong>«Назва з чека»</strong> (повна назва з брендом і вагою), або введіть власний варіант із підказками каталогу.</li>
+        <li><strong>Зміна прив’язки, об’єднання та розділення позицій:</strong> взяли інший сир замість записаного в списку? На екрані звірки позицію з чека можна вручну прив’язати до іншого товару, відв’язати, <strong>об’єднати</strong> два рядки в один або <strong>розділити</strong> згруповану позицію.</li>
+        <li><strong>Контроль підсумку («Сума збігається»):</strong> у верхній картці Shoplix порівнює суму обраних позицій із підсумковою сумою на чеку. Зелений індикатор <strong>«✓ Сума збігається»</strong> підтверджує, що всі вагові позиції та ціни розпізнано до копійки. Якщо в чеку є непродуктові товари, які ви не хочете враховувати в продуктовому бюджеті, просто зніміть із них прапорець.</li>
+      </ul>
+
+      <h2 id="comparison">5. Ручне введення vs окремі сканери чеків vs Shoplix</h2>
+      <div class="ar-table-wrap">
+        <table class="ar-table">
+          <thead><tr><th>Можливість</th><th>Введення вручну в залі</th><th>Окремі сканери чеків</th><th>Звірка чеків у Shoplix</th></tr></thead>
+          <tbody>
+            <tr class="hl"><td>Час у магазині</td><td>Потрібно вводити вагу і ціну біля полиць</td><td class="yes">Нічого не вводите в залі</td><td class="yes">Лише відмічаєте куплене у списку</td></tr>
+            <tr><td>Зв’язок зі списком покупок</td><td class="yes">Так</td><td class="no">Ні, окремий застосунок відірваний від списку</td><td class="yes">Так: оновлює Історію, закриває список і додає позапланове</td></tr>
+            <tr><td>Назви товарів у статистиці</td><td class="yes">Ваші звичні назви</td><td class="no">Касові скорочення плодять дублікати</td><td class="yes">Прив’язка до назв із вашого каталогу або назви з чека</td></tr>
+            <tr><td>Точна вага та кількість</td><td>Легко пропустити точні грами в залі</td><td class="yes">Точно з чека</td><td class="yes">Точно з чека + історія цін за одиницю</td></tr>
+            <tr><td>Паперові та електронні чеки</td><td class="no">—</td><td>Залежить від сервісу</td><td class="yes">1–5 фото (склеювання довгих чеків) або скріншоти</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="how-to-start">6. Як відсканувати свій перший чек</h2>
+      <ol>
+        <li><strong>Складіть список без зайвих деталей:</strong> додайте потрібні товари у список просто за назвою.</li>
+        <li><strong>Купуйте як зазвичай:</strong> відмічайте куплене одним тапом у спільному списку разом із сім’єю.</li>
+        <li><strong>Відкрийте «Сканувати чек»:</strong> натисніть меню з трьома крапками <strong>⋮</strong> у заголовку списку → <strong>«Сканувати чек»</strong> (або перейдіть в <strong>Історію</strong> та натисніть іконку чека зверху).</li>
+        <li><strong>Додайте фото або скріншот і натисніть «Застосувати»:</strong> перегляньте результати звірки та підтвердьте — статистика витрат, історія цін та автопідстановка для наступних покупок оновляться миттєво.</li>
+      </ol>
+
+      <div class="ar-cta">
+        <p class="ar-cta-title">Спробуйте сканування чеків у дії</p>
+        <p>10 сканувань чеків щомісяця доступні безкоштовно кожному користувачу (і до 150 на місяць у Shoplix Premium) — без реклами і без обов’язкової реєстрації.</p>
+        <div class="dp-cta-row" style="justify-content:center">
+          <a class="dp-btn dp-btn-primary" href="https://apps.apple.com/app/apple-store/id6759987277?pt=128613636&ct=shoplix-site&mt=8" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.03 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702z"/></svg> App Store</a>
+          <a class="dp-btn dp-btn-ghost" href="https://play.google.com/store/apps/details?id=com.shoplix.app&referrer=utm_source%3Dshoplix.app%26utm_medium%3Dweb%26utm_campaign%3Duk-blog-receipt" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg> Google Play</a>
+          <a class="dp-btn dp-btn-ghost" href="https://app.shoplix.app/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Відкрити веб-версію</a>
+        </div>
+      </div>
+
+      <h2 id="faq">7. Часті питання (FAQ)</h2>
+      <div class="ar-faq">
+        <details><summary>Чи можна сканувати електронні чеки з додатків супермаркетів і банків?</summary><p>Так. Зробіть 1–5 скріншотів електронного чека з додатку супермаркету, сервісу доставки або банкінгу та оберіть їх через кнопку «Галерея». Shoplix розпізнає товари, вагу, кількість та суму так само, як із паперового чека.</p></details>
+        <details><summary>Як сфотографувати довгий паперовий чек?</summary><p>Не потрібно фотографувати довгу стрічку здалеку дрібним шрифтом. Сфотографуйте чек по частинах (від 2 до 5 фото) з невеликим перекриттям — Shoplix сам склеїть частини чека та прибере дублікати на стиках.</p></details>
+        <details><summary>Чи потрібно вказувати кількість і ціну товару перед походом у магазин?</summary><p>Ні. Достатньо додати у список просто назви продуктів. Усю фактичну вагу, кількість і реальні ціни Shoplix підставить автоматично під час звірки чека.</p></details>
+        <details><summary>Що буде з незрозумілими касовими скороченнями в моїй статистиці?</summary><p>Shoplix автоматично пов’язує касові рядки зі звичними назвами у вашому списку та каталозі (наприклад, «Молоко»), щоб статистика й історія цін не дробилися. За бажанням на екрані звірки можна в один тап перемкнути назву на повний варіант із чека або змінити прив’язку.</p></details>
+        <details><summary>Які ліміти на сканування чеків у безкоштовній версії та в Premium?</summary><p>У безкоштовному плані доступно 10 сканувань чеків на місяць (цього вистачає на щотижневі великі закупівлі), а в підписці Shoplix Premium — до 150 сканувань на місяць. Лічильник оновлюється 1-го числа кожного місяця.</p></details>
+      </div>
+      <p>Читайте також наш детальний гайд про <a href="/uk/blog/dodatok-oblik-vytrat-na-produkty/">облік витрат на продукти та історію цін у Shoplix</a> і велике порівняння <a href="/uk/blog/naikrashchi-dodatky-spysok-pokupok/">найкращих додатків для спільного списку покупок</a>.</p>
+    </div>
+  </main>
+  <footer class="dp-footer"><div>SHOPLIX · 2026 · UA</div><div class="dp-footer-links"><a href="/uk/blog/">Блог</a><a href="/privacy-policy.html">Конфіденційність</a><a href="/terms.html">Умови</a><a href="https://x.com/ShoplixApp" target="_blank" rel="me noopener">X</a><a href="mailto:support@shoplix.app">support@shoplix.app</a></div></footer>
+</div>
+<script>(function(){document.addEventListener('click',function(e){document.querySelectorAll('details.dp-lang-menu[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});})();</script>
+</body>
+</html>

@@ -4,10 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shoplix — Shared shopping list app that syncs in real time</title>
-  <meta name="description" content="Free shared shopping list app for families and events. Add, claim, and check off items in real time so nobody buys twice — on iOS, Android, and the web." />
+  <meta name="description" content="Free shared shopping list app for families and events. Add, claim, and check off items in real time, scan receipts to auto-fill prices and weights — on iOS, Android, and the web." />
   <link rel="canonical" href="https://shoplix.app/en/" />
   <link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
   <link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/" />
+  <link rel="alternate" hreflang="de" href="https://shoplix.app/de/" />
+  <link rel="alternate" hreflang="es" href="https://shoplix.app/es/" />
+  <link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/" />
+  <link rel="alternate" hreflang="it" href="https://shoplix.app/it/" />
+  <link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/" />
+  <link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
+  <link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
+  <link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
   <link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
   <link rel="icon" type="image/png" href="/app-icon.png" />
   <link rel="apple-touch-icon" href="/app-icon.png" />
@@ -16,71 +24,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/landing.css" />
-  <script>
-    (function () {
-      var l = (navigator.language || navigator.userLanguage || '').toLowerCase();
-      location.replace(l.indexOf('uk') === 0 ? '/uk/' : '/en/');
-    })();
-  </script>
-  <style>
-    .root-gateway {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 48px 24px;
-      max-width: 760px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .root-gateway h1 {
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 600;
-      color: #fff;
-      margin: 20px 0 14px;
-      line-height: 1.15;
-    }
-    .root-gateway p {
-      font-size: 16px;
-      line-height: 1.65;
-      color: var(--dp-fg-2);
-      margin: 0 0 24px;
-    }
-    .root-features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      text-align: left;
-      margin: 28px 0;
-      width: 100%;
-    }
-    .root-feat-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--dp-line);
-      border-radius: 14px;
-      padding: 16px 18px;
-    }
-    .root-feat-card strong {
-      display: block;
-      color: #fff;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-    .root-feat-card span {
-      font-size: 13px;
-      color: var(--dp-fg-3);
-      line-height: 1.5;
-    }
-    .root-btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
-  </style>
-  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Shoplix","url":"https://shoplix.app/","logo":"https://shoplix.app/app-icon.png","email":"support@shoplix.app","sameAs":["https://x.com/ShoplixApp","https://apps.apple.com/app/id6759987277","https://play.google.com/store/apps/details?id=com.shoplix.app"]},{"@context":"https://schema.org","@type":"WebSite","name":"Shoplix","url":"https://shoplix.app/en/","inLanguage":"en"},{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Shoplix","description":"Free shared shopping list app for families and events. Add, claim, and check off items in real time so nobody buys twice — on iOS, Android, and the web.","applicationCategory":"ShoppingApplication","operatingSystem":"iOS, Android, Web","url":"https://shoplix.app/en/","image":"https://shoplix.app/app-icon.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"installUrl":["https://apps.apple.com/app/id6759987277","https://play.google.com/store/apps/details?id=com.shoplix.app"]}]</script>
+  <script>(function(){var sup=["en","uk","de","es","fr","it","nl","pl","pt","ro"];var raw=(navigator.language||navigator.userLanguage||'en').toLowerCase().split('-')[0];var dest=sup.indexOf(raw)!==-1?raw:'en';location.replace('/'+dest+'/');})();</script>
+  <style>.root-gateway{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:48px 24px;max-width:760px;margin:0 auto;text-align:center}.root-gateway h1{font-size:clamp(28px,4vw,42px);font-weight:600;color:#fff;margin:20px 0 14px;line-height:1.15}.root-gateway p{font-size:16px;line-height:1.65;color:var(--dp-fg-2);margin:0 0 24px}.root-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;text-align:left;margin:28px 0;width:100%}.root-feat-card{background:rgba(255,255,255,0.03);border:1px solid var(--dp-line);border-radius:14px;padding:16px 18px}.root-feat-card strong{display:block;color:#fff;font-size:14px;margin-bottom:6px}.root-feat-card span{font-size:13px;color:var(--dp-fg-3);line-height:1.5}.root-btn-group{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px}</style>
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Shoplix","url":"https://shoplix.app/","logo":"https://shoplix.app/app-icon.png","email":"support@shoplix.app","sameAs":["https://x.com/ShoplixApp","https://apps.apple.com/app/id6759987277","https://play.google.com/store/apps/details?id=com.shoplix.app"]},{"@context":"https://schema.org","@type":"WebSite","name":"Shoplix","url":"https://shoplix.app/en/","inLanguage":"en"},{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Shoplix","description":"Free shared shopping list app for families and events. Add, claim, and check off items in real time, scan receipts to auto-fill prices and weights — on iOS, Android, and the web.","applicationCategory":"ShoppingApplication","operatingSystem":"iOS, Android, Web","url":"https://shoplix.app/en/","image":"https://shoplix.app/app-icon.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"installUrl":["https://apps.apple.com/app/id6759987277","https://play.google.com/store/apps/details?id=com.shoplix.app"]}]</script>
 </head>
 <body>
   <div class="dp-page">
@@ -88,44 +34,15 @@
     <main class="root-gateway">
       <div class="dp-brand-mark" style="width:56px;height:56px;margin:0 auto" aria-label="Shoplix"></div>
       <h1>Shoplix — Real-Time Shared Shopping List App</h1>
-      <p>
-        Free, real-time shared shopping list application for families, couples, and events.
-        Add, claim, and check off items in real time so nobody buys twice — on iOS, Android, and the web.
-      </p>
-
-      <div class="root-btn-group">
-        <a class="dp-btn dp-btn-primary" href="/en/">Continue in English</a>
-        <a class="dp-btn dp-btn-ghost" href="/uk/">Перейти українською</a>
-      </div>
-
+      <p>Free, real-time shared shopping list application for families, couples, and events. Add, claim, and check off items in real time, or scan receipts to fill in exact prices and weights automatically — on iOS, Android, and the web.</p>
+      <div class="root-btn-group"><a class="dp-btn dp-btn-primary" href="/en/" hreflang="en">English</a><a class="dp-btn dp-btn-ghost" href="/uk/" hreflang="uk">Українська</a><a class="dp-btn dp-btn-ghost" href="/de/" hreflang="de">Deutsch</a><a class="dp-btn dp-btn-ghost" href="/es/" hreflang="es">Español</a><a class="dp-btn dp-btn-ghost" href="/fr/" hreflang="fr">Français</a><a class="dp-btn dp-btn-ghost" href="/it/" hreflang="it">Italiano</a><a class="dp-btn dp-btn-ghost" href="/nl/" hreflang="nl">Nederlands</a><a class="dp-btn dp-btn-ghost" href="/pl/" hreflang="pl">Polski</a><a class="dp-btn dp-btn-ghost" href="/pt/" hreflang="pt">Português</a><a class="dp-btn dp-btn-ghost" href="/ro/" hreflang="ro">Română</a></div>
       <div class="root-features">
-        <div class="root-feat-card">
-          <strong>⚡ Real-Time Sync</strong>
-          <span>Instant WebSocket updates across all phones with &ldquo;I&rsquo;ll grab it&rdquo; item claiming.</span>
-        </div>
-        <div class="root-feat-card">
-          <strong>🏡 Two List Modes</strong>
-          <span>Family Lists auto-clear checked items. Event Lists preserve history &amp; track participant spend.</span>
-        </div>
-        <div class="root-feat-card">
-          <strong>📊 Budget Intelligence</strong>
-          <span>Log item prices at check-off to track grocery inflation and category spending over time.</span>
-        </div>
-        <div class="root-feat-card">
-          <strong>🔒 Anonymous-First</strong>
-          <span>Start immediately without accounts or passwords. 100% offline-first reliability with SQLite.</span>
-        </div>
+        <div class="root-feat-card"><strong>⚡ Real-Time Sync</strong><span>Instant WebSocket updates across all phones with &ldquo;I&rsquo;ll grab it&rdquo; item claiming.</span></div>
+        <div class="root-feat-card"><strong>🧾 Receipt Scanning</strong><span>Snap a paper receipt or digital screenshot to auto-reconcile exact prices, weights &amp; quantities.</span></div>
+        <div class="root-feat-card"><strong>📊 Budget Intelligence</strong><span>Track grocery inflation and spending by member, category, and product over time.</span></div>
+        <div class="root-feat-card"><strong>🔒 Anonymous-First</strong><span>Start immediately without accounts or passwords. 100% offline-first reliability with SQLite.</span></div>
       </div>
-
-      <div class="dp-meta-row" style="margin-top:12px">
-        <a href="https://apps.apple.com/app/id6759987277" target="_blank" rel="noopener">App Store</a>
-        <span>·</span>
-        <a href="https://play.google.com/store/apps/details?id=com.shoplix.app" target="_blank" rel="noopener">Google Play</a>
-        <span>·</span>
-        <a href="https://app.shoplix.app/" target="_blank" rel="noopener">Web App</a>
-        <span>·</span>
-        <a href="/en/blog/">Blog</a>
-      </div>
+      <div class="dp-meta-row" style="margin-top:12px"><a href="https://apps.apple.com/app/id6759987277" target="_blank" rel="noopener">App Store</a><span>·</span><a href="https://play.google.com/store/apps/details?id=com.shoplix.app" target="_blank" rel="noopener">Google Play</a><span>·</span><a href="https://app.shoplix.app/" target="_blank" rel="noopener">Web App</a><span>·</span><a href="/en/blog/">Blog</a></div>
     </main>
   </div>
 </body>
