@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://shoplix.app/en/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
@@ -16,11 +16,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
   </url>
   <url>
     <loc>https://shoplix.app/uk/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
@@ -33,11 +37,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
   </url>
   <url>
     <loc>https://shoplix.app/de/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
@@ -50,11 +58,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
   </url>
   <url>
     <loc>https://shoplix.app/es/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
@@ -67,11 +79,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
   </url>
   <url>
     <loc>https://shoplix.app/fr/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
@@ -84,11 +100,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
   </url>
   <url>
     <loc>https://shoplix.app/it/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
@@ -101,11 +121,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
   </url>
   <url>
     <loc>https://shoplix.app/nl/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
@@ -118,11 +142,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
   </url>
   <url>
     <loc>https://shoplix.app/pl/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
@@ -135,11 +163,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
   </url>
   <url>
     <loc>https://shoplix.app/pt/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
@@ -152,11 +184,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
   </url>
   <url>
     <loc>https://shoplix.app/ro/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
@@ -169,11 +205,99 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/cs/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/sk/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/fi/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/hr/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/" />
   </url>
   <url>
     <loc>https://shoplix.app/en/blog/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -186,11 +310,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
   </url>
   <url>
     <loc>https://shoplix.app/uk/blog/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -203,11 +331,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
   </url>
   <url>
     <loc>https://shoplix.app/de/blog/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -220,11 +352,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
   </url>
   <url>
     <loc>https://shoplix.app/es/blog/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -237,11 +373,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
   </url>
   <url>
     <loc>https://shoplix.app/fr/blog/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -254,11 +394,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
   </url>
   <url>
     <loc>https://shoplix.app/it/blog/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -271,11 +415,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
   </url>
   <url>
     <loc>https://shoplix.app/nl/blog/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -288,11 +436,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
   </url>
   <url>
     <loc>https://shoplix.app/pl/blog/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -305,11 +457,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
   </url>
   <url>
     <loc>https://shoplix.app/pt/blog/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -322,11 +478,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
   </url>
   <url>
     <loc>https://shoplix.app/ro/blog/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
@@ -339,6 +499,94 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/cs/blog/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/sk/blog/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/fi/blog/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/hr/blog/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/" />
   </url>
   <url>
@@ -356,6 +604,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
   </url>
   <url>
@@ -373,6 +625,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
   </url>
   <url>
@@ -390,6 +646,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
   </url>
   <url>
@@ -407,6 +667,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
   </url>
   <url>
@@ -424,6 +688,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
   </url>
   <url>
@@ -441,6 +709,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
   </url>
   <url>
@@ -458,6 +730,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
   </url>
   <url>
@@ -475,6 +751,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
   </url>
   <url>
@@ -492,6 +772,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
   </url>
   <url>
@@ -509,6 +793,94 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/cs/blog/receipt-scanning-shopping-list/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/skanuvannia-chekiv-spysok-pokupok/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/sk/blog/receipt-scanning-shopping-list/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/skanuvannia-chekiv-spysok-pokupok/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/fi/blog/receipt-scanning-shopping-list/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/skanuvannia-chekiv-spysok-pokupok/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/hr/blog/receipt-scanning-shopping-list/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/skanuvannia-chekiv-spysok-pokupok/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/receipt-scanning-shopping-list/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/receipt-scanning-shopping-list/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/receipt-scanning-shopping-list/" />
   </url>
   <url>
@@ -526,6 +898,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
   </url>
   <url>
@@ -543,6 +919,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
   </url>
   <url>
@@ -560,6 +940,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
   </url>
   <url>
@@ -577,6 +961,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
   </url>
   <url>
@@ -594,6 +982,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
   </url>
   <url>
@@ -611,6 +1003,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
   </url>
   <url>
@@ -628,6 +1024,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
   </url>
   <url>
@@ -645,6 +1045,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
   </url>
   <url>
@@ -662,6 +1066,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
   </url>
   <url>
@@ -679,6 +1087,94 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/dodatok-oblik-vytrat-na-produkty/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/dodatok-oblik-vytrat-na-produkty/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/dodatok-oblik-vytrat-na-produkty/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/dodatok-oblik-vytrat-na-produkty/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/grocery-list-app-that-tracks-spending/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/grocery-list-app-that-tracks-spending/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/grocery-list-app-that-tracks-spending/" />
   </url>
   <url>
@@ -696,6 +1192,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
   </url>
   <url>
@@ -713,6 +1213,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
   </url>
   <url>
@@ -730,6 +1234,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
   </url>
   <url>
@@ -747,6 +1255,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
   </url>
   <url>
@@ -764,6 +1276,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
   </url>
   <url>
@@ -781,6 +1297,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
   </url>
   <url>
@@ -798,6 +1318,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
   </url>
   <url>
@@ -815,6 +1339,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
   </url>
   <url>
@@ -832,6 +1360,10 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
   </url>
   <url>
@@ -849,11 +1381,99 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/cs/blog/best-shared-shopping-list-apps/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/naikrashchi-dodatky-spysok-pokupok/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/sk/blog/best-shared-shopping-list-apps/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/naikrashchi-dodatky-spysok-pokupok/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/fi/blog/best-shared-shopping-list-apps/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/naikrashchi-dodatky-spysok-pokupok/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/hr/blog/best-shared-shopping-list-apps/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/naikrashchi-dodatky-spysok-pokupok/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/best-shared-shopping-list-apps/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/best-shared-shopping-list-apps/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/best-shared-shopping-list-apps/" />
   </url>
   <url>
     <loc>https://shoplix.app/en/blog/shoplix-vs-listonic/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
@@ -866,11 +1486,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
   </url>
   <url>
     <loc>https://shoplix.app/uk/blog/shoplix-chy-listonic/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
@@ -883,11 +1507,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
   </url>
   <url>
     <loc>https://shoplix.app/de/blog/shoplix-vs-listonic/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
@@ -900,11 +1528,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
   </url>
   <url>
     <loc>https://shoplix.app/es/blog/shoplix-vs-listonic/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
@@ -917,11 +1549,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
   </url>
   <url>
     <loc>https://shoplix.app/fr/blog/shoplix-vs-listonic/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
@@ -934,11 +1570,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
   </url>
   <url>
     <loc>https://shoplix.app/it/blog/shoplix-vs-listonic/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
@@ -951,11 +1591,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
   </url>
   <url>
     <loc>https://shoplix.app/nl/blog/shoplix-vs-listonic/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
@@ -968,11 +1612,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
   </url>
   <url>
     <loc>https://shoplix.app/pl/blog/shoplix-vs-listonic/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
@@ -985,11 +1633,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
   </url>
   <url>
     <loc>https://shoplix.app/pt/blog/shoplix-vs-listonic/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
@@ -1002,11 +1654,15 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
   </url>
   <url>
     <loc>https://shoplix.app/ro/blog/shoplix-vs-listonic/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
@@ -1019,6 +1675,94 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/cs/blog/shoplix-vs-listonic/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/shoplix-chy-listonic/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/sk/blog/shoplix-vs-listonic/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/shoplix-chy-listonic/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/fi/blog/shoplix-vs-listonic/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/shoplix-chy-listonic/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
+  </url>
+  <url>
+    <loc>https://shoplix.app/hr/blog/shoplix-vs-listonic/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://shoplix.app/uk/blog/shoplix-chy-listonic/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://shoplix.app/de/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://shoplix.app/es/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoplix.app/fr/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://shoplix.app/it/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://shoplix.app/nl/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://shoplix.app/pl/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://shoplix.app/pt/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://shoplix.app/ro/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://shoplix.app/cs/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://shoplix.app/sk/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://shoplix.app/fi/blog/shoplix-vs-listonic/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://shoplix.app/hr/blog/shoplix-vs-listonic/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shoplix.app/en/blog/shoplix-vs-listonic/" />
   </url>
   <url>

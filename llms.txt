@@ -1,6 +1,6 @@
 # Shoplix
 
-> Shoplix is a free shared shopping list app for families, roommates, couples, and events. Several people share one live list: everyone adds items, claims them ("I'll buy this"), and checks them off in real time, so nothing is forgotten and nothing gets bought twice. Available on iOS, Android, and the web (no account required). Interface in 11 languages, including English and Ukrainian.
+> Shoplix is a free shared shopping list app for families, roommates, couples, and events. Several people share one live list: everyone adds items, claims them ("I'll buy this"), and checks them off in real time, so nothing is forgotten and nothing gets bought twice. Available on iOS, Android, and the web (no account required). Interface in 14 languages (19 regional locales), including English, Ukrainian, Czech, Slovak, Finnish, and Croatian.
 
 Key facts (verified against the app, November 2026):
 
@@ -15,7 +15,7 @@ Key facts (verified against the app, November 2026):
 - Sharing is a link: it opens the app directly on the join screen, or routes through the store install first. No registration is required to join.
 - Optional Shoplix Premium removes the free tier's caps (20 templates, 20 recipes, monthly quota of recipe imports, barcode lookups, and 10 free receipt scans/month up to 150/month) and adds animated themes. Claiming, sync, statistics, voice, and offline mode are never paywalled.
 
-## Main pages (10 languages)
+## Main pages (14 languages)
 
 - [Landing (English)](https://shoplix.app/en/): what Shoplix does, feature overview
 - [Landing (Ukrainian — Українська)](https://shoplix.app/uk/): українська версія
@@ -27,11 +27,15 @@ Key facts (verified against the app, November 2026):
 - [Landing (Polish — Polski)](https://shoplix.app/pl/): Wspólna lista zakupów w czasie rzeczywistym
 - [Landing (Portuguese — Português)](https://shoplix.app/pt/): Lista de compras partilhada em tempo real
 - [Landing (Romanian — Română)](https://shoplix.app/ro/): Listă de cumpărături comună în timp real
+- [Landing (Czech — Čeština)](https://shoplix.app/cs/): Sdílený nákupní seznam v reálném čase
+- [Landing (Slovak — Slovenčina)](https://shoplix.app/sk/): Zdieľaný nákupný zoznam v reálnom čase
+- [Landing (Finnish — Suomi)](https://shoplix.app/fi/): Reaaliaikainen jaettu ostoslista
+- [Landing (Croatian — Hrvatski)](https://shoplix.app/hr/): Zajednički popis za kupovinu u stvarnom vremenu
 - [Web app](https://app.shoplix.app/): use Shoplix in the browser, no registration
 - [App Store](https://apps.apple.com/app/id6759987277): iOS app
 - [Google Play](https://play.google.com/store/apps/details?id=com.shoplix.app): Android app
 
-## Guides and comparisons (blog in 10 languages: /en/blog/, /uk/blog/, /de/blog/, /es/blog/, /fr/blog/, /it/blog/, /nl/blog/, /pl/blog/, /pt/blog/, /ro/blog/)
+## Guides and comparisons (blog in 14 languages: /en/blog/, /uk/blog/, /de/blog/, /es/blog/, /fr/blog/, /it/blog/, /nl/blog/, /pl/blog/, /pt/blog/, /ro/blog/, /cs/blog/, /sk/blog/, /fi/blog/, /hr/blog/)
 
 - [Receipt scanning in Shoplix: stop typing prices and weights in the store](https://shoplix.app/en/blog/receipt-scanning-shopping-list/): how paper and digital receipt scanning reconciles prices, weights, and unplanned buys
 - [The 6 best shared shopping list apps in 2026](https://shoplix.app/en/blog/best-shared-shopping-list-apps/): honest comparison of Shoplix, AnyList, Bring!, Listonic, OurGroceries, and Google Keep

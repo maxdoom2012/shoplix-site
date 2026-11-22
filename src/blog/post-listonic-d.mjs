@@ -2,6 +2,8 @@ import { renderArticlePage } from './blog-layout.mjs';
 import { POST_LISTONIC_A } from './post-listonic-a.mjs';
 import { POST_LISTONIC_B } from './post-listonic-b.mjs';
 import { POST_LISTONIC_C } from './post-listonic-c.mjs';
+import { POST_LISTONIC_E } from './post-listonic-e.mjs';
+import { POST_LISTONIC_F } from './post-listonic-f.mjs';
 
 export const POST_LISTONIC_D = {
   pt: {
@@ -86,7 +88,7 @@ export const POST_LISTONIC_D = {
   },
 };
 
-const ALL_LISTONIC = { ...POST_LISTONIC_A, ...POST_LISTONIC_B, ...POST_LISTONIC_C, ...POST_LISTONIC_D };
+const ALL_LISTONIC = { ...POST_LISTONIC_A, ...POST_LISTONIC_B, ...POST_LISTONIC_C, ...POST_LISTONIC_D, ...POST_LISTONIC_E, ...POST_LISTONIC_F };
 
 export function renderListonicPost(lang) {
   const d = ALL_LISTONIC[lang];

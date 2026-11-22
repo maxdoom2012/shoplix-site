@@ -16,7 +16,7 @@ import { renderSpendingPost } from './post-spending-d.mjs';
 import { renderBestAppsPost } from './post-best-f.mjs';
 import { renderListonicPost } from './post-listonic-d.mjs';
 
-const NEW_LANGS = ['de', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ro'];
+const NEW_LANGS = ['de', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ro', 'cs', 'sk', 'fi', 'hr'];
 const ARTICLE_KEYS = Object.keys(ARTICLE_SLUGS);
 
 const RENDERERS = {
@@ -43,12 +43,12 @@ function buildSitemapXml() {
     }
   };
 
-  addCluster(getLandingPath, '2026-11-04', 'weekly', '1.0');
-  addCluster(getBlogIndexPath, '2026-11-04', 'weekly', '0.8');
+  addCluster(getLandingPath, '2026-11-22', 'weekly', '1.0');
+  addCluster(getBlogIndexPath, '2026-11-22', 'weekly', '0.8');
   addCluster((l) => getArticlePath('receipt', l), '2026-11-04', 'monthly', '0.8');
   addCluster((l) => getArticlePath('spending', l), '2026-08-26', 'monthly', '0.8');
   addCluster((l) => getArticlePath('bestApps', l), '2026-08-25', 'monthly', '0.8');
-  addCluster((l) => getArticlePath('listonic', l), '2026-08-25', 'monthly', '0.8');
+  addCluster((l) => getArticlePath('listonic', l), '2026-11-22', 'monthly', '0.8');
 
   for (const staticPath of ['/privacy-policy.html', '/terms.html']) {
     entries.push(`  <url>\n    <loc>${SITE}${staticPath}</loc>\n    <lastmod>2026-08-25</lastmod>\n    <changefreq>yearly</changefreq>\n    <priority>0.3</priority>\n  </url>`);
@@ -69,7 +69,7 @@ export async function buildBlogAndSitemap(docsDir) {
       const rawArt = await readFile(artFile, 'utf8');
       await writeFile(artFile, upgradeExistingBlogPage(rawArt, lang, (l) => getArticlePath(key, l)), 'utf8');
     }
-    console.log(`upgraded /${lang}/blog/ index + 4 articles with 10-language switcher & hreflang`);
+    console.log(`upgraded /${lang}/blog/ index + 4 articles with ${LANGS.length}-language switcher & hreflang`);
   }
 
   for (const lang of NEW_LANGS) {
@@ -87,5 +87,5 @@ export async function buildBlogAndSitemap(docsDir) {
   }
 
   await writeFile(join(docsDir, 'sitemap.xml'), buildSitemapXml(), 'utf8');
-  console.log('built /sitemap.xml (62 URLs with 10-language hreflang clusters)');
+  console.log(`built /sitemap.xml (${LANGS.length * 6 + 2} URLs with ${LANGS.length}-language hreflang clusters)`);
 }

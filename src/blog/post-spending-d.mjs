@@ -3,6 +3,8 @@ import { renderSpendingArticleMockups } from './blog-mockups.mjs';
 import { POST_SPENDING_A } from './post-spending-a.mjs';
 import { POST_SPENDING_B } from './post-spending-b.mjs';
 import { POST_SPENDING_C } from './post-spending-c.mjs';
+import { POST_SPENDING_E } from './post-spending-e.mjs';
+import { POST_SPENDING_F } from './post-spending-f.mjs';
 
 export const POST_SPENDING_D = {
   pt: {
@@ -117,7 +119,7 @@ export const POST_SPENDING_D = {
   },
 };
 
-const ALL_SPENDING = { ...POST_SPENDING_A, ...POST_SPENDING_B, ...POST_SPENDING_C, ...POST_SPENDING_D };
+const ALL_SPENDING = { ...POST_SPENDING_A, ...POST_SPENDING_B, ...POST_SPENDING_C, ...POST_SPENDING_D, ...POST_SPENDING_E, ...POST_SPENDING_F };
 
 export function renderSpendingPost(lang) {
   const d = ALL_SPENDING[lang];

@@ -3,6 +3,8 @@ import { renderReceiptArticleMockups } from './blog-mockups.mjs';
 import { POST_RECEIPT_A } from './post-receipt-a.mjs';
 import { POST_RECEIPT_B } from './post-receipt-b.mjs';
 import { POST_RECEIPT_C } from './post-receipt-c.mjs';
+import { POST_RECEIPT_E } from './post-receipt-e.mjs';
+import { POST_RECEIPT_F } from './post-receipt-f.mjs';
 
 export const POST_RECEIPT_D = {
   pt: {
@@ -123,7 +125,7 @@ export const POST_RECEIPT_D = {
   },
 };
 
-const ALL_RECEIPT = { ...POST_RECEIPT_A, ...POST_RECEIPT_B, ...POST_RECEIPT_C, ...POST_RECEIPT_D };
+const ALL_RECEIPT = { ...POST_RECEIPT_A, ...POST_RECEIPT_B, ...POST_RECEIPT_C, ...POST_RECEIPT_D, ...POST_RECEIPT_E, ...POST_RECEIPT_F };
 
 export function renderReceiptPost(lang) {
   const d = ALL_RECEIPT[lang];

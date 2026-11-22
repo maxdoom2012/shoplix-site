@@ -91,6 +91,7 @@ img { display: block; max-width: 100%; }
 .dp-lang-list {
   position: absolute; right: 0; top: calc(100% + 8px);
   min-width: 176px; padding: 6px;
+  max-height: 70vh; overflow-y: auto;
   border-radius: 14px; border: 1px solid var(--dp-line-strong);
   background: rgba(16, 18, 28, 0.96);
   backdrop-filter: saturate(180%) blur(18px);

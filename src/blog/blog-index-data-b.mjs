@@ -1,6 +1,7 @@
 import { SITE, OG_IMAGE, getArticlePath, getBlogIndexPath } from '../i18n/languages.mjs';
 import { renderBlogDocument, CTA_BTNS } from './blog-layout.mjs';
 import { BLOG_INDEX_DATA } from './blog-index-data.mjs';
+import { BLOG_INDEX_DATA_C } from './blog-index-data-c.mjs';
 
 const BLOG_INDEX_DATA_B = {
   nl: {
@@ -117,7 +118,7 @@ const BLOG_INDEX_DATA_B = {
   },
 };
 
-const ALL_INDEX = { ...BLOG_INDEX_DATA, ...BLOG_INDEX_DATA_B };
+const ALL_INDEX = { ...BLOG_INDEX_DATA, ...BLOG_INDEX_DATA_B, ...BLOG_INDEX_DATA_C };
 
 export function renderBlogIndexPage(lang) {
   const d = ALL_INDEX[lang];

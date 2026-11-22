@@ -1,7 +1,7 @@
 export const SITE = 'https://shoplix.app';
 export const OG_IMAGE = `${SITE}/app-icon.png`;
 
-export const LANGS = ['en', 'uk', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ro'];
+export const LANGS = ['en', 'uk', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ro', 'cs', 'sk', 'fi', 'hr'];
 
 export const LANG_INFO = {
   en: { code: 'en', label: 'EN', name: 'English', ogLocale: 'en_US', country: 'US' },
@@ -14,6 +14,10 @@ export const LANG_INFO = {
   pl: { code: 'pl', label: 'PL', name: 'Polski', ogLocale: 'pl_PL', country: 'PL' },
   pt: { code: 'pt', label: 'PT', name: 'Português', ogLocale: 'pt_PT', country: 'PT' },
   ro: { code: 'ro', label: 'RO', name: 'Română', ogLocale: 'ro_RO', country: 'RO' },
+  cs: { code: 'cs', label: 'CS', name: 'Čeština', ogLocale: 'cs_CZ', country: 'CZ' },
+  sk: { code: 'sk', label: 'SK', name: 'Slovenčina', ogLocale: 'sk_SK', country: 'SK' },
+  fi: { code: 'fi', label: 'FI', name: 'Suomi', ogLocale: 'fi_FI', country: 'FI' },
+  hr: { code: 'hr', label: 'HR', name: 'Hrvatski', ogLocale: 'hr_HR', country: 'HR' },
 };
 
 export const ARTICLE_SLUGS = {

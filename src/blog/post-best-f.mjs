@@ -4,6 +4,8 @@ import { POST_BEST_B } from './post-best-b.mjs';
 import { POST_BEST_C } from './post-best-c.mjs';
 import { POST_BEST_D } from './post-best-d.mjs';
 import { POST_BEST_E } from './post-best-e.mjs';
+import { POST_BEST_G } from './post-best-g.mjs';
+import { POST_BEST_H } from './post-best-h.mjs';
 
 export const POST_BEST_F = {
   pt: {
@@ -92,7 +94,7 @@ export const POST_BEST_F = {
   },
 };
 
-const ALL_BEST = { ...POST_BEST_A, ...POST_BEST_B, ...POST_BEST_C, ...POST_BEST_D, ...POST_BEST_E, ...POST_BEST_F };
+const ALL_BEST = { ...POST_BEST_A, ...POST_BEST_B, ...POST_BEST_C, ...POST_BEST_D, ...POST_BEST_E, ...POST_BEST_F, ...POST_BEST_G, ...POST_BEST_H };
 
 export function renderBestAppsPost(lang) {
   const d = ALL_BEST[lang];
