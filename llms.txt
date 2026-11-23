@@ -13,7 +13,7 @@ Key facts (verified against the app, November 2026):
 - Barcode scanner with automatic product recognition; recipe import from a URL or pasted text with a review step; reusable templates for recurring shops.
 - Works offline; changes sync when the connection returns. Real-time sync across all participants' devices.
 - Sharing is a link: it opens the app directly on the join screen, or routes through the store install first. No registration is required to join.
-- Optional Shoplix Premium removes the free tier's caps (20 templates, 20 recipes, monthly quota of recipe imports, barcode lookups, and 10 free receipt scans/month up to 150/month) and adds animated themes. Claiming, sync, statistics, voice, and offline mode are never paywalled.
+- Optional Shoplix Premium removes the free tier's caps (20 templates, 20 recipes, and starter free quotas of 5 AI recipe imports, 20 barcode scans, and 10 receipt scans total; Premium unlocks up to 100 recipe imports/month, 1000 barcode scans/month, and 150 receipt scans/month) and adds animated themes. Claiming, sync, statistics, voice, and offline mode are never paywalled.
 
 ## Main pages (14 languages)
 

@@ -76,7 +76,7 @@ export const POST_LISTONIC_E = {
       "<strong>Bez reklam a bez povinného účtu:</strong> Jakýkoli seznam nasdílíš jedním odkazem."
     ],
     "premTitle": "Co přidává Shoplix Premium",
-    "premP": "Bezplatný tarif Shoplixu je úplně bez reklam a zahrnuje 20 šablon, 20 receptů a 10 skenů účtenek měsíčně. Shoplix Premium navyšuje limit na 150 účtenek měsíčně a odemyká neomezené šablony i recepty.",
+    "premP": "Bezplatný tarif Shoplixu je úplně bez reklam a zahrnuje 20 šablon, 20 receptů a startovací balíček zdarma (10 skenů účtenek, 20 čárových kódů a 5 importů receptů celkem). Shoplix Premium navyšuje limit na 150 účtenek měsíčně a odemyká neomezené šablony i recepty.",
     "verdict": "<strong>Nakupuješ většinou sám a chceš řazení podle uliček</strong> → Listonic. <strong>Nakupujete v rodině, v páru nebo ve skupině</strong> → Shoplix.",
     "ctaTitle": "Poznej rozdíl na vlastním seznamu",
     "ctaDesc": "Vytvoř seznam v Shoplixu, pošli odkaz a rezervuj si první položku – zdarma a bez reklam.",
@@ -178,7 +178,7 @@ export const POST_LISTONIC_E = {
       "<strong>Bez reklám a bez povinnej registrácie:</strong> Akýkoľvek zoznam zdieľate jednoduchým odkazom."
     ],
     "premTitle": "Čo prináša Shoplix Premium",
-    "premP": "Bezplatná verzia Shoplix nemá žiadne reklamy a zahŕňa 20 šablón, 20 receptov a 10 skenov bločkov mesačne. Shoplix Premium zvyšuje limit na 150 bločkov mesačne a odomyká neobmedzené šablóny aj recepty.",
+    "premP": "Bezplatná verzia Shoplix nemá žiadne reklamy a zahŕňa 20 šablón, 20 receptov a bezplatný štartovací balík (10 skenov bločkov, 20 čiarových kódov a 5 importov receptov celkovo). Shoplix Premium zvyšuje limit na 150 bločkov mesačne a odomyká neobmedzené šablóny aj recepty.",
     "verdict": "<strong>Nakupujete sami a chcete zoradenie podľa uličiek</strong> → Listonic. <strong>Nakupujete ako rodina, pár alebo partia</strong> → Shoplix.",
     "ctaTitle": "Vyskúšajte rozdiel na vlastnom zozname",
     "ctaDesc": "Vytvorte zoznam v Shoplix, pošlite odkaz a rezervujte položku – zadarmo a bez reklám.",

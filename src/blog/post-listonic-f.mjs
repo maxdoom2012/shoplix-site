@@ -76,7 +76,7 @@ export const POST_LISTONIC_F = {
       "<strong>Mainokseton ilman tiliä:</strong> Jaa mikä tahansa lista linkillä saman tien."
     ],
     "premTitle": "Mitä Shoplix Premium tuo lisää",
-    "premP": "Shoplixin ilmaisversio on täysin mainokseton ja sisältää 20 pohjaa, 20 reseptiä ja 10 kuittiskannausta kuukaudessa. Shoplix Premium nostaa rajan 150 kuittiskannaukseen kuukaudessa ja avaa rajattomat pohjat sekä reseptit.",
+    "premP": "Shoplixin ilmaisversio on täysin mainokseton ja sisältää 20 pohjaa, 20 reseptiä sekä maksuttomat aloituskiintiöt (10 kuittiskannausta, 20 viivakoodiskannausta ja 5 reseptituontia yhteensä). Shoplix Premium nostaa rajan 150 kuittiskannaukseen kuukaudessa ja avaa rajattomat pohjat sekä reseptit.",
     "verdict": "<strong>Käyt kaupassa yksin ja haluat käytäväjärjestyksen</strong> → Listonic. <strong>Käytte kaupassa perheen, puolison tai porukan kanssa</strong> → Shoplix.",
     "ctaTitle": "Huomaa ero omalla ostoslistallasi",
     "ctaDesc": "Luo lista Shoplixissa, jaa linkki ja varaa ensimmäinen tuote – maksutta ja ilman mainoksia.",
@@ -178,7 +178,7 @@ export const POST_LISTONIC_F = {
       "<strong>Bez oglasa i bez obveznog korisničkog računa:</strong> Podijelite bilo koji popis putem poveznice."
     ],
     "premTitle": "Što donosi Shoplix Premium",
-    "premP": "Besplatni plan Shoplixa nema oglasa i uključuje 20 predložaka, 20 recepata i 10 skeniranja računa mjesečno. Shoplix Premium povećava ograničenje na 150 računa mjesečno te otključava neograničene predloške i recepte.",
+    "premP": "Besplatni plan Shoplixa nema oglasa i uključuje 20 predložaka, 20 recepata i besplatne početne kvote (10 skeniranja računa, 20 barkodova i 5 uvoza recepata ukupno). Shoplix Premium povećava ograničenje na 150 računa mjesečno te otključava neograničene predloške i recepte.",
     "verdict": "<strong>Kupujete sami i želite redoslijed po odjelima</strong> → Listonic. <strong>Kupujete kao obitelj, par ili društvo</strong> → Shoplix.",
     "ctaTitle": "Osjetite razliku na vlastitom popisu",
     "ctaDesc": "Izradite popis u Shoplixu, podijelite poveznicu i rezervirajte prvu stavku — besplatno i bez oglasa.",

@@ -90,7 +90,7 @@ export const POST_RECEIPT_F = {
       "<strong>Lisää kuvat tai kuvakaappaukset ja napauta ”Tallenna”:</strong> Tilastot ja hintahistoria päivittyvät saman tien."
     ],
     "ctaTitle": "Kokeile kuitin skannausta seuraavalla kauppareissulla",
-    "ctaDesc": "10 kuittiskannausta kuukaudessa maksutta kaikille (ja jopa 150/kk Shoplix Premiumilla) – mainokseton, ilman rekisteröitymistä.",
+    "ctaDesc": "10 maksutonta kuittiskannausta sisältyy kaikille (ja jopa 150/kk Shoplix Premiumilla) – mainokseton, ilman rekisteröitymistä.",
     "faqTitle": "7. Usein kysytyt kysymykset (UKK)",
     "faqs": [
       [
@@ -111,7 +111,7 @@ export const POST_RECEIPT_F = {
       ],
       [
         "Montako kuittiskannausta sisältyy ilmaisversioon?",
-        "Ilmaisversio sisältää 10 kuittiskannausta kuukaudessa ja Shoplix Premium jopa 150 skannausta kuukaudessa. Kiintiö nollautuu jokaisen kuukauden 1. päivänä."
+        "Ilmaisversio sisältää 10 maksutonta kuittiskannausta yhteensä ja Shoplix Premium jopa 150 skannausta kuukaudessa (Premium-kiintiö nollautuu jokaisen kuukauden 1. päivänä)."
       ]
     ],
     "relatedHtml": "Haluatko nähdä, miten hinnat muuttuvat selkeiksi budjettitilastoiksi? Lue oppaamme <a href=\"/fi/blog/grocery-list-app-that-tracks-spending/\">ostoslistasovelluksesta, joka seuraa kuluja</a>, tai lue vertailumme: <a href=\"/fi/blog/best-shared-shopping-list-apps/\">6 parasta jaettua ostoslistasovellusta vuonna 2026</a>."
@@ -207,7 +207,7 @@ export const POST_RECEIPT_F = {
       "<strong>Dodajte fotografije ili snimke zaslona i dodirnite „Primijeni“:</strong> Statistika i povijest cijena odmah su ažurirane."
     ],
     "ctaTitle": "Isprobajte skeniranje računa pri idućoj kupnji",
-    "ctaDesc": "10 skeniranja računa mjesečno uključeno je besplatno za sve korisnike (i do 150 mjesečno uz Shoplix Premium) — bez oglasa i bez registracije.",
+    "ctaDesc": "10 besplatnih skeniranja računa uključeno je za sve korisnike (i do 150 mjesečno uz Shoplix Premium) — bez oglasa i bez registracije.",
     "faqTitle": "7. Često postavljana pitanja (FAQ)",
     "faqs": [
       [
@@ -228,7 +228,7 @@ export const POST_RECEIPT_F = {
       ],
       [
         "Koliko je skeniranja uključeno u besplatni plan?",
-        "Besplatni plan uključuje 10 skeniranja računa mjesečno, a Shoplix Premium do 150 skeniranja mjesečno. Brojač se obnavlja 1. dana svakog mjeseca."
+        "Besplatni plan uključuje 10 besplatnih skeniranja ukupno, a Shoplix Premium do 150 skeniranja mjesečno (brojač za Premium obnavlja se 1. dana svakog mjeseca)."
       ]
     ],
     "relatedHtml": "Želite saznati više o praćenju potrošnje? Pročitajte naš vodič za <a href=\"/hr/blog/grocery-list-app-that-tracks-spending/\">aplikaciju za popis za kupovinu koja prati troškove</a> ili usporedite <a href=\"/hr/blog/best-shared-shopping-list-apps/\">6 najboljih aplikacija za dijeljeni popis za kupovinu u 2026.</a>"

@@ -90,7 +90,7 @@ export const POST_RECEIPT_E = {
       "<strong>Přidej fotky nebo snímky a klepni na „Použít“:</strong> Statistiky i historie cen se okamžitě aktualizují."
     ],
     "ctaTitle": "Vyzkoušej skenování účtenky při příštím nákupu",
-    "ctaDesc": "10 skenů účtenek měsíčně má každý zdarma (a až 150/měsíc v Shoplix Premium) – bez reklam a bez registrace.",
+    "ctaDesc": "10 bezplatných skenů účtenek má každý zdarma (a až 150/měsíc v Shoplix Premium) – bez reklam a bez registrace.",
     "faqTitle": "7. Časté dotazy (FAQ)",
     "faqs": [
       [
@@ -111,7 +111,7 @@ export const POST_RECEIPT_E = {
       ],
       [
         "Kolik skenů účtenek je zdarma?",
-        "Tarif zdarma zahrnuje 10 skenů účtenek měsíčně a Shoplix Premium až 150 skenů měsíčně. Limit se obnovuje vždy 1. dne v měsíci."
+        "Tarif zdarma zahrnuje 10 bezplatných skenů účtenek celkem a Shoplix Premium až 150 skenů měsíčně (limit Premium se obnovuje vždy 1. dne v měsíci)."
       ]
     ],
     "relatedHtml": "Chceš vidět, jak se z účtenek stane jasný přehled výdajů? Přečti si průvodce <a href=\"/cs/blog/grocery-list-app-that-tracks-spending/\">aplikací pro nákupní seznam, která hlídá výdaje</a>, nebo srovnání <a href=\"/cs/blog/best-shared-shopping-list-apps/\">6 nejlepších aplikací pro sdílený nákupní seznam v roce 2026</a>."
@@ -207,7 +207,7 @@ export const POST_RECEIPT_E = {
       "<strong>Pridajte fotky či snímky a klepnite na „Použiť“:</strong> Štatistiky aj história cien sa okamžite aktualizujú."
     ],
     "ctaTitle": "Vyskúšajte skenovanie bločkov pri najbližšom nákupe",
-    "ctaDesc": "10 skenov bločkov mesačne je zadarmo pre každého (a až 150 mesačne so Shoplix Premium) – bez reklám a bez registrácie.",
+    "ctaDesc": "10 bezplatných skenov bločkov je zadarmo pre každého (a až 150 mesačne so Shoplix Premium) – bez reklám a bez registrácie.",
     "faqTitle": "7. Často kladené otázky (FAQ)",
     "faqs": [
       [
@@ -228,7 +228,7 @@ export const POST_RECEIPT_E = {
       ],
       [
         "Koľko skenov bločkov je v bezplatnej verzii?",
-        "Bezplatná verzia zahŕňa 10 skenov mesačne a Shoplix Premium až 150 skenov mesačne. Počítadlo sa obnovuje vždy 1. dňa v mesiaci."
+        "Bezplatná verzia zahŕňa 10 bezplatných skenov celkovo a Shoplix Premium až 150 skenov mesačne (počítadlo Premium sa obnovuje vždy 1. dňa v mesiaci)."
       ]
     ],
     "relatedHtml": "Chcete vidieť, ako sa ceny menia na prehľadné grafy? Prečítajte si návod k <a href=\"/sk/blog/grocery-list-app-that-tracks-spending/\">aplikácii na nákupný zoznam, ktorá sleduje výdavky</a>, alebo porovnanie <a href=\"/sk/blog/best-shared-shopping-list-apps/\">6 najlepších aplikácií na zdieľaný nákupný zoznam v roku 2026</a>."
